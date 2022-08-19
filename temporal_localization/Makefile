@@ -2,7 +2,7 @@ ALL_PDF := $(shell ls *.pdf)
 ALL_TXT := $(ALL_PDF:.pdf=.txt)
 
 
-LIST_OF_HAND_DL :=
+LIST_OF_HAND_DL := sensors-22-03601-v2
 
 ALL_ARXIV_IDS := $(shell egrep -o 'arxiv.org/(abs|pdf)/\d+\.\d+(:?v\d)?' README.md | egrep -o '\d+\.\d+(:?v\d)?$$')
 GIT_REPOS := $(shell egrep -oi '[^\.]github.com/([\w\./-~\-]+){2}' README.md | egrep -io 'github.com/[^/]+/[^/]+' | sed 's/github\.com\///')
@@ -14,7 +14,7 @@ print-git:
 
 clone-git:
 	@# example: https://github.com/Ki6an/fastT5.git
-	echo $(GIT_REPOS) | tr ' ' '\n' | awk '{ print "https://github/" $$1 ".git" }' | xargs -I{} sh -c 'FOLDER=$$(basename  -s .git {}); (test -d $$FOLDER && echo $$FOLDER already cloned) || (git clone {} && echo $$FOLDER >> ./.gitignore)'
+	# echo $(GIT_REPOS) | tr ' ' '\n' | awk '{ print "https://github.com/" $$1 ".git" }' | xargs -I{} sh -c 'GIT=$$(echo "{}"); FOLDER=$$(basename  -s .git "$$GIT"); (test -d $$FOLDER && echo $$FOLDER already cloned) || (git clone "$$GIT" && echo $$FOLDER >> ./.gitignore)'
 	make ignore-git-clone
 
 

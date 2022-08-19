@@ -14,7 +14,7 @@ print-git:
 
 clone-git:
 	@# example: https://github.com/Ki6an/fastT5.git
-	echo $(GIT_REPOS) | tr ' ' '\n' | awk '{ print "https://github/" $$1 ".git" }' | xargs -I{} sh -c 'FOLDER=$$(basename  -s .git {}); (test -d $$FOLDER && echo $$FOLDER already cloned) || (git clone {} && echo $$FOLDER >> ./.gitignore)'
+	echo $(GIT_REPOS) | tr ' ' '\n' | awk '{ print "https://github.com/" $$1 ".git" }' | xargs -I{} sh -c 'GIT=$$(echo "{}"); FOLDER=$$(basename  -s .git "$$GIT"); (test -d $$FOLDER && echo $$FOLDER already cloned) || (git clone "$$GIT" && echo "/$$FOLDER" >> ./.gitignore)'
 	make ignore-git-clone
 
 
@@ -46,6 +46,7 @@ all2txt: $(ALL_TXT)
 
 
 all: clone-git dl-paper all2txt
+	cd temporal_localization && make all
 
 
 .PHONY: all clone-git dl-paper all2txt print-git print-paper ignore-pdf-txt ignore-git-clone
