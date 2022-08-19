@@ -32,7 +32,7 @@ Related Work
 
 * gaopengcuhk/Tip-Adapter [[github code]](https://github.com/gaopengcuhk/tip-adapter) [[arXiv abstract]](https://arxiv.org/abs/2111.03930) [[pdf]](2111.03930.pdf)
 
-* CyCLIP: Cyclic Contrastive Language-Image Pretraining [[arXiv abstract]](https://arxiv.org/abs/2205.14459) [[pdf]](2205.14459)
+* CyCLIP: Cyclic Contrastive Language-Image Pretraining [[arXiv abstract]](https://arxiv.org/abs/2205.14459) [[pdf]](2205.14459.pdf)
 [[github code]](https://github.com/megvii-research/protoclip)
 
 * ZrrSkywalker/PointCLIP: [CVPR 2022] PointCLIP: Point Cloud Understanding by CLIP [[github code]](https://github.com/ZrrSkywalker/PointCLIP) [[arXiv abstract]](https://arxiv.org/abs/2112.02413) [[pdf]](2112.02413.pdf)
@@ -47,6 +47,7 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 * ClipBERT: Less is More: ClipBERT for Video-and-Language Learning via Sparse Sampling [[github code]](https://github.com/jayleicn/ClipBERT) [[arXiv abstract]](https://arxiv.org/abs/2102.06183) [[pdf]](2102.06183.pdf)
 
 * CLIP4Clip: An Empirical Study of CLIP for End to End Video Clip Retrieval [[github code]](https://github.com/ArrowLuo/CLIP4Clip) [[arXiv abstract]](https://arxiv.org/abs/2104.08860) [[pdf]](2104.08860.pdf)
+  > Also present in the [Twohee Framework](https://towhee.io/video-text-embedding/clip4clip)
 
 * Center Clip: Token Clustering for Efficient Text-Video Retrieval [[github code]](https://github.com/mzhaoshuai/CenterCLIP) [[arXiv abstract]](https://arxiv.org/abs/2205.00823) [[pdf]](2205.00823.pdf)
 
@@ -54,12 +55,14 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 [[github code]](https://github.com/antoine77340/S3D_HowTo100M)
 
 * DRL: Disentangled Representation Learning for Text-Video Retrieval
- [[github code]](https://github.com/foolwood/DRL) [[arXiv abstract]](https://arxiv.org/abs/2203.07111) [[pdf]](2203.07111.pdf) [[towhee]](https://towhee.io/video-text-embedding/drl)
+ [[github code]](https://github.com/foolwood/DRL) [[arXiv abstract]](https://arxiv.org/abs/2203.07111) [[pdf]](2203.07111.pdf)
+  > Available as a [[Towhee operator]](https://towhee.io/video-text-embedding/drl.pdf)
 
 * Frozen in Time: A Joint Video and Image Encoder for End-to-End Retrieval
-[[github code]](https://github.com/m-bain/frozen-in-time) [[arXiv abstract]](https://arxiv.org/abs/2104.00650) [[pdf]](2104.00650.pdf) [[towhee]](https://towhee.io/video-text-embedding/frozen-in-time)
+[[github code]](https://github.com/m-bain/frozen-in-time) [[arXiv abstract]](https://arxiv.org/abs/2104.00650) [[pdf]](2104.00650.pdf)
+  > Available as a [[Towhee operator]](https://towhee.io/video-text-embedding/frozen-in-time.pdf)
 
-* CyCLIP: Cyclic Contrastive Language-Image Pretraining [[arXiv abstract]](https://arxiv.org/abs/2205.14459) [[pdf]](2205.14459)
+* CyCLIP: Cyclic Contrastive Language-Image Pretraining [[arXiv abstract]](https://arxiv.org/abs/2205.14459) [[pdf]](2205.14459.pdf)
 [[github code]](https://github.com/goel-shashank/CyCLIP)
 
 * SPOT: Semi-Supervised Temporal Action Detection with Proposal-Free Masking [[github code]](https://github.com/sauradip/SPOT) [[arXiv abstract]](https://arxiv.org/abs/2207.07059) [[pdf]](2207.07059.pdf)
@@ -73,9 +76,9 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 * singularity: Revealing Single Frame Bias for Video-and-Language Learning [[github code]](https://github.com/jayleicn/singularity) [[arXiv abstract]](https://arxiv.org/abs/2206.03428) [[pdf]](2206.03428.pdf)
 
-* SlowFast: video understanding codebase from FAIR for reproducing [[github code]](https://github.com/facebookresearch/SlowFast) [[arXiv abstract]](https://arxiv.org/abs/1812.03982) [[pdf]](1812.03982.pdf) [[arXiv abstract X3D: Progressive Network Expansion for Efficient Video Recognition]](https://arxiv.org/abs/2004.04730)
+* SlowFast: video understanding codebase from FAIR for reproducing [[github code]](https://github.com/facebookresearch/SlowFast) [[arXiv abstract]](https://arxiv.org/abs/1812.03982) [[pdf]](1812.03982.pdf) [[arXiv abstract X3D: Progressive Network Expansion for Efficient Video Recognition]](https://arxiv.org/abs/2004.04730.pdf)
 
-* AdaFocus V2: End-to-End Training of Spatial Dynamic Networks for Video Recognition [[github code]](https://github.com/LeapLabTHU/AdaFocusV2) [[arXiv abstract]](https://arxiv.org/abs/2112.14238) [[pdf]](2112.14238.pdf) [[weights gdrive]](https://drive.google.com/drive/folders/1ETQb7aOGb4bePhVP82vFB24pqgn0UAkV)
+* AdaFocus V2: End-to-End Training of Spatial Dynamic Networks for Video Recognition [[github code]](https://github.com/LeapLabTHU/AdaFocusV2) [[arXiv abstract]](https://arxiv.org/abs/2112.14238) [[pdf]](2112.14238.pdf) [[weights gdrive]](https://drive.google.com/drive/folders/1ETQb7aOGb4bePhVP82vFB24pqgn0UAkV.pdf)
 
 * MViTv2: Improved Multiscale Vision Transformers for Classification and Detection [[github code]](https://github.com/facebookresearch/mvit) [[arXiv abstract]](https://arxiv.org/abs/2112.01526) [[pdf]](2112.01526.pdf)
 
@@ -87,7 +90,10 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 * DE:TR</span>: End-to-End Object Detection with Transformers
  [[github code]](https://github.com/facebookresearch/detr) [[arXiv abstract]](https://arxiv.org/abs/2005.12872) [[pdf]](2005.12872.pdf)
 
-* VideoCLIP: Contrastive Pre-training for Zero-shot Video-Text Understanding [[github code]](https://github.com/facebookresearch/fairseq/tree/main/examples/MMPT) [[arXiv abstract]](https://arxiv.org/abs/2109.14084) [[pdf]](2109.14084)
+* VideoCLIP: Contrastive Pre-training for Zero-shot Video-Text Understanding [[github code]](https://github.com/facebookresearch/fairseq/tree/main/examples/MMPT) [[arXiv abstract]](https://arxiv.org/abs/2109.14084) [[pdf]](2109.14084.pdf)
+
+* BridgeFormer: Bridging Video-text Retrieval with Multiple Choice Questions [[arXiv abstract]](https://arxiv.org/abs/2201.04850) [[pdf]](2201.04850.pdf) [[github code]](https://github.com/tencentarc/mcq)
+  > It is also available as a [Towhee operator](https://towhee.io/video-text-embedding/bridge-former)
 
 
 
@@ -110,14 +116,14 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 * Vision optimization:
 
   * A Simple Cache Model for Image Recognition
-  [[arXiv abstract]](https://arxiv.org/abs/1805.08709) [[pdf]](1805.08709) [[github code]](https://github.com/eminorhan/simple-cache)
+  [[arXiv abstract]](https://arxiv.org/abs/1805.08709) [[pdf]](1805.08709.pdf) [[github code]](https://github.com/eminorhan/simple-cache)
 
   * KD-Lib: A PyTorch library for Knowledge Distillation, Pruning and Quantization
-  [[arXiv abstract]](https://arxiv.org/abs/2011.14691) [[pdf]](2011.14691)
+  [[arXiv abstract]](https://arxiv.org/abs/2011.14691) [[pdf]](2011.14691.pdf)
 
   * [[github code]](https://github.com/urvashik/knnlm)
 
-* Feature Pyramid Networks for Object Detection [[arXiv abstract]](https://arxiv.org/abs/1612.03144) [[pdf]](1612.03144)
+* Feature Pyramid Networks for Object Detection [[arXiv abstract]](https://arxiv.org/abs/1612.03144) [[pdf]](1612.03144.pdf)
 
 * lucidrains/discrete-key-value-bottleneck-pytorch: Implementation of Discrete Key / Value Bottleneck, in Pytorch
 [[github code]](https://github.com/lucidrains/discrete-key-value-bottleneck-pytorch)
@@ -136,21 +142,7 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 ### Datasets
 
-* Imagery Library for Intelligent Detection Systems (**i-LIDS**); A Standard for Testing Video Based Detection Systems | IEEE Conference Publication | IEEE Xplore
-[[IEEE]](https://ieeexplore.ieee.org/document/4105319)
-  > ```latex
-  > @INPROCEEDINGS{4105319,
-  >   author={i-LIDS Team},
-  >   booktitle={Proceedings 40th Annual 2006 International Carnahan Conference on Security Technology},
-  >   title={Imagery Library for Intelligent Detection Systems (i-LIDS); A Standard for Testing Video Based Detection Systems},
-  >   year={2006},
-  >   volume={},
-  >   number={},
-  >   pages={75-80},
-  >   doi={10.1109/CCST.2006.313432},
-  >   ISSN={2153-0742},
-  >   month={Oct}}
-  > ```
+> Security and i-LIDS Dataset topics are presented in the [/i-LIDS subfolder](i-LIDS)
 
 
 * [VIRAT Video Data](https://viratdata.org/#getting-data)
@@ -164,6 +156,33 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 ### MLOps
 
 > [MLOps Toys | A Curated List of Machine Learning Projects](https://mlops.toys/)
+
+* Aim: easy-to-use and performant open-source ML experiment tracker.
+[[official website]](https://aimstack.io/)
+  > Open Source
+
+* BentoML: A faster way to ship your models to production [[official website]](https://www.bentoml.com/)
+  > Open Source
+
+* Data Version Control · DVC [[official website]](https://dvc.org/)
+  > Open Source
+  >
+  > by iterative.ai
+
+* Home | MLEM [[official website]](https://mlem.ai/)
+  > Open Source
+  >
+  > by iterative.ai
+  >
+  > Open-source tool to simplify ML model deployment: Save your ML model with a Python call, Model metadata is captured automatically, Deploy models anywhere you want, make git a Model Registry
+
+* Weights & Biases – Developer tools for ML [[official website]](https://wandb.ai/site)
+  > The developer-first ‍MLOps platform
+  >
+  > Build better models faster with experiment tracking, dataset versioning, and model management
+
+* Home - neptune.ai [[official website]](https://neptune.ai/home)
+  > Track experiments. Register models. Integrate with any MLOps stack.
 
 * Aporia - Cloud Native ML Observability | Monitor your Models [[official website]](https://www.aporia.com/)
 
@@ -227,7 +246,7 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 * [Mixed precision: What is mixed precision training?](https://keras.io/api/mixed_precision/)
 
-* A Survey of Quantization Methods for Efficient Neural Network Inference [[arXiv abstract]](https://arxiv.org/abs/2103.13630) [[pdf]](2103.13630)
+* A Survey of Quantization Methods for Efficient Neural Network Inference [[arXiv abstract]](https://arxiv.org/abs/2103.13630) [[pdf]](2103.13630.pdf)
 
 * [PyTorch Model Inference using ONNX and Caffe2 | LearnOpenCV](https://learnopencv.com/pytorch-model-inference-using-onnx-and-caffe2/)
 
@@ -276,6 +295,8 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
   * [action-classification/movinet - movinet - Towhee](https://towhee.io/action-classification/movinet)
   * [Towhee | Operator Task Detail - Towhee](https://towhee.io/tasks/detail/operator?field_name=Multimodal&task_name=Video/Text-Embedding)
     * [video-text-embedding/clip4clip - clip4clip - Towhee](https://towhee.io/video-text-embedding/clip4clip)
+
+* Welcome to TorchMetrics — PyTorch-Metrics 0.9.3 documentation [[readthedocs]](https://torchmetrics.readthedocs.io/en/stable/)
 
 * streamlit/streamlit: Streamlit — The fastest way to build data web apps in Python
 [[github code]](https://github.com/streamlit/streamlit)
