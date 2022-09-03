@@ -176,6 +176,8 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
   >
   > Open-source tool to simplify ML model deployment: Save your ML model with a Python call, Model metadata is captured automatically, Deploy models anywhere you want, make git a Model Registry
 
+* Optuna - A hyperparameter optimization framework [[official website]](https://optuna.org/)
+
 * Weights & Biases – Developer tools for ML [[official website]](https://wandb.ai/site)
   > The developer-first ‍MLOps platform
   >
