@@ -8,6 +8,16 @@ ALL_ARXIV_IDS := $(shell egrep -o 'arxiv.org/(abs|pdf)/\d+\.\d+(:?v\d)?' README.
 GIT_REPOS := $(shell egrep -oi '[^\.]github.com/([\w\./-~\-]+){2}' README.md | egrep -io 'github.com/[^/]+/[^/]+' | sed 's/github\.com\///')
 
 
+%.bib: tools/arxiv2bib/index.js
+	node tools/arxiv2bib/index.js $* > $*.bib
+
+get-all-bib:
+	make $(addsuffix .bib,$(ALL_ARXIV_IDS))
+	cd temporal_localization && make get-all-bib
+
+cat-bib:
+	cat *.bib temporal_localization/*.bib
+
 
 print-git:
 	echo $(GIT_REPOS) | tr ' ' '\n'

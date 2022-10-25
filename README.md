@@ -62,9 +62,6 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 [[github code]](https://github.com/m-bain/frozen-in-time) [[arXiv abstract]](https://arxiv.org/abs/2104.00650) [[pdf]](2104.00650.pdf)
   > Available as a [[Towhee operator]](https://towhee.io/video-text-embedding/frozen-in-time.pdf)
 
-* CyCLIP: Cyclic Contrastive Language-Image Pretraining [[arXiv abstract]](https://arxiv.org/abs/2205.14459) [[pdf]](2205.14459.pdf)
-[[github code]](https://github.com/goel-shashank/CyCLIP)
-
 * SPOT: Semi-Supervised Temporal Action Detection with Proposal-Free Masking [[github code]](https://github.com/sauradip/SPOT) [[arXiv abstract]](https://arxiv.org/abs/2207.07059) [[pdf]](2207.07059.pdf)
   > **Also with Temporal Action Localization**
   >
@@ -306,6 +303,9 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 * msamogh/nonechucks: Deal with bad samples in your dataset dynamically, use Transforms as Filters, and more! [[github code]](https://github.com/msamogh/nonechucks)
 
 * [Altair: Declarative Visualization in Python — Altair 4.2.0 documentation](https://altair-viz.github.io/)
+
+* open-mmlab/mmaction2: OpenMMLab's Next Generation Video Understanding Toolbox and Benchmark
+[[github code]](https://github.com/open-mmlab/mmaction2)
 
 
 ### Other Computer Vision tasks/concepts

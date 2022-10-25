@@ -9,6 +9,13 @@ GIT_REPOS := $(shell egrep -oi '[^\.]github.com/([\w\./-~\-]+){2}' README.md | e
 
 
 
+%.bib: ../tools/arxiv2bib/index.js
+	node ../tools/arxiv2bib/index.js $* > $*.bib
+
+get-all-bib:
+	make $(addsuffix .bib,$(ALL_ARXIV_IDS))
+
+
 print-git:
 	echo $(GIT_REPOS) | tr ' ' '\n'
 
