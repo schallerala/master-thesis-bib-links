@@ -63,7 +63,7 @@ function atom2bib (entry) {
     ].filter(e => !!e);
 
 
-    return `@article{{${articleTitle.join("").replaceAll(/[^a-z0-9]/gi, "")}},
+    return `@article{${articleTitle.join("").replaceAll(/[^a-z0-9]/gi, "")},
     ${fields.join(",\n    ")}
 }`
 }

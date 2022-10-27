@@ -8,6 +8,9 @@ ALL_ARXIV_IDS := $(shell egrep -o 'arxiv.org/(abs|pdf)/\d+\.\d+(:?v\d)?' README.
 GIT_REPOS := $(shell egrep -oi '[^\.]github.com/([\w\./-~\-]+){2}' README.md | egrep -io 'github.com/[^/]+/[^/]+' | sed 's/github\.com\///')
 
 
+ALL_MARKDOWN := $(shell find . -maxdepth 3 -name "*.md" -type f -not -path "*/.history/*" -print0)
+
+
 %.bib: tools/arxiv2bib/index.js
 	node tools/arxiv2bib/index.js $* > $*.bib
 
@@ -15,8 +18,11 @@ get-all-bib:
 	make $(addsuffix .bib,$(ALL_ARXIV_IDS))
 	cd temporal_localization && make get-all-bib
 
-cat-bib:
-	cat *.bib temporal_localization/*.bib
+autobiblio.bib: get-all-bib
+	cat $(addsuffix .bib,$(ALL_ARXIV_IDS)) temporal_localization/*.bib > $@
+
+readme.bib: $(ALL_MARKDOWN)
+	find . -maxdepth 3 -name "*.md" -type f -not -path "*/.history/*" -print0 | xargs -0 pcre2grep -M -H "@[a-zA-Z0-9]+(\{(?:[^{}]+|(?1))*+})" | sed 's/^\(.*\.md\):/% \1\n/' | sed 's/\s*> //' > readme.bib
 
 
 print-git:
