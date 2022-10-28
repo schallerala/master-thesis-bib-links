@@ -5,7 +5,7 @@ Related Work
 
 ## Related to CLIP (from OpenAI)
 
-> CLIP itself: openai/CLIP: Contrastive Language-Image Pretraining [[github code]](https://github.com/openai/CLIP) [[arXiv abstract]](https://arxiv.org/abs/2103.00020)
+> CLIP itself: openai/CLIP: Contrastive Language-Image Pretraining [[github code]](https://github.com/openai/CLIP) [[arXiv abstract]](https://arxiv.org/abs/2103.00020) [[pdf]](2103.00020.pdf)
 > Inspiration:
 > * [[Github Awesome CLIP]](https://github.com/yzhuoning/Awesome-CLIP) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/yzhuoning/Awesome-CLIP)
 > * [[Github Awesome Video Text Retrieval]](https://github.com/willard-yuan/video-text-retrieval-papers) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/willard-yuan/video-text-retrieval-papers)
