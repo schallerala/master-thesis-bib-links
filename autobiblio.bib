@@ -156,14 +156,6 @@
     month={12},
     year={2018}
 }
-@article{christophfeichtenhofer2020x3d,
-    title={X3D: Expanding Architectures for Efficient Video Recognition},
-    url={http://arxiv.org/abs/2004.04730v1},
-    author={Christoph Feichtenhofer},
-    abstract={This paper presents X3D, a family of efficient video networks that progressively expand a tiny 2D image classification architecture along multiple network axes, in space, time, width and depth. Inspired by feature selection methods in machine learning, a simple stepwise network expansion approach is employed that expands a single axis in each step, such that good accuracy to complexity trade-off is achieved. To expand X3D to a specific target complexity, we perform progressive forward expansion followed by backward contraction. X3D achieves state-of-the-art performance while requiring 4.8x and 5.5x fewer multiply-adds and parameters for similar accuracy as previous work. Our most surprising finding is that networks with high spatiotemporal resolution can perform well, while being extremely light in terms of network width and parameters. We report competitive accuracy at unprecedented efficiency on video classification and detection benchmarks. Code will be available at: https://github.com/facebookresearch/SlowFast},
-    month={4},
-    year={2020}
-}
 @article{yulinwang2021adafocus,
     title={AdaFocus V2: End-to-End Training of Spatial Dynamic Networks for Video
   Recognition},
@@ -223,6 +215,22 @@
     month={1},
     year={2022}
 }
+@article{fabiopetroni2019language,
+    title={Language Models as Knowledge Bases?},
+    url={http://arxiv.org/abs/1909.01066v2},
+    author={Fabio Petroni and Tim Rocktäschel and Patrick Lewis and Anton Bakhtin and Yuxiang Wu and Alexander H. Miller and Sebastian Riedel},
+    abstract={Recent progress in pretraining language models on large textual corpora led to a surge of improvements for downstream NLP tasks. Whilst learning linguistic knowledge, these models may also be storing relational knowledge present in the training data, and may be able to answer queries structured as "fill-in-the-blank" cloze statements. Language models have many advantages over structured knowledge bases: they require no schema engineering, allow practitioners to query about an open class of relations, are easy to extend to more data, and require no human supervision to train. We present an in-depth analysis of the relational knowledge already present (without fine-tuning) in a wide range of state-of-the-art pretrained language models. We find that (i) without fine-tuning, BERT contains relational knowledge competitive with traditional NLP methods that have some access to oracle knowledge, (ii) BERT also does remarkably well on open-domain question answering against a supervised baseline, and (iii) certain types of factual knowledge are learned much more readily than others by standard language model pretraining approaches. The surprisingly strong ability of these models to recall factual knowledge without any fine-tuning demonstrates their potential as unsupervised open-domain QA systems. The code to reproduce our analysis is available at https://github.com/facebookresearch/LAMA.},
+    month={9},
+    year={2019}
+}
+@article{kaiminghe2021masked,
+    title={Masked Autoencoders Are Scalable Vision Learners},
+    url={http://arxiv.org/abs/2111.06377v3},
+    author={Kaiming He and Xinlei Chen and Saining Xie and Yanghao Li and Piotr Dollár and Ross Girshick},
+    abstract={This paper shows that masked autoencoders (MAE) are scalable self-supervised learners for computer vision. Our MAE approach is simple: we mask random patches of the input image and reconstruct the missing pixels. It is based on two core designs. First, we develop an asymmetric encoder-decoder architecture, with an encoder that operates only on the visible subset of patches (without mask tokens), along with a lightweight decoder that reconstructs the original image from the latent representation and mask tokens. Second, we find that masking a high proportion of the input image, e.g., 75%, yields a nontrivial and meaningful self-supervisory task. Coupling these two designs enables us to train large models efficiently and effectively: we accelerate training (by 3x or more) and improve accuracy. Our scalable approach allows for learning high-capacity models that generalize well: e.g., a vanilla ViT-Huge model achieves the best accuracy (87.8%) among methods that use only ImageNet-1K data. Transfer performance in downstream tasks outperforms supervised pre-training and shows promising scaling behavior.},
+    month={11},
+    year={2021}
+}
 @article{mitchellwortsman2021robust,
     title={Robust fine-tuning of zero-shot models},
     url={http://arxiv.org/abs/2109.01903v3},
@@ -256,6 +264,39 @@
     month={12},
     year={2016}
 }
+@article{tsungyilin2014microsoft,
+    title={Microsoft COCO: Common Objects in Context},
+    url={http://arxiv.org/abs/1405.0312v3},
+    author={Tsung-Yi Lin and Michael Maire and Serge Belongie and Lubomir Bourdev and Ross Girshick and James Hays and Pietro Perona and Deva Ramanan and C. Lawrence Zitnick and Piotr Dollár},
+    abstract={We present a new dataset with the goal of advancing the state-of-the-art in object recognition by placing the question of object recognition in the context of the broader question of scene understanding. This is achieved by gathering images of complex everyday scenes containing common objects in their natural context. Objects are labeled using per-instance segmentations to aid in precise object localization. Our dataset contains photos of 91 objects types that would be easily recognizable by a 4 year old. With a total of 2.5 million labeled instances in 328k images, the creation of our dataset drew upon extensive crowd worker involvement via novel user interfaces for category detection, instance spotting and instance segmentation. We present a detailed statistical analysis of the dataset in comparison to PASCAL, ImageNet, and SUN. Finally, we provide baseline performance analysis for bounding box and segmentation detection results using a Deformable Parts Model.},
+    month={5},
+    year={2014}
+}
+@article{khurramsoomro2012ucf101,
+    title={UCF101: A Dataset of 101 Human Actions Classes From Videos in The Wild},
+    url={http://arxiv.org/abs/1212.0402v1},
+    author={Khurram Soomro and Amir Roshan Zamir and Mubarak Shah},
+    abstract={We introduce UCF101 which is currently the largest dataset of human actions. It consists of 101 action classes, over 13k clips and 27 hours of video data. The database consists of realistic user uploaded videos containing camera motion and cluttered background. Additionally, we provide baseline action recognition results on this new dataset using standard bag of words approach with overall performance of 44.5%. To the best of our knowledge, UCF101 is currently the most challenging dataset of actions due to its large number of classes, large number of clips and also unconstrained nature of such clips.},
+    month={12},
+    year={2012}
+}
+@article{willkay2017the,
+    title={The Kinetics Human Action Video Dataset},
+    url={http://arxiv.org/abs/1705.06950v1},
+    author={Will Kay and Joao Carreira and Karen Simonyan and Brian Zhang and Chloe Hillier and Sudheendra Vijayanarasimhan and Fabio Viola and Tim Green and Trevor Back and Paul Natsev and Mustafa Suleyman and Andrew Zisserman},
+    abstract={We describe the DeepMind Kinetics human action video dataset. The dataset contains 400 human action classes, with at least 400 video clips for each action. Each clip lasts around 10s and is taken from a different YouTube video. The actions are human focussed and cover a broad range of classes including human-object interactions such as playing instruments, as well as human-human interactions such as shaking hands. We describe the statistics of the dataset, how it was collected, and give some baseline performance figures for neural network architectures trained and tested for human action classification on this dataset. We also carry out a preliminary analysis of whether imbalance in the dataset leads to bias in the classifiers.},
+    month={5},
+    year={2017}
+}
+@article{haroonidrees2016the,
+    title={The THUMOS Challenge on Action Recognition for Videos "in the Wild"},
+    url={http://arxiv.org/abs/1604.06182v1},
+    author={Haroon Idrees and Amir R. Zamir and Yu-Gang Jiang and Alex Gorban and Ivan Laptev and Rahul Sukthankar and Mubarak Shah},
+    abstract={Automatically recognizing and localizing wide ranges of human actions has crucial importance for video understanding. Towards this goal, the THUMOS challenge was introduced in 2013 to serve as a benchmark for action recognition. Until then, video action recognition, including THUMOS challenge, had focused primarily on the classification of pre-segmented (i.e., trimmed) videos, which is an artificial task. In THUMOS 2014, we elevated action recognition to a more practical level by introducing temporally untrimmed videos. These also include `background videos' which share similar scenes and backgrounds as action videos, but are devoid of the specific actions. The three editions of the challenge organized in 2013--2015 have made THUMOS a common benchmark for action classification and detection and the annual challenge is widely attended by teams from around the world.   In this paper we describe the THUMOS benchmark in detail and give an overview of data collection and annotation procedures. We present the evaluation protocols used to quantify results in the two THUMOS tasks of action classification and temporal detection. We also present results of submissions to the THUMOS 2015 challenge and review the participating approaches. Additionally, we include a comprehensive empirical study evaluating the differences in action recognition between trimmed and untrimmed videos, and how well methods trained on trimmed videos generalize to untrimmed videos. We conclude by proposing several directions and improvements for future THUMOS challenges.},
+    month={4},
+    year={2016},
+    DOI={10.1016/j.cviu.2016.10.018}
+}
 @article{amirgholami2021a,
     title={A Survey of Quantization Methods for Efficient Neural Network Inference},
     url={http://arxiv.org/abs/2103.13630v3},
@@ -263,6 +304,15 @@
     abstract={As soon as abstract mathematical computations were adapted to computation on digital computers, the problem of efficient representation, manipulation, and communication of the numerical values in those computations arose. Strongly related to the problem of numerical representation is the problem of quantization: in what manner should a set of continuous real-valued numbers be distributed over a fixed discrete set of numbers to minimize the number of bits required and also to maximize the accuracy of the attendant computations? This perennial problem of quantization is particularly relevant whenever memory and/or computational resources are severely restricted, and it has come to the forefront in recent years due to the remarkable performance of Neural Network models in computer vision, natural language processing, and related areas. Moving from floating-point representations to low-precision fixed integer values represented in four bits or less holds the potential to reduce the memory footprint and latency by a factor of 16x; and, in fact, reductions of 4x to 8x are often realized in practice in these applications. Thus, it is not surprising that quantization has emerged recently as an important and very active sub-area of research in the efficient implementation of computations associated with Neural Networks. In this article, we survey approaches to the problem of quantizing the numerical values in deep Neural Network computations, covering the advantages/disadvantages of current methods. With this survey and its organization, we hope to have presented a useful snapshot of the current research in quantization for Neural Networks and to have given an intelligent organization to ease the evaluation of future research in this area.},
     month={3},
     year={2021}
+}
+@article{chienyaowang2022yolov7,
+    title={YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for
+  real-time object detectors},
+    url={http://arxiv.org/abs/2207.02696v1},
+    author={Chien-Yao Wang and Alexey Bochkovskiy and Hong-Yuan Mark Liao},
+    abstract={YOLOv7 surpasses all known object detectors in both speed and accuracy in the range from 5 FPS to 160 FPS and has the highest accuracy 56.8% AP among all known real-time object detectors with 30 FPS or higher on GPU V100. YOLOv7-E6 object detector (56 FPS V100, 55.9% AP) outperforms both transformer-based detector SWIN-L Cascade-Mask R-CNN (9.2 FPS A100, 53.9% AP) by 509% in speed and 2% in accuracy, and convolutional-based detector ConvNeXt-XL Cascade-Mask R-CNN (8.6 FPS A100, 55.2% AP) by 551% in speed and 0.7% AP in accuracy, as well as YOLOv7 outperforms: YOLOR, YOLOX, Scaled-YOLOv4, YOLOv5, DETR, Deformable DETR, DINO-5scale-R50, ViT-Adapter-B and many other object detectors in speed and accuracy. Moreover, we train YOLOv7 only on MS COCO dataset from scratch without using any other datasets or pre-trained weights. Source code is released in https://github.com/WongKinYiu/yolov7.},
+    month={7},
+    year={2022}
 }
 @article{serenayeung2015endtoend,
     title={End-to-end Learning of Action Detection from Frame Glimpses in Videos},
@@ -328,6 +378,14 @@
     month={7},
     year={2019}
 }
+@article{boyuanjiang2019stm,
+    title={STM: SpatioTemporal and Motion Encoding for Action Recognition},
+    url={http://arxiv.org/abs/1908.02486v2},
+    author={Boyuan Jiang and Mengmeng Wang and Weihao Gan and Wei Wu and Junjie Yan},
+    abstract={Spatiotemporal and motion features are two complementary and crucial information for video action recognition. Recent state-of-the-art methods adopt a 3D CNN stream to learn spatiotemporal features and another flow stream to learn motion features. In this work, we aim to efficiently encode these two features in a unified 2D framework. To this end, we first propose an STM block, which contains a Channel-wise SpatioTemporal Module (CSTM) to present the spatiotemporal features and a Channel-wise Motion Module (CMM) to efficiently encode motion features. We then replace original residual blocks in the ResNet architecture with STM blcoks to form a simple yet effective STM network by introducing very limited extra computation cost. Extensive experiments demonstrate that the proposed STM network outperforms the state-of-the-art methods on both temporal-related datasets (i.e., Something-Something v1 & v2 and Jester) and scene-related datasets (i.e., Kinetics-400, UCF-101, and HMDB-51) with the help of encoding spatiotemporal and motion features together.},
+    month={8},
+    year={2019}
+}
 @article{chuminglin2019fast,
     title={Fast Learning of Temporal Action Proposal via Dense Boundary Generator},
     url={http://arxiv.org/abs/1911.04127v1},
@@ -362,12 +420,37 @@
     month={3},
     year={2020}
 }
+@article{yanli2020tea,
+    title={TEA: Temporal Excitation and Aggregation for Action Recognition},
+    url={http://arxiv.org/abs/2004.01398v1},
+    author={Yan Li and Bin Ji and Xintian Shi and Jianguo Zhang and Bin Kang and Limin Wang},
+    abstract={Temporal modeling is key for action recognition in videos. It normally considers both short-range motions and long-range aggregations. In this paper, we propose a Temporal Excitation and Aggregation (TEA) block, including a motion excitation (ME) module and a multiple temporal aggregation (MTA) module, specifically designed to capture both short- and long-range temporal evolution. In particular, for short-range motion modeling, the ME module calculates the feature-level temporal differences from spatiotemporal features. It then utilizes the differences to excite the motion-sensitive channels of the features. The long-range temporal aggregations in previous works are typically achieved by stacking a large number of local temporal convolutions. Each convolution processes a local temporal window at a time. In contrast, the MTA module proposes to deform the local convolution to a group of sub-convolutions, forming a hierarchical residual architecture. Without introducing additional parameters, the features will be processed with a series of sub-convolutions, and each frame could complete multiple temporal aggregations with neighborhoods. The final equivalent receptive field of temporal dimension is accordingly enlarged, which is capable of modeling the long-range temporal relationship over distant frames. The two components of the TEA block are complementary in temporal modeling. Finally, our approach achieves impressive results at low FLOPs on several action recognition benchmarks, such as Kinetics, Something-Something, HMDB51, and UCF101, which confirms its effectiveness and efficiency.},
+    month={4},
+    year={2020}
+}
+@article{christophfeichtenhofer2020x3d,
+    title={X3D: Expanding Architectures for Efficient Video Recognition},
+    url={http://arxiv.org/abs/2004.04730v1},
+    author={Christoph Feichtenhofer},
+    abstract={This paper presents X3D, a family of efficient video networks that progressively expand a tiny 2D image classification architecture along multiple network axes, in space, time, width and depth. Inspired by feature selection methods in machine learning, a simple stepwise network expansion approach is employed that expands a single axis in each step, such that good accuracy to complexity trade-off is achieved. To expand X3D to a specific target complexity, we perform progressive forward expansion followed by backward contraction. X3D achieves state-of-the-art performance while requiring 4.8x and 5.5x fewer multiply-adds and parameters for similar accuracy as previous work. Our most surprising finding is that networks with high spatiotemporal resolution can perform well, while being extremely light in terms of network width and parameters. We report competitive accuracy at unprecedented efficiency on video classification and detection benchmarks. Code will be available at: https://github.com/facebookresearch/SlowFast},
+    month={4},
+    year={2020}
+}
 @article{zhaoyangliu2020tam,
     title={TAM: Temporal Adaptive Module for Video Recognition},
     url={http://arxiv.org/abs/2005.06803v3},
     author={Zhaoyang Liu and Limin Wang and Wayne Wu and Chen Qian and Tong Lu},
     abstract={Video data is with complex temporal dynamics due to various factors such as camera motion, speed variation, and different activities. To effectively capture this diverse motion pattern, this paper presents a new temporal adaptive module ({\bf TAM}) to generate video-specific temporal kernels based on its own feature map. TAM proposes a unique two-level adaptive modeling scheme by decoupling the dynamic kernel into a location sensitive importance map and a location invariant aggregation weight. The importance map is learned in a local temporal window to capture short-term information, while the aggregation weight is generated from a global view with a focus on long-term structure. TAM is a modular block and could be integrated into 2D CNNs to yield a powerful video architecture (TANet) with a very small extra computational cost. The extensive experiments on Kinetics-400 and Something-Something datasets demonstrate that our TAM outperforms other temporal modeling methods consistently, and achieves the state-of-the-art performance under the similar complexity. The code is available at \url{ https://github.com/liu-zhy/temporal-adaptive-module}.},
     month={5},
+    year={2020}
+}
+@article{xianhangli2020smallbignet,
+    title={SmallBigNet: Integrating Core and Contextual Views for Video
+  Classification},
+    url={http://arxiv.org/abs/2006.14582v1},
+    author={Xianhang Li and Yali Wang and Zhipeng Zhou and Yu Qiao},
+    abstract={Temporal convolution has been widely used for video classification. However, it is performed on spatio-temporal contexts in a limited view, which often weakens its capacity of learning video representation. To alleviate this problem, we propose a concise and novel SmallBig network, with the cooperation of small and big views. For the current time step, the small view branch is used to learn the core semantics, while the big view branch is used to capture the contextual semantics. Unlike traditional temporal convolution, the big view branch can provide the small view branch with the most activated video features from a broader 3D receptive field. Via aggregating such big-view contexts, the small view branch can learn more robust and discriminative spatio-temporal representations for video classification. Furthermore, we propose to share convolution in the small and big view branch, which improves model compactness as well as alleviates overfitting. As a result, our SmallBigNet achieves a comparable model size like 2D CNNs, while boosting accuracy like 3D CNNs. We conduct extensive experiments on the large-scale video benchmarks, e.g., Kinetics400, Something-Something V1 and V2. Our SmallBig network outperforms a number of recent state-of-the-art approaches, in terms of accuracy and/or efficiency. The codes and models will be available on https://github.com/xhl-video/SmallBigNet.},
+    month={6},
     year={2020}
 }
 @article{haishengsu2020bsn,

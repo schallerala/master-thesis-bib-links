@@ -73,7 +73,7 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 * singularity: Revealing Single Frame Bias for Video-and-Language Learning [[github code]](https://github.com/jayleicn/singularity) [[arXiv abstract]](https://arxiv.org/abs/2206.03428) [[pdf]](2206.03428.pdf)
 
-* SlowFast: video understanding codebase from FAIR for reproducing [[github code]](https://github.com/facebookresearch/SlowFast) [[arXiv abstract]](https://arxiv.org/abs/1812.03982) [[pdf]](1812.03982.pdf) [[arXiv abstract X3D: Progressive Network Expansion for Efficient Video Recognition]](https://arxiv.org/abs/2004.04730.pdf)
+* SlowFast: video understanding codebase from FAIR for reproducing [[github code]](https://github.com/facebookresearch/SlowFast) [[arXiv abstract]](https://arxiv.org/abs/1812.03982) [[pdf]](1812.03982.pdf) [[arXiv abstract X3D: Progressive Network Expansion for Efficient Video Recognition]](temporal_localization/2004.04730.pdf)
 
 * AdaFocus V2: End-to-End Training of Spatial Dynamic Networks for Video Recognition [[github code]](https://github.com/LeapLabTHU/AdaFocusV2) [[arXiv abstract]](https://arxiv.org/abs/2112.14238) [[pdf]](2112.14238.pdf) [[weights gdrive]](https://drive.google.com/drive/folders/1ETQb7aOGb4bePhVP82vFB24pqgn0UAkV.pdf)
 
@@ -97,6 +97,12 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 ## Temporal localization
 
 > See dedicated subfolder: [`./temporal_localization`](temporal_localization/README.md)
+
+## Prompt Engineering
+
+* LAMA: Language Models as Knowledge Bases? [[arXiv abstract]](https://arxiv.org/abs/1909.01066) [[pdf]](1909.01066.pdf) [[github code]](https://github.com/facebookresearch/LAMA)
+
+* MAE: Masked Autoencoders Are Scalable Vision Learners [[arXiv abstract]](https://arxiv.org/abs/2111.06377) [[pdf]](2111.06377.pdf) [[github code]](https://github.com/facebookresearch/mae)
 
 
 ## Others
@@ -148,6 +154,13 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
   * [TinyVIRAT: Low-resolution Video Action Recognition – Center for Research in Computer Vision](https://www.crcv.ucf.edu/research/projects/tinyvirat-low-resolution-video-action-recognition/)
 
 * [Jean-Marc Odobez - Home Page - IDIAP Research Institute: Traffic Junction](https://www.idiap.ch/~odobez/RESSOURCES/DataRelease-TrafficJunction.php)
+
+
+* Microsoft COCO: Common Objects in Context [[arXiv abstract]](https://arxiv.org/abs/1405.0312) [[pdf]](1405.0312.pdf)
+
+* UCF101: A Dataset of 101 Human Actions Classes From Videos in The Wild [[arXiv abstract]](https://arxiv.org/abs/1212.0402v1) [[pdf]](1212.0402v1.pdf)
+* The Kinetics Human Action Video Dataset [[arXiv abstract]](https://arxiv.org/abs/1705.06950v1) [[pdf]](1705.06950v1.pdf)
+* The THUMOS Challenge on Action Recognition for Videos "in the Wild" [[arXiv abstract]](https://arxiv.org/abs/1604.06182) [[pdf]](1604.06182.pdf)
 
 
 ### MLOps
@@ -312,6 +325,7 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 * [YOLO: Real-Time Object Detection](https://pjreddie.com/darknet/yolo/)
   * [Introduction to YOLO Algorithm for Object Detection | Engineering Education (EngEd) Program | Section](https://www.section.io/engineering-education/introduction-to-yolo-algorithm-for-object-detection/)
+  * YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors [[arXiv abstract]](https://arxiv.org/abs/2207.02696) [[pdf]](2207.02696.pdf) [[github code]](https://github.com/wongkinyiu/yolov7)
 
 * [Optical flow - Wikipedia](https://en.wikipedia.org/wiki/Optical_flow)
 
@@ -334,3 +348,5 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 * [paper-reading-technical.pdf Stanford](https://cs.stanford.edu/~rishig/courses/ref/paper-reading-technical.pdf)
 
 * [10 tips on how to give an academic talk](https://matt.might.net/articles/academic-presentation-tips/)
+
+* [The Good Research Code Handbook — Good research code](https://goodresearch.dev/index.html)

@@ -11,6 +11,11 @@ GIT_REPOS := $(shell egrep -oi '[^\.]github.com/([\w\./-~\-]+){2}' README.md | e
 ALL_MARKDOWN := $(shell find . -maxdepth 3 -name "*.md" -type f -not -path "*/.history/*" -print0)
 
 
+all: all-bib clone-git dl-paper all2txt
+	cd temporal_localization && make all
+
+
+
 %.bib: tools/arxiv2bib/index.js
 	node tools/arxiv2bib/index.js $* > $*.bib
 
@@ -24,6 +29,10 @@ autobiblio.bib: get-all-bib
 readme.bib: $(ALL_MARKDOWN)
 	find . -maxdepth 3 -name "*.md" -type f -not -path "*/.history/*" -print0 | xargs -0 pcre2grep -M -H "@[a-zA-Z0-9]+(\{(?:[^{}]+|(?1))*+})" | sed 's/^\(.*\.md\):/% \1\n/' | sed 's/\s*> //' > readme.bib
 
+temporal-all-bib:
+	cd temporal_localization && make get-all-bib
+
+all-bib: temporal-all-bib autobiblio.bib readme.bib
 
 print-git:
 	echo $(GIT_REPOS) | tr ' ' '\n'
@@ -60,9 +69,6 @@ ignore-git-clone: .gitignore
 
 all2txt: $(ALL_TXT)
 
-
-all: clone-git dl-paper all2txt
-	cd temporal_localization && make all
 
 
 .PHONY: all clone-git dl-paper all2txt print-git print-paper ignore-pdf-txt ignore-git-clone

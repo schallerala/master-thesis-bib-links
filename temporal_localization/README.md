@@ -111,3 +111,11 @@ Temporal localization
 
 * CTAP: Complementary Temporal Action Proposal Generation [[arXiv abstract]](https://arxiv.org/abs/1807.04821) [[pdf]](1807.04821.pdf)
 [[github code]](https://github.com/jiyanggao/CTAP)
+
+* SmallBigNet: Integrating Core and Contextual Views for Video Classification [[arXiv abstract]](https://arxiv.org/abs/2006.14582) [[pdf]](2006.14582.pdf) [[github code]](https://github.com/xhl-video/SmallBigNet)
+
+* X3D: Expanding Architectures for Efficient Video Recognition [[arXiv abstract]](https://arxiv.org/abs/2004.04730) [[pdf]](2004.04730.pdf)
+
+* STM: SpatioTemporal and Motion Encoding for Action Recognition [[arXiv abstract]](https://arxiv.org/abs/1908.02486) [[pdf]](1908.02486.pdf)
+
+* TEA: Temporal Excitation and Aggregation for Action Recognition [[arXiv abstract]](https://arxiv.org/abs/2004.01398) [[pdf]](2004.01398.pdf)

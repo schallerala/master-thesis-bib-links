@@ -51,7 +51,7 @@ ignore-git-clone: .gitignore
 all2txt: $(ALL_TXT)
 
 
-all: clone-git dl-paper all2txt
+all: get-all-bib clone-git dl-paper all2txt
 
 
 .PHONY: all clone-git dl-paper all2txt print-git print-paper ignore-pdf-txt ignore-git-clone
