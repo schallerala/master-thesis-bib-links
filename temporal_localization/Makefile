@@ -12,8 +12,7 @@ GIT_REPOS := $(shell egrep -oi '[^\.]github.com/([\w\./-~\-]+){2}' README.md | e
 %.bib: ../tools/arxiv2bib/index.js
 	node ../tools/arxiv2bib/index.js $* > $*.bib
 
-get-all-bib:
-	make $(addsuffix .bib,$(ALL_ARXIV_IDS))
+get-all-bib: $(addsuffix .bib,$(ALL_ARXIV_IDS))
 
 
 print-git:
@@ -28,8 +27,10 @@ clone-git:
 print-paper:
 	echo $(ALL_ARXIV_IDS) | tr ' ' '\n'
 
-dl-paper:
-	echo $(ALL_ARXIV_IDS) | tr ' ' '\n' | awk '{ print "https://arxiv.org/pdf/" $$1 ".pdf" }' | xargs wget -N --user-agent Master
+%.pdf:
+	wget -N --user-agent Master "https://arxiv.org/pdf/$*.pdf"
+
+dl-paper: $(shell echo $(ALL_ARXIV_IDS) | tr ' ' '\n' | awk '{ print $$1 ".pdf" }')
 	make ignore-pdf-txt
 
 

@@ -14,20 +14,17 @@ ALL_MARKDOWN := $(shell find . -maxdepth 3 -name "*.md" -type f -not -path "*/.h
 all: all-bib clone-git dl-paper all2txt
 	cd temporal_localization && make all
 
-
-
-%.bib: tools/arxiv2bib/index.js
-	node tools/arxiv2bib/index.js $* > $*.bib
-
-get-all-bib:
-	make $(addsuffix .bib,$(ALL_ARXIV_IDS))
-	cd temporal_localization && make get-all-bib
-
 autobiblio.bib: get-all-bib
 	cat $(addsuffix .bib,$(ALL_ARXIV_IDS)) temporal_localization/*.bib > $@
 
 readme.bib: $(ALL_MARKDOWN)
 	find . -maxdepth 3 -name "*.md" -type f -not -path "*/.history/*" -print0 | xargs -0 pcre2grep -M -H "@[a-zA-Z0-9]+(\{(?:[^{}]+|(?1))*+})" | sed 's/^\(.*\.md\):/% \1\n/' | sed 's/\s*> //' > readme.bib
+
+%.bib: tools/arxiv2bib/index.js
+	node tools/arxiv2bib/index.js $* > $*.bib
+
+get-all-bib: $(addsuffix .bib,$(ALL_ARXIV_IDS))
+	cd temporal_localization && make get-all-bib
 
 temporal-all-bib:
 	cd temporal_localization && make get-all-bib
@@ -46,8 +43,10 @@ clone-git:
 print-paper:
 	echo $(ALL_ARXIV_IDS) | tr ' ' '\n'
 
-dl-paper:
-	echo $(ALL_ARXIV_IDS) | tr ' ' '\n' | awk '{ print "https://arxiv.org/pdf/" $$1 ".pdf" }' | xargs wget -N --user-agent Master
+%.pdf:
+	wget -N --user-agent Master "https://arxiv.org/pdf/$*.pdf"
+
+dl-paper: $(shell echo $(ALL_ARXIV_IDS) | tr ' ' '\n' | awk '{ print $$1 ".pdf" }')
 	make ignore-pdf-txt
 
 

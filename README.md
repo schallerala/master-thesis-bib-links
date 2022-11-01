@@ -102,10 +102,13 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 * LAMA: Language Models as Knowledge Bases? [[arXiv abstract]](https://arxiv.org/abs/1909.01066) [[pdf]](1909.01066.pdf) [[github code]](https://github.com/facebookresearch/LAMA)
 
-* MAE: Masked Autoencoders Are Scalable Vision Learners [[arXiv abstract]](https://arxiv.org/abs/2111.06377) [[pdf]](2111.06377.pdf) [[github code]](https://github.com/facebookresearch/mae)
+* AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts
+[[arXiv abstract]](https://arxiv.org/abs/2010.15980) [[pdf]](2010.15980.pdf) [[github code]](https://github.com/ucinlp/autoprompt)
 
 
 ## Others
+
+* ResNet: Deep Residual Learning for Image Recognition [[arXiv abstract]](https://arxiv.org/abs/1512.03385) [[pdf]](1512.03385.pdf)
 
 * Robust fine-tuning of zero-shot models (by ML Foundations) [[github code]](https://github.com/mlfoundations/wise-ft) [[arXiv abstract]](https://arxiv.org/abs/2109.01903) [[pdf]](2109.01903.pdf)
 
