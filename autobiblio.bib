@@ -6,6 +6,15 @@
     month={2},
     year={2021}
 }
+@article{ruizhecheng2021dataefficient,
+    title={Data-Efficient Language-Supervised Zero-Shot Learning with
+  Self-Distillation},
+    url={http://arxiv.org/abs/2104.08945v1},
+    author={Ruizhe Cheng and Bichen Wu and Peizhao Zhang and Peter Vajda and Joseph E. Gonzalez},
+    abstract={Traditional computer vision models are trained to predict a fixed set of predefined categories. Recently, natural language has been shown to be a broader and richer source of supervision that provides finer descriptions to visual concepts than supervised "gold" labels. Previous works, such as CLIP, use a simple pretraining task of predicting the pairings between images and text captions. CLIP, however, is data hungry and requires more than 400M image text pairs for training. We propose a data-efficient contrastive distillation method that uses soft labels to learn from noisy image-text pairs. Our model transfers knowledge from pretrained image and sentence encoders and achieves strong performance with only 3M image text pairs, 133x smaller than CLIP. Our method exceeds the previous SoTA of general zero-shot learning on ImageNet 21k+1k by 73% relatively with a ResNet50 image encoder and DeCLUTR text encoder. We also beat CLIP by 10.5% relatively on zero-shot evaluation on Google Open Images (19,958 classes).},
+    month={4},
+    year={2021}
+}
 @article{kaiyangzhou2022conditional,
     title={Conditional Prompt Learning for Vision-Language Models},
     url={http://arxiv.org/abs/2203.05557v2},
@@ -215,6 +224,14 @@
     month={1},
     year={2022}
 }
+@article{jaemincho2022finegrained,
+    title={Fine-grained Image Captioning with CLIP Reward},
+    url={http://arxiv.org/abs/2205.13115v1},
+    author={Jaemin Cho and Seunghyun Yoon and Ajinkya Kale and Franck Dernoncourt and Trung Bui and Mohit Bansal},
+    abstract={Modern image captioning models are usually trained with text similarity objectives. However, since reference captions in public datasets often describe the most salient common objects, models trained with text similarity objectives tend to ignore specific and detailed aspects of an image that distinguish it from others. Toward more descriptive and distinctive caption generation, we propose using CLIP, a multimodal encoder trained on huge image-text pairs from web, to calculate multimodal similarity and use it as a reward function. We also propose a simple finetuning strategy of the CLIP text encoder to improve grammar that does not require extra text annotation. This completely eliminates the need for reference captions during the reward computation. To comprehensively evaluate descriptive captions, we introduce FineCapEval, a new dataset for caption evaluation with fine-grained criteria: overall, background, object, relations. In our experiments on text-to-image retrieval and FineCapEval, the proposed CLIP-guided model generates more distinctive captions than the CIDEr-optimized model. We also show that our unsupervised grammar finetuning of the CLIP text encoder alleviates the degeneration problem of the naive CLIP reward. Lastly, we show human analysis where the annotators strongly prefer the CLIP reward to the CIDEr and MLE objectives according to various criteria. Code and Data: https://github.com/j-min/CLIP-Caption-Reward},
+    month={5},
+    year={2022}
+}
 @article{fabiopetroni2019language,
     title={Language Models as Knowledge Bases?},
     url={http://arxiv.org/abs/1909.01066v2},
@@ -273,6 +290,22 @@
     month={12},
     year={2016}
 }
+@article{tombbrown2020language,
+    title={Language Models are Few-Shot Learners},
+    url={http://arxiv.org/abs/2005.14165v4},
+    author={Tom B. Brown and Benjamin Mann and Nick Ryder and Melanie Subbiah and Jared Kaplan and Prafulla Dhariwal and Arvind Neelakantan and Pranav Shyam and Girish Sastry and Amanda Askell and Sandhini Agarwal and Ariel Herbert-Voss and Gretchen Krueger and Tom Henighan and Rewon Child and Aditya Ramesh and Daniel M. Ziegler and Jeffrey Wu and Clemens Winter and Christopher Hesse and Mark Chen and Eric Sigler and Mateusz Litwin and Scott Gray and Benjamin Chess and Jack Clark and Christopher Berner and Sam McCandlish and Alec Radford and Ilya Sutskever and Dario Amodei},
+    abstract={Recent work has demonstrated substantial gains on many NLP tasks and benchmarks by pre-training on a large corpus of text followed by fine-tuning on a specific task. While typically task-agnostic in architecture, this method still requires task-specific fine-tuning datasets of thousands or tens of thousands of examples. By contrast, humans can generally perform a new language task from only a few examples or from simple instructions - something which current NLP systems still largely struggle to do. Here we show that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuning approaches. Specifically, we train GPT-3, an autoregressive language model with 175 billion parameters, 10x more than any previous non-sparse language model, and test its performance in the few-shot setting. For all tasks, GPT-3 is applied without any gradient updates or fine-tuning, with tasks and few-shot demonstrations specified purely via text interaction with the model. GPT-3 achieves strong performance on many NLP datasets, including translation, question-answering, and cloze tasks, as well as several tasks that require on-the-fly reasoning or domain adaptation, such as unscrambling words, using a novel word in a sentence, or performing 3-digit arithmetic. At the same time, we also identify some datasets where GPT-3's few-shot learning still struggles, as well as some datasets where GPT-3 faces methodological issues related to training on large web corpora. Finally, we find that GPT-3 can generate samples of news articles which human evaluators have difficulty distinguishing from articles written by humans. We discuss broader societal impacts of this finding and of GPT-3 in general.},
+    month={5},
+    year={2020}
+}
+@article{christophschuhmann2021laion400m,
+    title={LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs},
+    url={http://arxiv.org/abs/2111.02114v1},
+    author={Christoph Schuhmann and Richard Vencu and Romain Beaumont and Robert Kaczmarczyk and Clayton Mullis and Aarush Katta and Theo Coombes and Jenia Jitsev and Aran Komatsuzaki},
+    abstract={Multi-modal language-vision models trained on hundreds of millions of image-text pairs (e.g. CLIP, DALL-E) gained a recent surge, showing remarkable capability to perform zero- or few-shot learning and transfer even in absence of per-sample labels on target image data. Despite this trend, to date there has been no publicly available datasets of sufficient scale for training such models from scratch. To address this issue, in a community effort we build and release for public LAION-400M, a dataset with CLIP-filtered 400 million image-text pairs, their CLIP embeddings and kNN indices that allow efficient similarity search.},
+    month={11},
+    year={2021}
+}
 @article{tsungyilin2014microsoft,
     title={Microsoft COCO: Common Objects in Context},
     url={http://arxiv.org/abs/1405.0312v3},
@@ -305,6 +338,14 @@
     month={4},
     year={2016},
     DOI={10.1016/j.cviu.2016.10.018}
+}
+@article{kimmokrkkinen2019fairface,
+    title={FairFace: Face Attribute Dataset for Balanced Race, Gender, and Age},
+    url={http://arxiv.org/abs/1908.04913v1},
+    author={Kimmo Kärkkäinen and Jungseock Joo},
+    abstract={Existing public face datasets are strongly biased toward Caucasian faces, and other races (e.g., Latino) are significantly underrepresented. This can lead to inconsistent model accuracy, limit the applicability of face analytic systems to non-White race groups, and adversely affect research findings based on such skewed data. To mitigate the race bias in these datasets, we construct a novel face image dataset, containing 108,501 images, with an emphasis of balanced race composition in the dataset. We define 7 race groups: White, Black, Indian, East Asian, Southeast Asian, Middle East, and Latino. Images were collected from the YFCC-100M Flickr dataset and labeled with race, gender, and age groups. Evaluations were performed on existing face attribute datasets as well as novel image datasets to measure generalization performance. We find that the model trained from our dataset is substantially more accurate on novel datasets and the accuracy is consistent between race and gender groups.},
+    month={8},
+    year={2019}
 }
 @article{amirgholami2021a,
     title={A Survey of Quantization Methods for Efficient Neural Network Inference},

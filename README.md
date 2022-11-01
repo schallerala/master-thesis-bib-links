@@ -17,16 +17,13 @@ Related Work
 
 
 * Train-CLIP: A PyTorch Lightning solution to training OpenAI's CLIP from scratch [[github code]](https://github.com/Zasder3/train-CLIP)
+  > also includes Data-Efficient Language-Supervised Zero-Shot Learning with Self-Distillation [[arXiv abstract]](https://arxiv.org/abs/2104.08945) [[pdf]](2104.08945.pdf)
 
 * OpenCLIP: An open source implementation of CLIP [[github code]](https://github.com/mlfoundations/open_clip)
 
 * KaiyangZhou/CoOp: Prompt Learning for Vision-Language Models [[github code]](https://github.com/KaiyangZhou/CoOp)
   * [Conditional Prompt Learning for Vision-Language Models - [arXiv abstract]](https://arxiv.org/abs/2203.05557) [[pdf]](2203.05557.pdf), in CVPR, 2022.
   * [Learning to Prompt for Vision-Language Models - [arXiv abstract]](https://arxiv.org/abs/2109.01134) [[pdf]](2109.01134.pdf), arXiv, 2021.
-
-* rmokady/CLIP_prefix_caption: Simple image captioning model
-[[github code]](https://github.com/rmokady/CLIP_prefix_caption)
-  > Could produce captions out of encoded images by CLIP (maybe work also for videos)
 
 * gaopengcuhk/CLIP-Adapter [[github code]](https://github.com/gaopengcuhk/CLIP-Adapter) [[arXiv abstract]](https://arxiv.org/abs/2110.04544) [[pdf]](2110.04544.pdf)
 
@@ -92,6 +89,14 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 * BridgeFormer: Bridging Video-text Retrieval with Multiple Choice Questions [[arXiv abstract]](https://arxiv.org/abs/2201.04850) [[pdf]](2201.04850.pdf) [[github code]](https://github.com/tencentarc/mcq)
   > It is also available as a [Towhee operator](https://towhee.io/video-text-embedding/bridge-former)
 
+### Captioning with CLIP
+
+* Fine-grained Image Captioning with CLIP Reward [[arXiv abstract]](https://arxiv.org/abs/2205.13115) [[pdf]](2205.13115.pdf) [[github code]](https://github.com/j-min/clip-caption-reward)
+
+* rmokady/CLIP_prefix_caption: Simple image captioning model
+[[github code]](https://github.com/rmokady/CLIP_prefix_caption)
+  > Could produce captions out of encoded images by CLIP (maybe work also for videos)
+
 
 
 ## Temporal localization
@@ -145,6 +150,7 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
   * mAP (mean Average Precision) for Object Detection | by Jonathan Hui [[Medium]](https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173)
 
+* GPT3: Language Models are Few-Shot Learners [[arXiv abstract]](https://arxiv.org/abs/2005.14165) [[pdf]](2005.14165.pdf) [[github code]](https://github.com/openai/gpt-3)
 
 ### Datasets
 
@@ -158,12 +164,15 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 * [Jean-Marc Odobez - Home Page - IDIAP Research Institute: Traffic Junction](https://www.idiap.ch/~odobez/RESSOURCES/DataRelease-TrafficJunction.php)
 
+* LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs [[arXiv abstract]](https://arxiv.org/abs/2111.02114) [[pdf]](2111.02114.pdf)
 
 * Microsoft COCO: Common Objects in Context [[arXiv abstract]](https://arxiv.org/abs/1405.0312) [[pdf]](1405.0312.pdf)
 
 * UCF101: A Dataset of 101 Human Actions Classes From Videos in The Wild [[arXiv abstract]](https://arxiv.org/abs/1212.0402v1) [[pdf]](1212.0402v1.pdf)
 * The Kinetics Human Action Video Dataset [[arXiv abstract]](https://arxiv.org/abs/1705.06950v1) [[pdf]](1705.06950v1.pdf)
 * The THUMOS Challenge on Action Recognition for Videos "in the Wild" [[arXiv abstract]](https://arxiv.org/abs/1604.06182) [[pdf]](1604.06182.pdf)
+
+* FairFace: Face Attribute Dataset for Balanced Race, Gender, and Age [[arXiv abstract]](https://arxiv.org/abs/1908.04913) [[pdf]](1908.04913.pdf) [[github code]](https://github.com/joojs/fairface)
 
 
 ### MLOps
