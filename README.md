@@ -20,8 +20,8 @@ Related Work
 * OpenCLIP: An open source implementation of CLIP [[github code]](https://github.com/mlfoundations/open_clip)
 
 * KaiyangZhou/CoOp: Prompt Learning for Vision-Language Models [[github code]](https://github.com/KaiyangZhou/CoOp)
-  * [Conditional Prompt Learning for Vision-Language Models - [arXiv abstract]](https://arxiv.org/abs/2203.05557) [[pdf]](2203.05557.pdf), in CVPR, 2022.
-  * [Learning to Prompt for Vision-Language Models - [arXiv abstract]](https://arxiv.org/abs/2109.01134) [[pdf]](2109.01134.pdf), arXiv, 2021.
+  * 1st CoOp: [Learning to Prompt for Vision-Language Models - [arXiv abstract]](https://arxiv.org/abs/2109.01134) [[pdf]](2109.01134.pdf), arXiv, 2021.
+  * 2nd CoCoOp: [Conditional Prompt Learning for Vision-Language Models - [arXiv abstract]](https://arxiv.org/abs/2203.05557) [[pdf]](2203.05557.pdf), in CVPR, 2022.
 
 * gaopengcuhk/CLIP-Adapter [[github code]](https://github.com/gaopengcuhk/CLIP-Adapter) [[arXiv abstract]](https://arxiv.org/abs/2110.04544) [[pdf]](2110.04544.pdf)
 
