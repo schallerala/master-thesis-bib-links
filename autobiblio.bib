@@ -82,14 +82,6 @@
     month={2},
     year={2021}
 }
-@article{zhecanwang2022cliptd,
-    title={CLIP-TD: CLIP Targeted Distillation for Vision-Language Tasks},
-    url={http://arxiv.org/abs/2201.05729v1},
-    author={Zhecan Wang and Noel Codella and Yen-Chun Chen and Luowei Zhou and Jianwei Yang and Xiyang Dai and Bin Xiao and Haoxuan You and Shih-Fu Chang and Lu Yuan},
-    abstract={Contrastive language-image pretraining (CLIP) links vision and language modalities into a unified embedding space, yielding the tremendous potential for vision-language (VL) tasks. While early concurrent works have begun to study this potential on a subset of tasks, important questions remain: 1) What is the benefit of CLIP on unstudied VL tasks? 2) Does CLIP provide benefit in low-shot or domain-shifted scenarios? 3) Can CLIP improve existing approaches without impacting inference or pretraining complexity? In this work, we seek to answer these questions through two key contributions. First, we introduce an evaluation protocol that includes Visual Commonsense Reasoning (VCR), Visual Entailment (SNLI-VE), and Visual Question Answering (VQA), across a variety of data availability constraints and conditions of domain shift. Second, we propose an approach, named CLIP Targeted Distillation (CLIP-TD), to intelligently distill knowledge from CLIP into existing architectures using a dynamically weighted objective applied to adaptively selected tokens per instance. Experiments demonstrate that our proposed CLIP-TD leads to exceptional gains in the low-shot (up to 51.9%) and domain-shifted (up to 71.3%) conditions of VCR, while simultaneously improving performance under standard fully-supervised conditions (up to 2%), achieving state-of-art performance on VCR compared to other single models that are pretrained with image-text data only. On SNLI-VE, CLIP-TD produces significant gains in low-shot conditions (up to 6.6%) as well as fully supervised (up to 3%). On VQA, CLIP-TD provides improvement in low-shot (up to 9%), and in fully-supervised (up to 1.3%). Finally, CLIP-TD outperforms concurrent works utilizing CLIP for finetuning, as well as baseline naive distillation approaches. Code will be made available.},
-    month={1},
-    year={2022}
-}
 @article{jielei2021less,
     title={Less is More: ClipBERT for Video-and-Language Learning via Sparse
   Sampling},
@@ -232,6 +224,56 @@
     month={5},
     year={2022}
 }
+@article{ronmokady2021clipcap,
+    title={ClipCap: CLIP Prefix for Image Captioning},
+    url={http://arxiv.org/abs/2111.09734v1},
+    author={Ron Mokady and Amir Hertz and Amit H. Bermano},
+    abstract={Image captioning is a fundamental task in vision-language understanding, where the model predicts a textual informative caption to a given input image. In this paper, we present a simple approach to address this task. We use CLIP encoding as a prefix to the caption, by employing a simple mapping network, and then fine-tunes a language model to generate the image captions. The recently proposed CLIP model contains rich semantic features which were trained with textual context, making it best for vision-language perception. Our key idea is that together with a pre-trained language model (GPT2), we obtain a wide understanding of both visual and textual data. Hence, our approach only requires rather quick training to produce a competent captioning model. Without additional annotations or pre-training, it efficiently generates meaningful captions for large-scale and diverse datasets. Surprisingly, our method works well even when only the mapping network is trained, while both CLIP and the language model remain frozen, allowing a lighter architecture with less trainable parameters. Through quantitative evaluation, we demonstrate our model achieves comparable results to state-of-the-art methods on the challenging Conceptual Captions and nocaps datasets, while it is simpler, faster, and lighter. Our code is available in https://github.com/rmokady/CLIP_prefix_caption.},
+    month={11},
+    year={2021}
+}
+@article{xiuyegu2021openvocabulary,
+    title={Open-vocabulary Object Detection via Vision and Language Knowledge
+  Distillation},
+    url={http://arxiv.org/abs/2104.13921v3},
+    author={Xiuye Gu and Tsung-Yi Lin and Weicheng Kuo and Yin Cui},
+    abstract={We aim at advancing open-vocabulary object detection, which detects objects described by arbitrary text inputs. The fundamental challenge is the availability of training data. It is costly to further scale up the number of classes contained in existing object detection datasets. To overcome this challenge, we propose ViLD, a training method via Vision and Language knowledge Distillation. Our method distills the knowledge from a pretrained open-vocabulary image classification model (teacher) into a two-stage detector (student). Specifically, we use the teacher model to encode category texts and image regions of object proposals. Then we train a student detector, whose region embeddings of detected boxes are aligned with the text and image embeddings inferred by the teacher. We benchmark on LVIS by holding out all rare categories as novel categories that are not seen during training. ViLD obtains 16.1 mask AP$_r$ with a ResNet-50 backbone, even outperforming the supervised counterpart by 3.8. When trained with a stronger teacher model ALIGN, ViLD achieves 26.3 AP$_r$. The model can directly transfer to other datasets without finetuning, achieving 72.2 AP$_{50}$ on PASCAL VOC, 36.6 AP on COCO and 11.8 AP on Objects365. On COCO, ViLD outperforms the previous state-of-the-art by 4.8 on novel AP and 11.4 on overall AP. Code and demo are open-sourced at https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild.},
+    month={4},
+    year={2021}
+}
+@article{xingyizhou2022detecting,
+    title={Detecting Twenty-thousand Classes using Image-level Supervision},
+    url={http://arxiv.org/abs/2201.02605v3},
+    author={Xingyi Zhou and Rohit Girdhar and Armand Joulin and Philipp Krähenbühl and Ishan Misra},
+    abstract={Current object detectors are limited in vocabulary size due to the small scale of detection datasets. Image classifiers, on the other hand, reason about much larger vocabularies, as their datasets are larger and easier to collect. We propose Detic, which simply trains the classifiers of a detector on image classification data and thus expands the vocabulary of detectors to tens of thousands of concepts. Unlike prior work, Detic does not need complex assignment schemes to assign image labels to boxes based on model predictions, making it much easier to implement and compatible with a range of detection architectures and backbones. Our results show that Detic yields excellent detectors even for classes without box annotations. It outperforms prior work on both open-vocabulary and long-tail detection benchmarks. Detic provides a gain of 2.4 mAP for all classes and 8.3 mAP for novel classes on the open-vocabulary LVIS benchmark. On the standard LVIS benchmark, Detic obtains 41.7 mAP when evaluated on all classes, or only rare classes, hence closing the gap in performance for object categories with few samples. For the first time, we train a detector with all the twenty-one-thousand classes of the ImageNet dataset and show that it generalizes to new datasets without finetuning. Code is available at \url{https://github.com/facebookresearch/Detic}.},
+    month={1},
+    year={2022}
+}
+@article{zhecanwang2022cliptd,
+    title={CLIP-TD: CLIP Targeted Distillation for Vision-Language Tasks},
+    url={http://arxiv.org/abs/2201.05729v1},
+    author={Zhecan Wang and Noel Codella and Yen-Chun Chen and Luowei Zhou and Jianwei Yang and Xiyang Dai and Bin Xiao and Haoxuan You and Shih-Fu Chang and Lu Yuan},
+    abstract={Contrastive language-image pretraining (CLIP) links vision and language modalities into a unified embedding space, yielding the tremendous potential for vision-language (VL) tasks. While early concurrent works have begun to study this potential on a subset of tasks, important questions remain: 1) What is the benefit of CLIP on unstudied VL tasks? 2) Does CLIP provide benefit in low-shot or domain-shifted scenarios? 3) Can CLIP improve existing approaches without impacting inference or pretraining complexity? In this work, we seek to answer these questions through two key contributions. First, we introduce an evaluation protocol that includes Visual Commonsense Reasoning (VCR), Visual Entailment (SNLI-VE), and Visual Question Answering (VQA), across a variety of data availability constraints and conditions of domain shift. Second, we propose an approach, named CLIP Targeted Distillation (CLIP-TD), to intelligently distill knowledge from CLIP into existing architectures using a dynamically weighted objective applied to adaptively selected tokens per instance. Experiments demonstrate that our proposed CLIP-TD leads to exceptional gains in the low-shot (up to 51.9%) and domain-shifted (up to 71.3%) conditions of VCR, while simultaneously improving performance under standard fully-supervised conditions (up to 2%), achieving state-of-art performance on VCR compared to other single models that are pretrained with image-text data only. On SNLI-VE, CLIP-TD produces significant gains in low-shot conditions (up to 6.6%) as well as fully supervised (up to 3%). On VQA, CLIP-TD provides improvement in low-shot (up to 9%), and in fully-supervised (up to 1.3%). Finally, CLIP-TD outperforms concurrent works utilizing CLIP for finetuning, as well as baseline naive distillation approaches. Code will be made available.},
+    month={1},
+    year={2022}
+}
+@article{normanmu2021slip,
+    title={SLIP: Self-supervision meets Language-Image Pre-training},
+    url={http://arxiv.org/abs/2112.12750v1},
+    author={Norman Mu and Alexander Kirillov and David Wagner and Saining Xie},
+    abstract={Recent work has shown that self-supervised pre-training leads to improvements over supervised learning on challenging visual recognition tasks. CLIP, an exciting new approach to learning with language supervision, demonstrates promising performance on a wide variety of benchmarks. In this work, we explore whether self-supervised learning can aid in the use of language supervision for visual representation learning. We introduce SLIP, a multi-task learning framework for combining self-supervised learning and CLIP pre-training. After pre-training with Vision Transformers, we thoroughly evaluate representation quality and compare performance to both CLIP and self-supervised learning under three distinct settings: zero-shot transfer, linear classification, and end-to-end finetuning. Across ImageNet and a battery of additional datasets, we find that SLIP improves accuracy by a large margin. We validate our results further with experiments on different model sizes, training schedules, and pre-training datasets. Our findings show that SLIP enjoys the best of both worlds: better performance than self-supervision (+8.1% linear accuracy) and language supervision (+5.2% zero-shot accuracy).},
+    month={12},
+    year={2021}
+}
+@article{sanjaysubramanian2022reclip,
+    title={ReCLIP: A Strong Zero-Shot Baseline for Referring Expression
+  Comprehension},
+    url={http://arxiv.org/abs/2204.05991v2},
+    author={Sanjay Subramanian and William Merrill and Trevor Darrell and Matt Gardner and Sameer Singh and Anna Rohrbach},
+    abstract={Training a referring expression comprehension (ReC) model for a new visual domain requires collecting referring expressions, and potentially corresponding bounding boxes, for images in the domain. While large-scale pre-trained models are useful for image classification across domains, it remains unclear if they can be applied in a zero-shot manner to more complex tasks like ReC. We present ReCLIP, a simple but strong zero-shot baseline that repurposes CLIP, a state-of-the-art large-scale model, for ReC. Motivated by the close connection between ReC and CLIP's contrastive pre-training objective, the first component of ReCLIP is a region-scoring method that isolates object proposals via cropping and blurring, and passes them to CLIP. However, through controlled experiments on a synthetic dataset, we find that CLIP is largely incapable of performing spatial reasoning off-the-shelf. Thus, the second component of ReCLIP is a spatial relation resolver that handles several types of spatial relations. We reduce the gap between zero-shot baselines from prior work and supervised models by as much as 29% on RefCOCOg, and on RefGTA (video game imagery), ReCLIP's relative improvement over supervised ReC models trained on real images is 8%.},
+    month={4},
+    year={2022}
+}
 @article{fabiopetroni2019language,
     title={Language Models as Knowledge Bases?},
     url={http://arxiv.org/abs/1909.01066v2},
@@ -305,6 +347,15 @@
     abstract={Multi-modal language-vision models trained on hundreds of millions of image-text pairs (e.g. CLIP, DALL-E) gained a recent surge, showing remarkable capability to perform zero- or few-shot learning and transfer even in absence of per-sample labels on target image data. Despite this trend, to date there has been no publicly available datasets of sufficient scale for training such models from scratch. To address this issue, in a community effort we build and release for public LAION-400M, a dataset with CLIP-filtered 400 million image-text pairs, their CLIP embeddings and kNN indices that allow efficient similarity search.},
     month={11},
     year={2021}
+}
+@article{bartthomee2015yfcc100m,
+    title={YFCC100M: The New Data in Multimedia Research},
+    url={http://arxiv.org/abs/1503.01817v2},
+    author={Bart Thomee and David A. Shamma and Gerald Friedland and Benjamin Elizalde and Karl Ni and Douglas Poland and Damian Borth and Li-Jia Li},
+    abstract={We present the Yahoo Flickr Creative Commons 100 Million Dataset (YFCC100M), the largest public multimedia collection that has ever been released. The dataset contains a total of 100 million media objects, of which approximately 99.2 million are photos and 0.8 million are videos, all of which carry a Creative Commons license. Each media object in the dataset is represented by several pieces of metadata, e.g. Flickr identifier, owner name, camera, title, tags, geo, media source. The collection provides a comprehensive snapshot of how photos and videos were taken, described, and shared over the years, from the inception of Flickr in 2004 until early 2014. In this article we explain the rationale behind its creation, as well as the implications the dataset has for science, research, engineering, and development. We further present several new challenges in multimedia research that can now be expanded upon with our dataset.},
+    month={3},
+    year={2015},
+    DOI={10.1145/2812802}
 }
 @article{tsungyilin2014microsoft,
     title={Microsoft COCO: Common Objects in Context},

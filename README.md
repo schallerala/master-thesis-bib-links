@@ -11,8 +11,6 @@ Related Work
 > * [[Github Awesome Video Text Retrieval]](https://github.com/willard-yuan/video-text-retrieval-papers) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/willard-yuan/video-text-retrieval-papers)
 > * [[Papers with Code: Action Recognition]](https://paperswithcode.com/task/action-recognition)
 
-> (_johanmodin/clifs: Contrastive Language-Image Forensic Search allows free text searching through videos using OpenAI's machine-learning model CLIP [[github code]](https://github.com/johanmodin/clifs)_)
-
 > Popular Downstream Tasks for Video Representation Learning | by Madeline Schiappa | Towards Data Science [[towards data science]](https://towardsdatascience.com/popular-downstream-tasks-for-video-representation-learning-8edbd8dc19c1)
 
 
@@ -39,14 +37,12 @@ Related Work
 * _Align_: Scaling Up Visual and Vision-Language Representation Learning
 With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918) [[pdf]](2102.05918.pdf)
 
-* CLIP-TD: CLIP Targeted Distillation for Vision-Language Tasks [[arXiv abstract]](https://arxiv.org/abs/2201.05729v1) [[pdf]](2201.05729v1.pdf)
-
 * ClipBERT: Less is More: ClipBERT for Video-and-Language Learning via Sparse Sampling [[github code]](https://github.com/jayleicn/ClipBERT) [[arXiv abstract]](https://arxiv.org/abs/2102.06183) [[pdf]](2102.06183.pdf)
 
 * CLIP4Clip: An Empirical Study of CLIP for End to End Video Clip Retrieval [[github code]](https://github.com/ArrowLuo/CLIP4Clip) [[arXiv abstract]](https://arxiv.org/abs/2104.08860) [[pdf]](2104.08860.pdf)
   > Also present in the [Twohee Framework](https://towhee.io/video-text-embedding/clip4clip)
 
-* Center Clip: Token Clustering for Efficient Text-Video Retrieval [[github code]](https://github.com/mzhaoshuai/CenterCLIP) [[arXiv abstract]](https://arxiv.org/abs/2205.00823) [[pdf]](2205.00823.pdf)
+* CenterCLIP: Token Clustering for Efficient Text-Video Retrieval [[github code]](https://github.com/mzhaoshuai/CenterCLIP) [[arXiv abstract]](https://arxiv.org/abs/2205.00823) [[pdf]](2205.00823.pdf)
 
 * antoine77340/S3D_HowTo100M: S3D Text-Video model trained on HowTo100M using MIL-NCE
 [[github code]](https://github.com/antoine77340/S3D_HowTo100M)
@@ -93,11 +89,39 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 * Fine-grained Image Captioning with CLIP Reward [[arXiv abstract]](https://arxiv.org/abs/2205.13115) [[pdf]](2205.13115.pdf) [[github code]](https://github.com/j-min/clip-caption-reward)
 
-* rmokady/CLIP_prefix_caption: Simple image captioning model
-[[github code]](https://github.com/rmokady/CLIP_prefix_caption)
+* ClipCap: CLIP Prefix for Image Captioning
+[[arXiv abstract]](https://arxiv.org/abs/2111.09734) [[pdf]](2111.09734.pdf)
+[[github code (CLIP prefix captioning)]](https://github.com/rmokady/CLIP_prefix_caption)
   > Could produce captions out of encoded images by CLIP (maybe work also for videos)
 
 
+### Object Detection
+
+* roboflow: Object tracking implemented with the Roboflow Inference API, DeepSort, and OpenAI CLIP.
+[[github code]](https://github.com/roboflow-ai/zero-shot-object-tracking)
+
+* ViLD: Open-vocabulary Object Detection via Vision and Language Knowledge Distillation [[arXiv abstract]](https://arxiv.org/abs/2104.13921) [[pdf]](2104.13921.pdf) [[github code part of tensorflow/tpu]](https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild)
+
+* Crop-CLIP: Crop using CLIP [[github code]](https://github.com/vijishmadhavan/Crop-CLIP)
+
+* Detic: Detecting Twenty-thousand Classes using Image-level Supervision [[arXiv abstract]](https://arxiv.org/abs/2201.02605) [[pdf]](2201.02605.pdf) [[github code]](https://github.com/facebookresearch/Detic)
+
+* CLIP-TD: CLIP Targeted Distillation for Vision-Language Tasks [[arXiv abstract]](https://arxiv.org/abs/2201.05729v1) [[pdf]](2201.05729v1.pdf)
+
+* SLIP: Self-supervision meets Language-Image Pre-training [[arXiv abstract]](https://arxiv.org/abs/2112.12750) [[pdf]](2112.12750.pdf) [[github code]](https://github.com/facebookresearch/SLIP)
+
+* ReCLIP: A Strong Zero-Shot Baseline for Referring Expression Comprehension [[arXiv abstract]](https://arxiv.org/abs/2204.05991) [[pdf]](2204.05991.pdf) [[github code]](https://github.com/allenai/reclip)
+
+
+### Text -> Image: Query Search
+
+* johanmodin/clifs: Contrastive Language-Image Forensic Search allows free text searching through videos using OpenAI's machine-learning model CLIP [[github code]](https://github.com/johanmodin/clifs)
+
+* clip-retrieval: Easily compute clip embeddings and build a clip retrieval system with them [[github code]](https://github.com/rom1504/clip-retrieval)
+
+* natural-language-image-search: Search photos on Unsplash using natural language [[github code]](https://github.com/haltakov/natural-language-image-search)
+
+* natural-language-youtube-search: Search inside YouTube videos using natural language [[github code]](https://github.com/haltakov/natural-language-youtube-search)
 
 ## Temporal localization
 
@@ -165,6 +189,7 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 * [Jean-Marc Odobez - Home Page - IDIAP Research Institute: Traffic Junction](https://www.idiap.ch/~odobez/RESSOURCES/DataRelease-TrafficJunction.php)
 
 * LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs [[arXiv abstract]](https://arxiv.org/abs/2111.02114) [[pdf]](2111.02114.pdf)
+* YFCC100M: The New Data in Multimedia Research [[arXiv abstract]](https://arxiv.org/abs/1503.01817) [[pdf]](1503.01817.pdf)
 
 * Microsoft COCO: Common Objects in Context [[arXiv abstract]](https://arxiv.org/abs/1405.0312) [[pdf]](1405.0312.pdf)
 
