@@ -8,7 +8,7 @@ ALL_ARXIV_IDS := $(shell egrep -o 'arxiv.org/(abs|pdf)/\d+\.\d+(:?v\d)?' README.
 GIT_REPOS := $(shell egrep -oi '[^\.]github.com/([\w\./-~\-]+){2}' README.md | egrep -io 'github.com/[^/]+/[^/]+' | sed 's/github\.com\///')
 
 
-ALL_MARKDOWN := $(shell find . -maxdepth 3 -name "*.md" -type f -not -path "*/.history/*" -print0)
+ALL_MARKDOWN := $(shell find . -maxdepth 3 -name "*.md" -type f -not -path "*/.history/*"  -not -path "* *")
 
 
 all: all-bib clone-git dl-paper all2txt

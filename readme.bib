@@ -1,3 +1,10 @@
+% ./Detic/README.md
+    @inproceedings{zhou2022detecting,
+      title={Detecting Twenty-thousand Classes using Image-level Supervision},
+      author={Zhou, Xingyi and Girdhar, Rohit and Joulin, Armand and Kr{\"a}henb{\"u}hl, Philipp and Misra, Ishan},
+      booktitle={ECCV},
+      year={2022}
+    }
 % ./wise-ft/README.md
 @article{wortsman2021robust,
   title={Robust fine-tuning of zero-shot models},
@@ -190,6 +197,14 @@
   howpublished = {\url{https://github.com/facebookresearch/slowfast}},
   year =         {2020}
 }
+% ./fairface/README.md
+        @inproceedings{karkkainenfairface,
+          title={FairFace: Face Attribute Dataset for Balanced Race, Gender, and Age for Bias Measurement and Mitigation},
+          author={Karkkainen, Kimmo and Joo, Jungseock},
+          booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
+          year={2021},
+          pages={1548--1558}
+        }
 % ./fastT5/README.md
 @article{2019t5,
   author = {Colin Raffel and Noam Shazeer and Adam Roberts and Katherine Lee and Sharan Narang and Michael Matena and Yanqi Zhou and Wei Li and Peter J. Liu},
@@ -198,6 +213,28 @@
   year = {2019},
   archivePrefix = {arXiv},
   eprint = {1910.10683},
+}
+% ./reclip/UNITER/README.md
+@inproceedings{chen2020uniter,
+  title={Uniter: Universal image-text representation learning},
+  author={Chen, Yen-Chun and Li, Linjie and Yu, Licheng and Kholy, Ahmed El and Ahmed, Faisal and Gan, Zhe and Cheng, Yu and Liu, Jingjing},
+  booktitle={ECCV},
+  year={2020}
+}
+% ./reclip/README.md
+@inproceedings{subramanian-etal-2022-reclip,
+    title = "ReCLIP: A Strong Zero-shot Baseline for Referring Expression Comprehension",
+    author = "Subramanian, Sanjay  and
+      Merrill, Will  and
+       Darrell, Trevor and
+      Gardner, Matt  and
+      Singh, Sameer  and
+      Rohrbach, Anna",
+    booktitle = "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics",
+    month = may,
+    year = "2022",
+    address = "Dublin, Ireland",
+    publisher = "Association for Computational Linguistics"
 }
 % ./fairseq/README.md
 @inproceedings{ott2019fairseq,
@@ -524,6 +561,13 @@ year={2019}
   year={2020},
   url={https://openreview.net/forum?id=025X0zPfn}
 }
+% ./clip-caption-reward/README.md
+@inproceedings{Cho2022CLIPReward,
+  title     = {Fine-grained Image Captioning with CLIP Reward},
+  author    = {Jaemin Cho and Seunghyun Yoon and Ajinkya Kale and Franck Dernoncourt and Trung Bui and Mohit Bansal},
+  booktitle = {Findings of NAACL},
+  year      = {2022}
+}
 % ./CoOp/README.md
 @inproceedings{zhou2022cocoop,
     title={Conditional Prompt Learning for Vision-Language Models},
@@ -568,6 +612,19 @@ year={2019}
   author={Alec Radford and Jong Wook Kim and Chris Hallacy and A. Ramesh and Gabriel Goh and Sandhini Agarwal and Girish Sastry and Amanda Askell and Pamela Mishkin and Jack Clark and Gretchen Krueger and Ilya Sutskever},
   booktitle={ICML},
   year={2021}
+}
+% ./Multilingual-CLIP/README.md
+@InProceedings{carlsson-EtAl:2022:LREC,
+  author    = {Carlsson, Fredrik  and  Eisen, Philipp  and  Rekathati, Faton  and  Sahlgren, Magnus},
+  title     = {Cross-lingual and Multilingual CLIP},
+  booktitle      = {Proceedings of the Language Resources and Evaluation Conference},
+  month          = {June},
+  year           = {2022},
+  address        = {Marseille, France},
+  publisher      = {European Language Resources Association},
+  pages     = {6848--6854},
+  abstract  = {The long-standing endeavor of relating the textual and the visual domain recently underwent a pivotal breakthrough, as OpenAI released CLIP. This model distinguishes how well an English text corresponds with a given image with unprecedented accuracy. Trained via a contrastive learning objective over a huge dataset of 400M of images and captions, it is a work that is not easily replicated, especially for low resource languages. Capitalizing on the modularization of the CLIP architecture, we propose to use cross-lingual teacher learning to re-train the textual encoder for various non-English languages. Our method requires no image data and relies entirely on machine translation which removes the need for data in the target language. We find that our method can efficiently train a new textual encoder with relatively low computational cost, whilst still outperforming previous baselines on multilingual image-text retrieval.},
+  url       = {https://aclanthology.org/2022.lrec-1.739}
 }
 % ./mae/README.md
 @Article{MaskedAutoencoders2021,
@@ -636,6 +693,29 @@ year={2019}
   title =        {Detectron2},
   howpublished = {\url{https://github.com/facebookresearch/detectron2}},
   year =         {2019}
+}
+% ./autoprompt/README.md
+@inproceedings{autoprompt:emnlp20,
+  author = {Taylor Shin and Yasaman Razeghi and Robert L. Logan IV and Eric Wallace and Sameer Singh},
+  title = { {AutoPrompt}: Eliciting Knowledge from Language Models with Automatically Generated Prompts },
+  booktitle = {Empirical Methods in Natural Language Processing (EMNLP)},
+  year = {2020}
+}
+% ./gpt-3/README.md
+@article{brown2020language,
+    title={Language Models are Few-Shot Learners},
+    author={Tom B. Brown and Benjamin Mann and Nick Ryder and Melanie Subbiah and Jared Kaplan and Prafulla Dhariwal and Arvind Neelakantan and Pranav Shyam and Girish Sastry and Amanda Askell and Sandhini Agarwal and Ariel Herbert-Voss and Gretchen Krueger and Tom Henighan and Rewon Child and Aditya Ramesh and Daniel M. Ziegler and Jeffrey Wu and Clemens Winter and Christopher Hesse and Mark Chen and Eric Sigler and Mateusz Litwin and Scott Gray and Benjamin Chess and Jack Clark and Christopher Berner and Sam McCandlish and Alec Radford and Ilya Sutskever and Dario Amodei},
+    year={2020},
+    eprint={2005.14165},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
+}
+% ./SLIP/README.md
+@Article{mu2021slip,
+  author  = {Norman Mu and Alexander Kirillov and David Wagner and Saining Xie},
+  title   = {SLIP: Self-supervision meets Language-Image Pre-training},
+  journal = {arXiv preprint arXiv:2112.12750},
+  year    = {2021},
 }
 % ./CLIP_prefix_caption/README.md
 @article{mokady2021clipcap,

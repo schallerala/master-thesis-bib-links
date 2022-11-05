@@ -44,6 +44,8 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 * CenterCLIP: Token Clustering for Efficient Text-Video Retrieval [[github code]](https://github.com/mzhaoshuai/CenterCLIP) [[arXiv abstract]](https://arxiv.org/abs/2205.00823) [[pdf]](2205.00823.pdf)
 
+* Multilingual-CLIP: OpenAI CLIP text encoders for multiple languages! [[github code]](https://github.com/FreddeFrallan/Multilingual-CLIP)
+
 * antoine77340/S3D_HowTo100M: S3D Text-Video model trained on HowTo100M using MIL-NCE
 [[github code]](https://github.com/antoine77340/S3D_HowTo100M)
 
@@ -71,8 +73,6 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 * AdaFocus V2: End-to-End Training of Spatial Dynamic Networks for Video Recognition [[github code]](https://github.com/LeapLabTHU/AdaFocusV2) [[arXiv abstract]](https://arxiv.org/abs/2112.14238) [[pdf]](2112.14238.pdf) [[weights gdrive]](https://drive.google.com/drive/folders/1ETQb7aOGb4bePhVP82vFB24pqgn0UAkV.pdf)
 
 * MViTv2: Improved Multiscale Vision Transformers for Classification and Detection [[github code]](https://github.com/facebookresearch/mvit) [[arXiv abstract]](https://arxiv.org/abs/2112.01526) [[pdf]](2112.01526.pdf)
-
-* MoViNets: Mobile Video Networks for Efficient Video Recognition [[github code]](https://github.com/Atze00/MoViNet-pytorch) [[arXiv abstract]](https://arxiv.org/abs/2103.11511) [[pdf]](2103.11511.pdf)
 
 * ViViT: A Video Vision Transformer
  [[github code by Scenic]](https://github.com/google-research/scenic/tree/main/scenic/projects/vivit) [[arXiv abstract]](https://arxiv.org/abs/2103.15691) [[pdf]](2103.15691.pdf)
@@ -112,6 +112,11 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 * ReCLIP: A Strong Zero-Shot Baseline for Referring Expression Comprehension [[arXiv abstract]](https://arxiv.org/abs/2204.05991) [[pdf]](2204.05991.pdf) [[github code]](https://github.com/allenai/reclip)
 
+
+### Action Recognition
+
+* MoViNets: Mobile Video Networks for Efficient Video Recognition
+[[arXiv abstract]](https://arxiv.org/abs/2103.11511) [[pdf]](2103.11511.pdf)
 
 ### Text -> Image: Query Search
 
@@ -189,6 +194,9 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
   * [TinyVIRAT: Low-resolution Video Action Recognition – Center for Research in Computer Vision](https://www.crcv.ucf.edu/research/projects/tinyvirat-low-resolution-video-action-recognition/)
 
 * [Jean-Marc Odobez - Home Page - IDIAP Research Institute: Traffic Junction](https://www.idiap.ch/~odobez/RESSOURCES/DataRelease-TrafficJunction.php)
+
+* ImageNet Large Scale Visual Recognition Challenge
+[[arXiv abstract]](https://arxiv.org/abs/1409.0575) [[pdf]](1409.0575.pdf)
 
 * LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs [[arXiv abstract]](https://arxiv.org/abs/2111.02114) [[pdf]](2111.02114.pdf)
 * YFCC100M: The New Data in Multimedia Research [[arXiv abstract]](https://arxiv.org/abs/1503.01817) [[pdf]](1503.01817.pdf)
