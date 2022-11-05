@@ -138,6 +138,8 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 ## Others
 
 * ResNet: Deep Residual Learning for Image Recognition [[arXiv abstract]](https://arxiv.org/abs/1512.03385) [[pdf]](1512.03385.pdf)
+* Transformer: Attention Is All You Need [[arXiv abstract]](https://arxiv.org/abs/1706.03762) [[pdf]](1706.03762.pdf)
+* ViT: An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale [[arXiv abstract]](https://arxiv.org/abs/2010.11929) [[pdf]](2010.11929.pdf)
 
 * Robust fine-tuning of zero-shot models (by ML Foundations) [[github code]](https://github.com/mlfoundations/wise-ft) [[arXiv abstract]](https://arxiv.org/abs/2109.01903) [[pdf]](2109.01903.pdf)
 
@@ -192,6 +194,8 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 * YFCC100M: The New Data in Multimedia Research [[arXiv abstract]](https://arxiv.org/abs/1503.01817) [[pdf]](1503.01817.pdf)
 
 * Microsoft COCO: Common Objects in Context [[arXiv abstract]](https://arxiv.org/abs/1405.0312) [[pdf]](1405.0312.pdf)
+  * [Github: nightrome/cocostuff: The official homepage of the COCO-Stuff dataset](https://github.com/nightrome/cocostuff)
+  * [labels readme](https://github.com/nightrome/cocostuff/blob/master/labels.md) [labels txt](https://github.com/nightrome/cocostuff/blob/master/labels.txt)
 
 * UCF101: A Dataset of 101 Human Actions Classes From Videos in The Wild [[arXiv abstract]](https://arxiv.org/abs/1212.0402v1) [[pdf]](1212.0402v1.pdf)
 * The Kinetics Human Action Video Dataset [[arXiv abstract]](https://arxiv.org/abs/1705.06950v1) [[pdf]](1705.06950v1.pdf)
