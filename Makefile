@@ -2,7 +2,7 @@ ALL_PDF := $(shell ls *.pdf)
 ALL_TXT := $(ALL_PDF:.pdf=.txt)
 
 
-LIST_OF_HAND_DL := sensors-22-03601-v2
+LIST_OF_HAND_DL := sensors-22-03601-v2 fitclip
 
 ALL_ARXIV_IDS := $(shell egrep -o 'arxiv.org/(abs|pdf)/\d+\.\d+(:?v\d)?' README.md | egrep -o '\d+\.\d+(:?v\d)?$$')
 GIT_REPOS := $(shell egrep -oi '[^\.]github.com/([\w\./-~\-]+){2}' README.md | egrep -io 'github.com/[^/]+/[^/]+' | sed 's/github\.com\///')

@@ -39,12 +39,14 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 * ClipBERT: Less is More: ClipBERT for Video-and-Language Learning via Sparse Sampling [[github code]](https://github.com/jayleicn/ClipBERT) [[arXiv abstract]](https://arxiv.org/abs/2102.06183) [[pdf]](2102.06183.pdf)
 
-* CLIP4Clip: An Empirical Study of CLIP for End to End Video Clip Retrieval [[github code]](https://github.com/ArrowLuo/CLIP4Clip) [[arXiv abstract]](https://arxiv.org/abs/2104.08860) [[pdf]](2104.08860.pdf)
+* CLIP4Clip: An Empirical Study of CLIP for End to End Video Clip Retrieval [[github code]](https://github.com/ArrowLuo/CLIP4Clip) [[arXiv abstract]](https://arxiv.org/abs/2104.08860) [[pdf]](2104.08860.txt)
   > Also present in the [Twohee Framework](https://towhee.io/video-text-embedding/clip4clip)
 
 * CenterCLIP: Token Clustering for Efficient Text-Video Retrieval [[github code]](https://github.com/mzhaoshuai/CenterCLIP) [[arXiv abstract]](https://arxiv.org/abs/2205.00823) [[pdf]](2205.00823.pdf)
 
-* Multilingual-CLIP: OpenAI CLIP text encoders for multiple languages! [[github code]](https://github.com/FreddeFrallan/Multilingual-CLIP)
+* Multilingual-CLIP: OpenAI CLIP text encoders for multiple languages! [[github code]](https://github.com/FreddeFrallan/Multilingual-CLIP) (also mentioned with **M-CLIP**)
+
+* [2207.07285] X-CLIP: End-to-End Multi-grained Contrastive Learning for Video-Text Retrieval [[github code]](https://github.com/xuguohai/X-CLIP)[[arXiv abstract]](https://arxiv.org/abs/2207.07285)[[pdf]](2207.07285.pdf) [[hugging face]](https://huggingface.co/docs/transformers/model_doc/xclip)
 
 * antoine77340/S3D_HowTo100M: S3D Text-Video model trained on HowTo100M using MIL-NCE
 [[github code]](https://github.com/antoine77340/S3D_HowTo100M)
@@ -81,6 +83,13 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
  [[github code]](https://github.com/facebookresearch/detr) [[arXiv abstract]](https://arxiv.org/abs/2005.12872) [[pdf]](2005.12872.pdf)
 
 * VideoCLIP: Contrastive Pre-training for Zero-shot Video-Text Understanding [[github code]](https://github.com/facebookresearch/fairseq/tree/main/examples/MMPT) [[arXiv abstract]](https://arxiv.org/abs/2109.14084) [[pdf]](2109.14084.pdf)
+
+* FitCLIP: Refining Large-Scale Pretrained Image-Text Models for Zero-Shot Video Understanding Tasks
+[[presentation + video]](https://bmvc2022.mpi-inf.mpg.de/939/)
+[[online pdf]](https://bmvc2022.mpi-inf.mpg.de/0939.pdf) [[pdf]](fitclip.pdf)[[github code]](https://github.com/bryant1410/)fitclip
+
+
+* X-CLIP: Expanding Language-Image Pretrained Models for General Video Recognition [[arXiv abstract]](https://arxiv.org/abs/2208.02816) [[pdf]](2208.02816.pdf) [[github code]](https://github.com/microsoft/VideoX/tree/master/X-CLIP)
 
 * BridgeFormer: Bridging Video-text Retrieval with Multiple Choice Questions [[arXiv abstract]](https://arxiv.org/abs/2201.04850) [[pdf]](2201.04850.pdf) [[github code]](https://github.com/tencentarc/mcq)
   > It is also available as a [Towhee operator](https://towhee.io/video-text-embedding/bridge-former)
@@ -135,6 +144,7 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 ## Prompt Engineering
 
 * LAMA: Language Models as Knowledge Bases? [[arXiv abstract]](https://arxiv.org/abs/1909.01066) [[pdf]](1909.01066.pdf) [[github code]](https://github.com/facebookresearch/LAMA)
+  * **Negated** and Misprimed Probes for Pretrained Language Models: Birds Can Talk, But Cannot Fly [[arXiv abstract]](https://arxiv.org/abs/1911.03343) [[pdf]](1911.03343.pdf)
 
 * AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts
 [[arXiv abstract]](https://arxiv.org/abs/2010.15980) [[pdf]](2010.15980.pdf) [[github code]](https://github.com/ucinlp/autoprompt)
@@ -148,6 +158,7 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 * Robust fine-tuning of zero-shot models (by ML Foundations) [[github code]](https://github.com/mlfoundations/wise-ft) [[arXiv abstract]](https://arxiv.org/abs/2109.01903) [[pdf]](2109.01903.pdf)
 
+* 🏄 Embed/reason/rank images and sentences with CLIP models [[github code]](https://github.com/jina-ai/clip-as-service)
 
 * t-SNE clearly explained. An intuitive explanation of t-SNE… | by Kemal Erdem (burnpiro) | Towards Data Science
 [[towards data science]](https://towardsdatascience.com/t-sne-clearly-explained-d84c537f53a)
@@ -384,6 +395,8 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 * facebookresearch/detectron2: Detectron2 is a platform for object detection, segmentation and other visual recognition tasks.
 [[github code]](https://github.com/facebookresearch/detectron2)
+
+* Prismer: A Vision-Language Model with An Ensemble of Experts [[github code]](https://github.com/NVlabs/prismer)[[arXiv abstract]](https://arxiv.org/abs/2303.02506)[[pdf]](2303.02506.pdf) [[hugging face space]](https://huggingface.co/spaces/shikunl/prismer)
 
 * Image derivative. Analysis of the first derivative of an… | by Giuseppe Pio Cannata | Towards Data Science
 [[towards data science]](https://towardsdatascience.com/image-derivative-8a07a4118550)

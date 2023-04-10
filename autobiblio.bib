@@ -109,6 +109,15 @@
     year={2022},
     DOI={10.1145/3477495.3531950}
 }
+@article{yiweima2022xclip,
+    title={X-CLIP: End-to-End Multi-grained Contrastive Learning for Video-Text
+  Retrieval},
+    url={http://arxiv.org/abs/2207.07285v2},
+    author={Yiwei Ma and Guohai Xu and Xiaoshuai Sun and Ming Yan and Ji Zhang and Rongrong Ji},
+    abstract={Video-text retrieval has been a crucial and fundamental task in multi-modal research. The development of video-text retrieval has been considerably promoted by large-scale multi-modal contrastive pre-training, which primarily focuses on coarse-grained or fine-grained contrast. However, cross-grained contrast, which is the contrast between coarse-grained representations and fine-grained representations, has rarely been explored in prior research. Compared with fine-grained or coarse-grained contrasts, cross-grained contrast calculate the correlation between coarse-grained features and each fine-grained feature, and is able to filter out the unnecessary fine-grained features guided by the coarse-grained feature during similarity calculation, thus improving the accuracy of retrieval. To this end, this paper presents a novel multi-grained contrastive model, namely X-CLIP, for video-text retrieval. However, another challenge lies in the similarity aggregation problem, which aims to aggregate fine-grained and cross-grained similarity matrices to instance-level similarity. To address this challenge, we propose the Attention Over Similarity Matrix (AOSM) module to make the model focus on the contrast between essential frames and words, thus lowering the impact of unnecessary frames and words on retrieval results. With multi-grained contrast and the proposed AOSM module, X-CLIP achieves outstanding performance on five widely-used video-text retrieval datasets, including MSR-VTT (49.3 R@1), MSVD (50.4 R@1), LSMDC (26.1 R@1), DiDeMo (47.8 R@1) and ActivityNet (46.2 R@1). It outperforms the previous state-of-theart by +6.3%, +6.6%, +11.1%, +6.7%, +3.8% relative improvements on these benchmarks, demonstrating the superiority of multi-grained contrast and AOSM.},
+    month={7},
+    year={2022}
+}
 @article{qiangwang2022disentangled,
     title={Disentangled Representation Learning for Text-Video Retrieval},
     url={http://arxiv.org/abs/2203.07111v1},
@@ -175,14 +184,6 @@
     month={12},
     year={2021}
 }
-@article{dankondratyuk2021movinets,
-    title={MoViNets: Mobile Video Networks for Efficient Video Recognition},
-    url={http://arxiv.org/abs/2103.11511v2},
-    author={Dan Kondratyuk and Liangzhe Yuan and Yandong Li and Li Zhang and Mingxing Tan and Matthew Brown and Boqing Gong},
-    abstract={We present Mobile Video Networks (MoViNets), a family of computation and memory efficient video networks that can operate on streaming video for online inference. 3D convolutional neural networks (CNNs) are accurate at video recognition but require large computation and memory budgets and do not support online inference, making them difficult to work on mobile devices. We propose a three-step approach to improve computational efficiency while substantially reducing the peak memory usage of 3D CNNs. First, we design a video network search space and employ neural architecture search to generate efficient and diverse 3D CNN architectures. Second, we introduce the Stream Buffer technique that decouples memory from video clip duration, allowing 3D CNNs to embed arbitrary-length streaming video sequences for both training and inference with a small constant memory footprint. Third, we propose a simple ensembling technique to improve accuracy further without sacrificing efficiency. These three progressive techniques allow MoViNets to achieve state-of-the-art accuracy and efficiency on the Kinetics, Moments in Time, and Charades video action recognition datasets. For instance, MoViNet-A5-Stream achieves the same accuracy as X3D-XL on Kinetics 600 while requiring 80% fewer FLOPs and 65% less memory. Code will be made available at https://github.com/tensorflow/models/tree/master/official/vision.},
-    month={3},
-    year={2021}
-}
 @article{anuragarnab2021vivit,
     title={ViViT: A Video Vision Transformer},
     url={http://arxiv.org/abs/2103.15691v2},
@@ -207,6 +208,14 @@
     abstract={We present VideoCLIP, a contrastive approach to pre-train a unified model for zero-shot video and text understanding, without using any labels on downstream tasks. VideoCLIP trains a transformer for video and text by contrasting temporally overlapping positive video-text pairs with hard negatives from nearest neighbor retrieval. Our experiments on a diverse series of downstream tasks, including sequence-level text-video retrieval, VideoQA, token-level action localization, and action segmentation reveal state-of-the-art performance, surpassing prior work, and in some cases even outperforming supervised approaches. Code is made available at https://github.com/pytorch/fairseq/tree/main/examples/MMPT.},
     month={9},
     year={2021}
+}
+@article{bolinni2022expanding,
+    title={Expanding Language-Image Pretrained Models for General Video Recognition},
+    url={http://arxiv.org/abs/2208.02816v1},
+    author={Bolin Ni and Houwen Peng and Minghao Chen and Songyang Zhang and Gaofeng Meng and Jianlong Fu and Shiming Xiang and Haibin Ling},
+    abstract={Contrastive language-image pretraining has shown great success in learning visual-textual joint representation from web-scale data, demonstrating remarkable "zero-shot" generalization ability for various image tasks. However, how to effectively expand such new language-image pretraining methods to video domains is still an open problem. In this work, we present a simple yet effective approach that adapts the pretrained language-image models to video recognition directly, instead of pretraining a new model from scratch. More concretely, to capture the long-range dependencies of frames along the temporal dimension, we propose a cross-frame attention mechanism that explicitly exchanges information across frames. Such module is lightweight and can be plugged into pretrained language-image models seamlessly. Moreover, we propose a video-specific prompting scheme, which leverages video content information for generating discriminative textual prompts. Extensive experiments demonstrate that our approach is effective and can be generalized to different video recognition scenarios. In particular, under fully-supervised settings, our approach achieves a top-1 accuracy of 87.1% on Kinectics-400, while using 12 times fewer FLOPs compared with Swin-L and ViViT-H. In zero-shot experiments, our approach surpasses the current state-of-the-art methods by +7.6% and +14.9% in terms of top-1 accuracy under two popular protocols. In few-shot scenarios, our approach outperforms previous best methods by +32.1% and +23.1% when the labeled data is extremely limited. Code and models are available at https://aka.ms/X-CLIP},
+    month={8},
+    year={2022}
 }
 @article{yuyingge2022bridging,
     title={Bridging Video-text Retrieval with Multiple Choice Questions},
@@ -274,12 +283,29 @@
     month={4},
     year={2022}
 }
+@article{dankondratyuk2021movinets,
+    title={MoViNets: Mobile Video Networks for Efficient Video Recognition},
+    url={http://arxiv.org/abs/2103.11511v2},
+    author={Dan Kondratyuk and Liangzhe Yuan and Yandong Li and Li Zhang and Mingxing Tan and Matthew Brown and Boqing Gong},
+    abstract={We present Mobile Video Networks (MoViNets), a family of computation and memory efficient video networks that can operate on streaming video for online inference. 3D convolutional neural networks (CNNs) are accurate at video recognition but require large computation and memory budgets and do not support online inference, making them difficult to work on mobile devices. We propose a three-step approach to improve computational efficiency while substantially reducing the peak memory usage of 3D CNNs. First, we design a video network search space and employ neural architecture search to generate efficient and diverse 3D CNN architectures. Second, we introduce the Stream Buffer technique that decouples memory from video clip duration, allowing 3D CNNs to embed arbitrary-length streaming video sequences for both training and inference with a small constant memory footprint. Third, we propose a simple ensembling technique to improve accuracy further without sacrificing efficiency. These three progressive techniques allow MoViNets to achieve state-of-the-art accuracy and efficiency on the Kinetics, Moments in Time, and Charades video action recognition datasets. For instance, MoViNet-A5-Stream achieves the same accuracy as X3D-XL on Kinetics 600 while requiring 80% fewer FLOPs and 65% less memory. Code will be made available at https://github.com/tensorflow/models/tree/master/official/vision.},
+    month={3},
+    year={2021}
+}
 @article{fabiopetroni2019language,
     title={Language Models as Knowledge Bases?},
     url={http://arxiv.org/abs/1909.01066v2},
     author={Fabio Petroni and Tim Rocktäschel and Patrick Lewis and Anton Bakhtin and Yuxiang Wu and Alexander H. Miller and Sebastian Riedel},
     abstract={Recent progress in pretraining language models on large textual corpora led to a surge of improvements for downstream NLP tasks. Whilst learning linguistic knowledge, these models may also be storing relational knowledge present in the training data, and may be able to answer queries structured as "fill-in-the-blank" cloze statements. Language models have many advantages over structured knowledge bases: they require no schema engineering, allow practitioners to query about an open class of relations, are easy to extend to more data, and require no human supervision to train. We present an in-depth analysis of the relational knowledge already present (without fine-tuning) in a wide range of state-of-the-art pretrained language models. We find that (i) without fine-tuning, BERT contains relational knowledge competitive with traditional NLP methods that have some access to oracle knowledge, (ii) BERT also does remarkably well on open-domain question answering against a supervised baseline, and (iii) certain types of factual knowledge are learned much more readily than others by standard language model pretraining approaches. The surprisingly strong ability of these models to recall factual knowledge without any fine-tuning demonstrates their potential as unsupervised open-domain QA systems. The code to reproduce our analysis is available at https://github.com/facebookresearch/LAMA.},
     month={9},
+    year={2019}
+}
+@article{norakassner2019negated,
+    title={Negated and Misprimed Probes for Pretrained Language Models: Birds Can
+  Talk, But Cannot Fly},
+    url={http://arxiv.org/abs/1911.03343v3},
+    author={Nora Kassner and Hinrich Schütze},
+    abstract={Building on Petroni et al. (2019), we propose two new probing tasks analyzing factual knowledge stored in Pretrained Language Models (PLMs). (1) Negation. We find that PLMs do not distinguish between negated ("Birds cannot [MASK]") and non-negated ("Birds can [MASK]") cloze questions. (2) Mispriming. Inspired by priming methods in human psychology, we add "misprimes" to cloze questions ("Talk? Birds can [MASK]"). We find that PLMs are easily distracted by misprimes. These results suggest that PLMs still have a long way to go to adequately learn human-like factual knowledge.},
+    month={11},
     year={2019}
 }
 @article{taylorshin2020autoprompt,
@@ -439,6 +465,14 @@
     abstract={YOLOv7 surpasses all known object detectors in both speed and accuracy in the range from 5 FPS to 160 FPS and has the highest accuracy 56.8% AP among all known real-time object detectors with 30 FPS or higher on GPU V100. YOLOv7-E6 object detector (56 FPS V100, 55.9% AP) outperforms both transformer-based detector SWIN-L Cascade-Mask R-CNN (9.2 FPS A100, 53.9% AP) by 509% in speed and 2% in accuracy, and convolutional-based detector ConvNeXt-XL Cascade-Mask R-CNN (8.6 FPS A100, 55.2% AP) by 551% in speed and 0.7% AP in accuracy, as well as YOLOv7 outperforms: YOLOR, YOLOX, Scaled-YOLOv4, YOLOv5, DETR, Deformable DETR, DINO-5scale-R50, ViT-Adapter-B and many other object detectors in speed and accuracy. Moreover, we train YOLOv7 only on MS COCO dataset from scratch without using any other datasets or pre-trained weights. Source code is released in https://github.com/WongKinYiu/yolov7.},
     month={7},
     year={2022}
+}
+@article{shikunliu2023prismer,
+    title={Prismer: A Vision-Language Model with An Ensemble of Experts},
+    url={http://arxiv.org/abs/2303.02506v2},
+    author={Shikun Liu and Linxi Fan and Edward Johns and Zhiding Yu and Chaowei Xiao and Anima Anandkumar},
+    abstract={Recent vision-language models have shown impressive multi-modal generation capabilities. However, typically they require training huge models on massive datasets. As a more scalable alternative, we introduce Prismer, a data- and parameter-efficient vision-language model that leverages an ensemble of domain experts. Prismer only requires training of a small number of components, with the majority of network weights inherited from readily-available, pre-trained domain experts, and kept frozen during training. By leveraging experts from a wide range of domains, we show that Prismer can efficiently pool this expert knowledge and adapt it to various vision-language reasoning tasks. In our experiments, we show that Prismer achieves fine-tuned and few-shot learning performance which is competitive with current state-of-the-art models, whilst requiring up to two orders of magnitude less training data. Code is available at https://github.com/NVlabs/prismer.},
+    month={3},
+    year={2023}
 }
 @article{serenayeung2015endtoend,
     title={End-to-end Learning of Action Detection from Frame Glimpses in Videos},
