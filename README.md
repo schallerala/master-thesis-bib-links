@@ -218,6 +218,7 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 * UCF101: A Dataset of 101 Human Actions Classes From Videos in The Wild [[arXiv abstract]](https://arxiv.org/abs/1212.0402v1) [[pdf]](1212.0402v1.pdf)
 * The Kinetics Human Action Video Dataset [[arXiv abstract]](https://arxiv.org/abs/1705.06950v1) [[pdf]](1705.06950v1.pdf)
+  * A Short Note about Kinetics-600 [[arXiv abstract]](https://arxiv.org/abs/1808.01340) [[pdf]](1808.01340.pdf)
 * The THUMOS Challenge on Action Recognition for Videos "in the Wild" [[arXiv abstract]](https://arxiv.org/abs/1604.06182) [[pdf]](1604.06182.pdf)
 
 * FairFace: Face Attribute Dataset for Balanced Race, Gender, and Age [[arXiv abstract]](https://arxiv.org/abs/1908.04913) [[pdf]](1908.04913.pdf) [[github code]](https://github.com/joojs/fairface)
