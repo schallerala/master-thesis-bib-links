@@ -225,6 +225,24 @@
     month={1},
     year={2022}
 }
+@article{wenhaowu2022revisiting,
+    title={Revisiting Classifier: Transferring Vision-Language Models for Video
+  Recognition},
+    url={http://arxiv.org/abs/2207.01297v4},
+    author={Wenhao Wu and Zhun Sun and Wanli Ouyang},
+    abstract={Transferring knowledge from task-agnostic pre-trained deep models for downstream tasks is an important topic in computer vision research. Along with the growth of computational capacity, we now have open-source vision-language pre-trained models in large scales of the model architecture and amount of data. In this study, we focus on transferring knowledge for video classification tasks. Conventional methods randomly initialize the linear classifier head for vision classification, but they leave the usage of the text encoder for downstream visual recognition tasks undiscovered. In this paper, we revise the role of the linear classifier and replace the classifier with the different knowledge from pre-trained model. We utilize the well-pretrained language model to generate good semantic target for efficient transferring learning. The empirical study shows that our method improves both the performance and the training speed of video classification, with a negligible change in the model. Our simple yet effective tuning paradigm achieves state-of-the-art performance and efficient training on various video recognition scenarios, i.e., zero-shot, few-shot, general recognition. In particular, our paradigm achieves the state-of-the-art accuracy of 87.8% on Kinetics-400, and also surpasses previous methods by 20~50% absolute top-1 accuracy under zero-shot, few-shot settings on five popular video datasets. Code and models can be found at https://github.com/whwu95/Text4Vis .},
+    month={7},
+    year={2022}
+}
+@article{wenhaowu2022bidirectional,
+    title={Bidirectional Cross-Modal Knowledge Exploration for Video Recognition
+  with Pre-trained Vision-Language Models},
+    url={http://arxiv.org/abs/2301.00182v2},
+    author={Wenhao Wu and Xiaohan Wang and Haipeng Luo and Jingdong Wang and Yi Yang and Wanli Ouyang},
+    abstract={Vision-language models (VLMs) pre-trained on large-scale image-text pairs have demonstrated impressive transferability on various visual tasks. Transferring knowledge from such powerful VLMs is a promising direction for building effective video recognition models. However, current exploration in this field is still limited. We believe that the greatest value of pre-trained VLMs lies in building a bridge between visual and textual domains. In this paper, we propose a novel framework called BIKE, which utilizes the cross-modal bridge to explore bidirectional knowledge: i) We introduce the Video Attribute Association mechanism, which leverages the Video-to-Text knowledge to generate textual auxiliary attributes for complementing video recognition. ii) We also present a Temporal Concept Spotting mechanism that uses the Text-to-Video expertise to capture temporal saliency in a parameter-free manner, leading to enhanced video representation. Extensive studies on six popular video datasets, including Kinetics-400 & 600, UCF-101, HMDB-51, ActivityNet and Charades, show that our method achieves state-of-the-art performance in various recognition scenarios, such as general, zero-shot, and few-shot video recognition. Our best model achieves a state-of-the-art accuracy of 88.6% on the challenging Kinetics-400 using the released CLIP model. The code is available at https://github.com/whwu95/BIKE .},
+    month={12},
+    year={2022}
+}
 @article{jaemincho2022finegrained,
     title={Fine-grained Image Captioning with CLIP Reward},
     url={http://arxiv.org/abs/2205.13115v1},
@@ -240,6 +258,15 @@
     abstract={Image captioning is a fundamental task in vision-language understanding, where the model predicts a textual informative caption to a given input image. In this paper, we present a simple approach to address this task. We use CLIP encoding as a prefix to the caption, by employing a simple mapping network, and then fine-tunes a language model to generate the image captions. The recently proposed CLIP model contains rich semantic features which were trained with textual context, making it best for vision-language perception. Our key idea is that together with a pre-trained language model (GPT2), we obtain a wide understanding of both visual and textual data. Hence, our approach only requires rather quick training to produce a competent captioning model. Without additional annotations or pre-training, it efficiently generates meaningful captions for large-scale and diverse datasets. Surprisingly, our method works well even when only the mapping network is trained, while both CLIP and the language model remain frozen, allowing a lighter architecture with less trainable parameters. Through quantitative evaluation, we demonstrate our model achieves comparable results to state-of-the-art methods on the challenging Conceptual Captions and nocaps datasets, while it is simpler, faster, and lighter. Our code is available in https://github.com/rmokady/CLIP_prefix_caption.},
     month={11},
     year={2021}
+}
+@article{junnanli2022blip,
+    title={BLIP: Bootstrapping Language-Image Pre-training for Unified
+  Vision-Language Understanding and Generation},
+    url={http://arxiv.org/abs/2201.12086v2},
+    author={Junnan Li and Dongxu Li and Caiming Xiong and Steven Hoi},
+    abstract={Vision-Language Pre-training (VLP) has advanced the performance for many vision-language tasks. However, most existing pre-trained models only excel in either understanding-based tasks or generation-based tasks. Furthermore, performance improvement has been largely achieved by scaling up the dataset with noisy image-text pairs collected from the web, which is a suboptimal source of supervision. In this paper, we propose BLIP, a new VLP framework which transfers flexibly to both vision-language understanding and generation tasks. BLIP effectively utilizes the noisy web data by bootstrapping the captions, where a captioner generates synthetic captions and a filter removes the noisy ones. We achieve state-of-the-art results on a wide range of vision-language tasks, such as image-text retrieval (+2.7% in average recall@1), image captioning (+2.8% in CIDEr), and VQA (+1.6% in VQA score). BLIP also demonstrates strong generalization ability when directly transferred to video-language tasks in a zero-shot manner. Code, models, and datasets are released at https://github.com/salesforce/BLIP.},
+    month={1},
+    year={2022}
 }
 @article{xiuyegu2021openvocabulary,
     title={Open-vocabulary Object Detection via Vision and Language Knowledge

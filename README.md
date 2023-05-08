@@ -88,11 +88,14 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 [[presentation + video]](https://bmvc2022.mpi-inf.mpg.de/939/)
 [[online pdf]](https://bmvc2022.mpi-inf.mpg.de/0939.pdf) [[pdf]](fitclip.pdf)[[github code]](https://github.com/bryant1410/)fitclip
 
-
 * X-CLIP: Expanding Language-Image Pretrained Models for General Video Recognition [[arXiv abstract]](https://arxiv.org/abs/2208.02816) [[pdf]](2208.02816.pdf) [[github code]](https://github.com/microsoft/VideoX/tree/master/X-CLIP)
 
 * BridgeFormer: Bridging Video-text Retrieval with Multiple Choice Questions [[arXiv abstract]](https://arxiv.org/abs/2201.04850) [[pdf]](2201.04850.pdf) [[github code]](https://github.com/tencentarc/mcq)
   > It is also available as a [Towhee operator](https://towhee.io/video-text-embedding/bridge-former)
+
+* Text4Vis: Revisiting Classifier: Transferring Vision-Language Models for Video Recognition [[arXiv abstract]](https://arxiv.org/abs/2207.01297) [[pdf]](2207.01297.pdf) [[github code]](https://github.com/whwu95/Text4Vis)
+
+* BIKE: Bidirectional Cross-Modal Knowledge Exploration for Video Recognition with Pre-trained Vision-Language Models [[arXiv abstract]](https://arxiv.org/abs/2301.00182) [[pdf]](2301.00182.pdf) [[github code]](https://github.com/whwu95/BIKE)
 
 ### Captioning with CLIP
 
@@ -103,6 +106,10 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 [[github code (CLIP prefix captioning)]](https://github.com/rmokady/CLIP_prefix_caption)
   > Could produce captions out of encoded images by CLIP (maybe work also for videos)
 
+* salesforce/BLIP: BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation
+[[arXiv abstract]](https://arxiv.org/abs/2201.12086) [[pdf]](2201.12086.pdf)
+[[github code]](https://github.com/salesforce/BLIP)
+  * Also does action classification
 
 ### Object Detection
 
