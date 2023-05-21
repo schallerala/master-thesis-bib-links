@@ -163,6 +163,9 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 * Transformer: Attention Is All You Need [[arXiv abstract]](https://arxiv.org/abs/1706.03762) [[pdf]](1706.03762.pdf)
 * ViT: An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale [[arXiv abstract]](https://arxiv.org/abs/2010.11929) [[pdf]](2010.11929.pdf)
 
+
+* MoViNets: Mobile Video Networks for Efficient Video Recognition [[arXiv abstract]](https://arxiv.org/abs/2103.11511) [[pdf]](2103.11511.pdf) [[github code]](https://github.com/tensorflow/models/tree/35ed75e315a582640c5c25f870f4e23e9c35b8b9/official/projects/movinet)
+
 * Robust fine-tuning of zero-shot models (by ML Foundations) [[github code]](https://github.com/mlfoundations/wise-ft) [[arXiv abstract]](https://arxiv.org/abs/2109.01903) [[pdf]](2109.01903.pdf)
 
 * 🏄 Embed/reason/rank images and sentences with CLIP models [[github code]](https://github.com/jina-ai/clip-as-service)
