@@ -1,77 +1,168 @@
-@article{alecradford2021learning,
-    title={Learning Transferable Visual Models From Natural Language Supervision},
-    url={http://arxiv.org/abs/2103.00020v1},
-    author={Alec Radford and Jong Wook Kim and Chris Hallacy and Aditya Ramesh and Gabriel Goh and Sandhini Agarwal and Girish Sastry and Amanda Askell and Pamela Mishkin and Jack Clark and Gretchen Krueger and Ilya Sutskever},
-    abstract={State-of-the-art computer vision systems are trained to predict a fixed set of predetermined object categories. This restricted form of supervision limits their generality and usability since additional labeled data is needed to specify any other visual concept. Learning directly from raw text about images is a promising alternative which leverages a much broader source of supervision. We demonstrate that the simple pre-training task of predicting which caption goes with which image is an efficient and scalable way to learn SOTA image representations from scratch on a dataset of 400 million (image, text) pairs collected from the internet. After pre-training, natural language is used to reference learned visual concepts (or describe new ones) enabling zero-shot transfer of the model to downstream tasks. We study the performance of this approach by benchmarking on over 30 different existing computer vision datasets, spanning tasks such as OCR, action recognition in videos, geo-localization, and many types of fine-grained object classification. The model transfers non-trivially to most tasks and is often competitive with a fully supervised baseline without the need for any dataset specific training. For instance, we match the accuracy of the original ResNet-50 on ImageNet zero-shot without needing to use any of the 1.28 million training examples it was trained on. We release our code and pre-trained model weights at https://github.com/OpenAI/CLIP.},
-    month={2},
-    year={2021}
-}
-@article{ruizhecheng2021dataefficient,
-    title={Data-Efficient Language-Supervised Zero-Shot Learning with
-  Self-Distillation},
-    url={http://arxiv.org/abs/2104.08945v1},
-    author={Ruizhe Cheng and Bichen Wu and Peizhao Zhang and Peter Vajda and Joseph E. Gonzalez},
-    abstract={Traditional computer vision models are trained to predict a fixed set of predefined categories. Recently, natural language has been shown to be a broader and richer source of supervision that provides finer descriptions to visual concepts than supervised "gold" labels. Previous works, such as CLIP, use a simple pretraining task of predicting the pairings between images and text captions. CLIP, however, is data hungry and requires more than 400M image text pairs for training. We propose a data-efficient contrastive distillation method that uses soft labels to learn from noisy image-text pairs. Our model transfers knowledge from pretrained image and sentence encoders and achieves strong performance with only 3M image text pairs, 133x smaller than CLIP. Our method exceeds the previous SoTA of general zero-shot learning on ImageNet 21k+1k by 73% relatively with a ResNet50 image encoder and DeCLUTR text encoder. We also beat CLIP by 10.5% relatively on zero-shot evaluation on Google Open Images (19,958 classes).},
-    month={4},
-    year={2021}
-}
-@article{kaiyangzhou2021learning,
-    title={Learning to Prompt for Vision-Language Models},
-    url={http://arxiv.org/abs/2109.01134v6},
-    author={Kaiyang Zhou and Jingkang Yang and Chen Change Loy and Ziwei Liu},
-    abstract={Large pre-trained vision-language models like CLIP have shown great potential in learning representations that are transferable across a wide range of downstream tasks. Different from the traditional representation learning that is based mostly on discretized labels, vision-language pre-training aligns images and texts in a common feature space, which allows zero-shot transfer to a downstream task via prompting, i.e., classification weights are synthesized from natural language describing classes of interest. In this work, we show that a major challenge for deploying such models in practice is prompt engineering, which requires domain expertise and is extremely time-consuming -- one needs to spend a significant amount of time on words tuning since a slight change in wording could have a huge impact on performance. Inspired by recent advances in prompt learning research in natural language processing (NLP), we propose Context Optimization (CoOp), a simple approach specifically for adapting CLIP-like vision-language models for downstream image recognition. Concretely, CoOp models a prompt's context words with learnable vectors while the entire pre-trained parameters are kept fixed. To handle different image recognition tasks, we provide two implementations of CoOp: unified context and class-specific context. Through extensive experiments on 11 datasets, we demonstrate that CoOp requires as few as one or two shots to beat hand-crafted prompts with a decent margin and is able to gain significant improvements over prompt engineering with more shots, e.g., with 16 shots the average gain is around 15% (with the highest reaching over 45%). Despite being a learning-based approach, CoOp achieves superb domain generalization performance compared with the zero-shot model using hand-crafted prompts.},
-    month={9},
-    year={2021},
-    DOI={10.1007/s11263-022-01653-1}
-}
-@article{kaiyangzhou2022conditional,
-    title={Conditional Prompt Learning for Vision-Language Models},
-    url={http://arxiv.org/abs/2203.05557v2},
-    author={Kaiyang Zhou and Jingkang Yang and Chen Change Loy and Ziwei Liu},
-    abstract={With the rise of powerful pre-trained vision-language models like CLIP, it becomes essential to investigate ways to adapt these models to downstream datasets. A recently proposed method named Context Optimization (CoOp) introduces the concept of prompt learning -- a recent trend in NLP -- to the vision domain for adapting pre-trained vision-language models. Specifically, CoOp turns context words in a prompt into a set of learnable vectors and, with only a few labeled images for learning, can achieve huge improvements over intensively-tuned manual prompts. In our study we identify a critical problem of CoOp: the learned context is not generalizable to wider unseen classes within the same dataset, suggesting that CoOp overfits base classes observed during training. To address the problem, we propose Conditional Context Optimization (CoCoOp), which extends CoOp by further learning a lightweight neural network to generate for each image an input-conditional token (vector). Compared to CoOp's static prompts, our dynamic prompts adapt to each instance and are thus less sensitive to class shift. Extensive experiments show that CoCoOp generalizes much better than CoOp to unseen classes, even showing promising transferability beyond a single dataset; and yields stronger domain generalization performance as well. Code is available at https://github.com/KaiyangZhou/CoOp.},
-    month={3},
-    year={2022}
-}
-@article{penggao2021clipadapter,
-    title={CLIP-Adapter: Better Vision-Language Models with Feature Adapters},
-    url={http://arxiv.org/abs/2110.04544v1},
-    author={Peng Gao and Shijie Geng and Renrui Zhang and Teli Ma and Rongyao Fang and Yongfeng Zhang and Hongsheng Li and Yu Qiao},
-    abstract={Large-scale contrastive vision-language pre-training has shown significant progress in visual representation learning. Unlike traditional visual systems trained by a fixed set of discrete labels, a new paradigm was introduced in \cite{radford2021learning} to directly learn to align images with raw texts in an open-vocabulary setting. On downstream tasks, a carefully chosen text prompt is employed to make zero-shot predictions.~To avoid non-trivial prompt engineering, context optimization \cite{zhou2021coop} has been proposed to learn continuous vectors as task-specific prompts with few-shot training examples.~In this paper, we show that there is an alternative path to achieve better vision-language models other than prompt tuning.~While prompt tuning is for the textual inputs, we propose CLIP-Adapter to conduct fine-tuning with feature adapters on either visual or language branch. Specifically, CLIP-Adapter adopts an additional bottleneck layer to learn new features and performs residual-style feature blending with the original pre-trained features.~As a consequence, CLIP-Adapter is able to outperform context optimization while maintains a simple design. Experiments and extensive ablation studies on various visual classification tasks demonstrate the effectiveness of our approach.},
-    month={10},
-    year={2021}
-}
-@article{renruizhang2021tipadapter,
-    title={Tip-Adapter: Training-free CLIP-Adapter for Better Vision-Language
-  Modeling},
-    url={http://arxiv.org/abs/2111.03930v2},
-    author={Renrui Zhang and Rongyao Fang and Wei Zhang and Peng Gao and Kunchang Li and Jifeng Dai and Yu Qiao and Hongsheng Li},
-    abstract={Contrastive Vision-Language Pre-training, known as CLIP, has provided a new paradigm for learning visual representations by using large-scale contrastive image-text pairs. It shows impressive performance on zero-shot knowledge transfer to downstream tasks. To further enhance CLIP's few-shot capability, CLIP-Adapter proposed to fine-tune a lightweight residual feature adapter and significantly improves the performance for few-shot classification. However, such a process still needs extra training and computational resources. In this paper, we propose \textbf{T}raining-Free CL\textbf{IP}-\textbf{Adapter} (\textbf{Tip-Adapter}), which not only inherits CLIP's training-free advantage but also performs comparably or even better than CLIP-Adapter. Tip-Adapter does not require any back propagation for training the adapter, but creates the weights by a key-value cache model constructed from the few-shot training set. In this non-parametric manner, Tip-Adapter acquires well-performed adapter weights without any training, which is both efficient and effective. Moreover, the performance of Tip-Adapter can be further boosted by fine-tuning such properly initialized adapter for only a few epochs with super-fast convergence speed. We conduct extensive experiments of few-shot classification on ImageNet and other 10 datasets to demonstrate the superiority of proposed Tip-Adapter. The code will be released at \url{https://github.com/gaopengcuhk/Tip-Adapter}.},
-    month={11},
-    year={2021}
-}
-@article{shashankgoel2022cyclip,
-    title={CyCLIP: Cyclic Contrastive Language-Image Pretraining},
-    url={http://arxiv.org/abs/2205.14459v2},
-    author={Shashank Goel and Hritik Bansal and Sumit Bhatia and Ryan A. Rossi and Vishwa Vinay and Aditya Grover},
-    abstract={Recent advances in contrastive representation learning over paired image-text data have led to models such as CLIP that achieve state-of-the-art performance for zero-shot classification and distributional robustness. Such models typically require joint reasoning in the image and text representation spaces for downstream inference tasks. Contrary to prior beliefs, we demonstrate that the image and text representations learned via a standard contrastive objective are not interchangeable and can lead to inconsistent downstream predictions. To mitigate this issue, we formalize consistency and propose CyCLIP, a framework for contrastive representation learning that explicitly optimizes for the learned representations to be geometrically consistent in the image and text space. In particular, we show that consistent representations can be learned by explicitly symmetrizing (a) the similarity between the two mismatched image-text pairs (cross-modal consistency); and (b) the similarity between the image-image pair and the text-text pair (in-modal consistency). Empirically, we show that the improved consistency in CyCLIP translates to significant gains over CLIP, with gains ranging from 10%-24% for zero-shot classification accuracy on standard benchmarks (CIFAR-10, CIFAR-100, ImageNet1K) and 10%-27% for robustness to various natural distribution shifts. The code is available at https://github.com/goel-shashank/CyCLIP.},
-    month={5},
-    year={2022}
-}
-@article{renruizhang2021pointclip,
-    title={PointCLIP: Point Cloud Understanding by CLIP},
-    url={http://arxiv.org/abs/2112.02413v1},
-    author={Renrui Zhang and Ziyu Guo and Wei Zhang and Kunchang Li and Xupeng Miao and Bin Cui and Yu Qiao and Peng Gao and Hongsheng Li},
-    abstract={Recently, zero-shot and few-shot learning via Contrastive Vision-Language Pre-training (CLIP) have shown inspirational performance on 2D visual recognition, which learns to match images with their corresponding texts in open-vocabulary settings. However, it remains under explored that whether CLIP, pre-trained by large-scale image-text pairs in 2D, can be generalized to 3D recognition. In this paper, we identify such a setting is feasible by proposing PointCLIP, which conducts alignment between CLIP-encoded point cloud and 3D category texts. Specifically, we encode a point cloud by projecting it into multi-view depth maps without rendering, and aggregate the view-wise zero-shot prediction to achieve knowledge transfer from 2D to 3D. On top of that, we design an inter-view adapter to better extract the global feature and adaptively fuse the few-shot knowledge learned from 3D into CLIP pre-trained in 2D. By just fine-tuning the lightweight adapter in the few-shot settings, the performance of PointCLIP could be largely improved. In addition, we observe the complementary property between PointCLIP and classical 3D-supervised networks. By simple ensembling, PointCLIP boosts baseline's performance and even surpasses state-of-the-art models. Therefore, PointCLIP is a promising alternative for effective 3D point cloud understanding via CLIP under low resource cost and data regime. We conduct thorough experiments on widely-adopted ModelNet10, ModelNet40 and the challenging ScanObjectNN to demonstrate the effectiveness of PointCLIP. The code is released at https://github.com/ZrrSkywalker/PointCLIP.},
+@article{khurramsoomro2012ucf101,
+    title={UCF101: A Dataset of 101 Human Actions Classes From Videos in The Wild},
+    url={http://arxiv.org/abs/1212.0402v1},
+    author={Khurram Soomro and Amir Roshan Zamir and Mubarak Shah},
+    abstract={We introduce UCF101 which is currently the largest dataset of human actions. It consists of 101 action classes, over 13k clips and 27 hours of video data. The database consists of realistic user uploaded videos containing camera motion and cluttered background. Additionally, we provide baseline action recognition results on this new dataset using standard bag of words approach with overall performance of 44.5%. To the best of our knowledge, UCF101 is currently the most challenging dataset of actions due to its large number of classes, large number of clips and also unconstrained nature of such clips.},
     month={12},
-    year={2021}
+    year={2012}
 }
-@article{mengmengwang2021actionclip,
-    title={ActionCLIP: A New Paradigm for Video Action Recognition},
-    url={http://arxiv.org/abs/2109.08472v1},
-    author={Mengmeng Wang and Jiazheng Xing and Yong Liu},
-    abstract={The canonical approach to video action recognition dictates a neural model to do a classic and standard 1-of-N majority vote task. They are trained to predict a fixed set of predefined categories, limiting their transferable ability on new datasets with unseen concepts. In this paper, we provide a new perspective on action recognition by attaching importance to the semantic information of label texts rather than simply mapping them into numbers. Specifically, we model this task as a video-text matching problem within a multimodal learning framework, which strengthens the video representation with more semantic language supervision and enables our model to do zero-shot action recognition without any further labeled data or parameters requirements. Moreover, to handle the deficiency of label texts and make use of tremendous web data, we propose a new paradigm based on this multimodal learning framework for action recognition, which we dub "pre-train, prompt and fine-tune". This paradigm first learns powerful representations from pre-training on a large amount of web image-text or video-text data. Then it makes the action recognition task to act more like pre-training problems via prompt engineering. Finally, it end-to-end fine-tunes on target datasets to obtain strong performance. We give an instantiation of the new paradigm, ActionCLIP, which not only has superior and flexible zero-shot/few-shot transfer ability but also reaches a top performance on general action recognition task, achieving 83.8% top-1 accuracy on Kinetics-400 with a ViT-B/16 as the backbone. Code is available at https://github.com/sallymmx/ActionCLIP.git},
+@article{tsungyilin2014microsoft,
+    title={Microsoft COCO: Common Objects in Context},
+    url={http://arxiv.org/abs/1405.0312v3},
+    author={Tsung-Yi Lin and Michael Maire and Serge Belongie and Lubomir Bourdev and Ross Girshick and James Hays and Pietro Perona and Deva Ramanan and C. Lawrence Zitnick and Piotr Dollár},
+    abstract={We present a new dataset with the goal of advancing the state-of-the-art in object recognition by placing the question of object recognition in the context of the broader question of scene understanding. This is achieved by gathering images of complex everyday scenes containing common objects in their natural context. Objects are labeled using per-instance segmentations to aid in precise object localization. Our dataset contains photos of 91 objects types that would be easily recognizable by a 4 year old. With a total of 2.5 million labeled instances in 328k images, the creation of our dataset drew upon extensive crowd worker involvement via novel user interfaces for category detection, instance spotting and instance segmentation. We present a detailed statistical analysis of the dataset in comparison to PASCAL, ImageNet, and SUN. Finally, we provide baseline performance analysis for bounding box and segmentation detection results using a Deformable Parts Model.},
+    month={5},
+    year={2014}
+}
+@article{olgarussakovsky2014imagenet,
+    title={ImageNet Large Scale Visual Recognition Challenge},
+    url={http://arxiv.org/abs/1409.0575v3},
+    author={Olga Russakovsky and Jia Deng and Hao Su and Jonathan Krause and Sanjeev Satheesh and Sean Ma and Zhiheng Huang and Andrej Karpathy and Aditya Khosla and Michael Bernstein and Alexander C. Berg and Li Fei-Fei},
+    abstract={The ImageNet Large Scale Visual Recognition Challenge is a benchmark in object category classification and detection on hundreds of object categories and millions of images. The challenge has been run annually from 2010 to present, attracting participation from more than fifty institutions.   This paper describes the creation of this benchmark dataset and the advances in object recognition that have been possible as a result. We discuss the challenges of collecting large-scale ground truth annotation, highlight key breakthroughs in categorical object recognition, provide a detailed analysis of the current state of the field of large-scale image classification and object detection, and compare the state-of-the-art computer vision accuracy with human accuracy. We conclude with lessons learned in the five years of the challenge, and propose future directions and improvements.},
     month={9},
-    year={2021}
+    year={2014}
+}
+@article{bartthomee2015yfcc100m,
+    title={YFCC100M: The New Data in Multimedia Research},
+    url={http://arxiv.org/abs/1503.01817v2},
+    author={Bart Thomee and David A. Shamma and Gerald Friedland and Benjamin Elizalde and Karl Ni and Douglas Poland and Damian Borth and Li-Jia Li},
+    abstract={We present the Yahoo Flickr Creative Commons 100 Million Dataset (YFCC100M), the largest public multimedia collection that has ever been released. The dataset contains a total of 100 million media objects, of which approximately 99.2 million are photos and 0.8 million are videos, all of which carry a Creative Commons license. Each media object in the dataset is represented by several pieces of metadata, e.g. Flickr identifier, owner name, camera, title, tags, geo, media source. The collection provides a comprehensive snapshot of how photos and videos were taken, described, and shared over the years, from the inception of Flickr in 2004 until early 2014. In this article we explain the rationale behind its creation, as well as the implications the dataset has for science, research, engineering, and development. We further present several new challenges in multimedia research that can now be expanded upon with our dataset.},
+    month={3},
+    year={2015},
+    DOI={10.1145/2812802}
+}
+@article{kaiminghe2015deep,
+    title={Deep Residual Learning for Image Recognition},
+    url={http://arxiv.org/abs/1512.03385v1},
+    author={Kaiming He and Xiangyu Zhang and Shaoqing Ren and Jian Sun},
+    abstract={Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers---8x deeper than VGG nets but still having lower complexity. An ensemble of these residual nets achieves 3.57% error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers.   The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 competitions, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.},
+    month={12},
+    year={2015}
+}
+@article{haroonidrees2016the,
+    title={The THUMOS Challenge on Action Recognition for Videos "in the Wild"},
+    url={http://arxiv.org/abs/1604.06182v1},
+    author={Haroon Idrees and Amir R. Zamir and Yu-Gang Jiang and Alex Gorban and Ivan Laptev and Rahul Sukthankar and Mubarak Shah},
+    abstract={Automatically recognizing and localizing wide ranges of human actions has crucial importance for video understanding. Towards this goal, the THUMOS challenge was introduced in 2013 to serve as a benchmark for action recognition. Until then, video action recognition, including THUMOS challenge, had focused primarily on the classification of pre-segmented (i.e., trimmed) videos, which is an artificial task. In THUMOS 2014, we elevated action recognition to a more practical level by introducing temporally untrimmed videos. These also include `background videos' which share similar scenes and backgrounds as action videos, but are devoid of the specific actions. The three editions of the challenge organized in 2013--2015 have made THUMOS a common benchmark for action classification and detection and the annual challenge is widely attended by teams from around the world.   In this paper we describe the THUMOS benchmark in detail and give an overview of data collection and annotation procedures. We present the evaluation protocols used to quantify results in the two THUMOS tasks of action classification and temporal detection. We also present results of submissions to the THUMOS 2015 challenge and review the participating approaches. Additionally, we include a comprehensive empirical study evaluating the differences in action recognition between trimmed and untrimmed videos, and how well methods trained on trimmed videos generalize to untrimmed videos. We conclude by proposing several directions and improvements for future THUMOS challenges.},
+    month={4},
+    year={2016},
+    DOI={10.1016/j.cviu.2016.10.018}
+}
+@article{tsungyilin2016feature,
+    title={Feature Pyramid Networks for Object Detection},
+    url={http://arxiv.org/abs/1612.03144v2},
+    author={Tsung-Yi Lin and Piotr Dollár and Ross Girshick and Kaiming He and Bharath Hariharan and Serge Belongie},
+    abstract={Feature pyramids are a basic component in recognition systems for detecting objects at different scales. But recent deep learning object detectors have avoided pyramid representations, in part because they are compute and memory intensive. In this paper, we exploit the inherent multi-scale, pyramidal hierarchy of deep convolutional networks to construct feature pyramids with marginal extra cost. A top-down architecture with lateral connections is developed for building high-level semantic feature maps at all scales. This architecture, called a Feature Pyramid Network (FPN), shows significant improvement as a generic feature extractor in several applications. Using FPN in a basic Faster R-CNN system, our method achieves state-of-the-art single-model results on the COCO detection benchmark without bells and whistles, surpassing all existing single-model entries including those from the COCO 2016 challenge winners. In addition, our method can run at 5 FPS on a GPU and thus is a practical and accurate solution to multi-scale object detection. Code will be made publicly available.},
+    month={12},
+    year={2016}
+}
+@article{willkay2017the,
+    title={The Kinetics Human Action Video Dataset},
+    url={http://arxiv.org/abs/1705.06950v1},
+    author={Will Kay and Joao Carreira and Karen Simonyan and Brian Zhang and Chloe Hillier and Sudheendra Vijayanarasimhan and Fabio Viola and Tim Green and Trevor Back and Paul Natsev and Mustafa Suleyman and Andrew Zisserman},
+    abstract={We describe the DeepMind Kinetics human action video dataset. The dataset contains 400 human action classes, with at least 400 video clips for each action. Each clip lasts around 10s and is taken from a different YouTube video. The actions are human focussed and cover a broad range of classes including human-object interactions such as playing instruments, as well as human-human interactions such as shaking hands. We describe the statistics of the dataset, how it was collected, and give some baseline performance figures for neural network architectures trained and tested for human action classification on this dataset. We also carry out a preliminary analysis of whether imbalance in the dataset leads to bias in the classifiers.},
+    month={5},
+    year={2017}
+}
+@article{ashishvaswani2017attention,
+    title={Attention Is All You Need},
+    url={http://arxiv.org/abs/1706.03762v5},
+    author={Ashish Vaswani and Noam Shazeer and Niki Parmar and Jakob Uszkoreit and Llion Jones and Aidan N. Gomez and Lukasz Kaiser and Illia Polosukhin},
+    abstract={The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.},
+    month={6},
+    year={2017}
+}
+@article{aeminorhan2018a,
+    title={A Simple Cache Model for Image Recognition},
+    url={http://arxiv.org/abs/1805.08709v2},
+    author={A. Emin Orhan},
+    abstract={Training large-scale image recognition models is computationally expensive. This raises the question of whether there might be simple ways to improve the test performance of an already trained model without having to re-train or fine-tune it with new data. Here, we show that, surprisingly, this is indeed possible. The key observation we make is that the layers of a deep network close to the output layer contain independent, easily extractable class-relevant information that is not contained in the output layer itself. We propose to extract this extra class-relevant information using a simple key-value cache memory to improve the classification performance of the model at test time. Our cache memory is directly inspired by a similar cache model previously proposed for language modeling (Grave et al., 2017). This cache component does not require any training or fine-tuning; it can be applied to any pre-trained model and, by properly setting only two hyper-parameters, leads to significant improvements in its classification performance. Improvements are observed across several architectures and datasets. In the cache component, using features extracted from layers close to the output (but not from the output layer itself) as keys leads to the largest improvements. Concatenating features from multiple layers to form keys can further improve performance over using single-layer features as keys. The cache component also has a regularizing effect, a simple consequence of which is that it substantially increases the robustness of models against adversarial attacks.},
+    month={5},
+    year={2018}
+}
+@article{joaocarreira2018a,
+    title={A Short Note about Kinetics-600},
+    url={http://arxiv.org/abs/1808.01340v1},
+    author={Joao Carreira and Eric Noland and Andras Banki-Horvath and Chloe Hillier and Andrew Zisserman},
+    abstract={We describe an extension of the DeepMind Kinetics human action dataset from 400 classes, each with at least 400 video clips, to 600 classes, each with at least 600 video clips. In order to scale up the dataset we changed the data collection process so it uses multiple queries per class, with some of them in a language other than english -- portuguese. This paper details the changes between the two versions of the dataset and includes a comprehensive set of statistics of the new version as well as baseline results using the I3D neural network architecture. The paper is a companion to the release of the ground truth labels for the public test set.},
+    month={8},
+    year={2018}
+}
+@article{christophfeichtenhofer2018slowfast,
+    title={SlowFast Networks for Video Recognition},
+    url={http://arxiv.org/abs/1812.03982v3},
+    author={Christoph Feichtenhofer and Haoqi Fan and Jitendra Malik and Kaiming He},
+    abstract={We present SlowFast networks for video recognition. Our model involves (i) a Slow pathway, operating at low frame rate, to capture spatial semantics, and (ii) a Fast pathway, operating at high frame rate, to capture motion at fine temporal resolution. The Fast pathway can be made very lightweight by reducing its channel capacity, yet can learn useful temporal information for video recognition. Our models achieve strong performance for both action classification and detection in video, and large improvements are pin-pointed as contributions by our SlowFast concept. We report state-of-the-art accuracy on major video recognition benchmarks, Kinetics, Charades and AVA. Code has been made available at: https://github.com/facebookresearch/SlowFast},
+    month={12},
+    year={2018}
+}
+@article{kimmokrkkinen2019fairface,
+    title={FairFace: Face Attribute Dataset for Balanced Race, Gender, and Age},
+    url={http://arxiv.org/abs/1908.04913v1},
+    author={Kimmo Kärkkäinen and Jungseock Joo},
+    abstract={Existing public face datasets are strongly biased toward Caucasian faces, and other races (e.g., Latino) are significantly underrepresented. This can lead to inconsistent model accuracy, limit the applicability of face analytic systems to non-White race groups, and adversely affect research findings based on such skewed data. To mitigate the race bias in these datasets, we construct a novel face image dataset, containing 108,501 images, with an emphasis of balanced race composition in the dataset. We define 7 race groups: White, Black, Indian, East Asian, Southeast Asian, Middle East, and Latino. Images were collected from the YFCC-100M Flickr dataset and labeled with race, gender, and age groups. Evaluations were performed on existing face attribute datasets as well as novel image datasets to measure generalization performance. We find that the model trained from our dataset is substantially more accurate on novel datasets and the accuracy is consistent between race and gender groups.},
+    month={8},
+    year={2019}
+}
+@article{fabiopetroni2019language,
+    title={Language Models as Knowledge Bases?},
+    url={http://arxiv.org/abs/1909.01066v2},
+    author={Fabio Petroni and Tim Rocktäschel and Patrick Lewis and Anton Bakhtin and Yuxiang Wu and Alexander H. Miller and Sebastian Riedel},
+    abstract={Recent progress in pretraining language models on large textual corpora led to a surge of improvements for downstream NLP tasks. Whilst learning linguistic knowledge, these models may also be storing relational knowledge present in the training data, and may be able to answer queries structured as "fill-in-the-blank" cloze statements. Language models have many advantages over structured knowledge bases: they require no schema engineering, allow practitioners to query about an open class of relations, are easy to extend to more data, and require no human supervision to train. We present an in-depth analysis of the relational knowledge already present (without fine-tuning) in a wide range of state-of-the-art pretrained language models. We find that (i) without fine-tuning, BERT contains relational knowledge competitive with traditional NLP methods that have some access to oracle knowledge, (ii) BERT also does remarkably well on open-domain question answering against a supervised baseline, and (iii) certain types of factual knowledge are learned much more readily than others by standard language model pretraining approaches. The surprisingly strong ability of these models to recall factual knowledge without any fine-tuning demonstrates their potential as unsupervised open-domain QA systems. The code to reproduce our analysis is available at https://github.com/facebookresearch/LAMA.},
+    month={9},
+    year={2019}
+}
+@article{norakassner2019negated,
+    title={Negated and Misprimed Probes for Pretrained Language Models: Birds Can
+  Talk, But Cannot Fly},
+    url={http://arxiv.org/abs/1911.03343v3},
+    author={Nora Kassner and Hinrich Schütze},
+    abstract={Building on Petroni et al. (2019), we propose two new probing tasks analyzing factual knowledge stored in Pretrained Language Models (PLMs). (1) Negation. We find that PLMs do not distinguish between negated ("Birds cannot [MASK]") and non-negated ("Birds can [MASK]") cloze questions. (2) Mispriming. Inspired by priming methods in human psychology, we add "misprimes" to cloze questions ("Talk? Birds can [MASK]"). We find that PLMs are easily distracted by misprimes. These results suggest that PLMs still have a long way to go to adequately learn human-like factual knowledge.},
+    month={11},
+    year={2019}
+}
+@article{nicolascarion2020endtoend,
+    title={End-to-End Object Detection with Transformers},
+    url={http://arxiv.org/abs/2005.12872v3},
+    author={Nicolas Carion and Francisco Massa and Gabriel Synnaeve and Nicolas Usunier and Alexander Kirillov and Sergey Zagoruyko},
+    abstract={We present a new method that views object detection as a direct set prediction problem. Our approach streamlines the detection pipeline, effectively removing the need for many hand-designed components like a non-maximum suppression procedure or anchor generation that explicitly encode our prior knowledge about the task. The main ingredients of the new framework, called DEtection TRansformer or DETR, are a set-based global loss that forces unique predictions via bipartite matching, and a transformer encoder-decoder architecture. Given a fixed small set of learned object queries, DETR reasons about the relations of the objects and the global image context to directly output the final set of predictions in parallel. The new model is conceptually simple and does not require a specialized library, unlike many other modern detectors. DETR demonstrates accuracy and run-time performance on par with the well-established and highly-optimized Faster RCNN baseline on the challenging COCO object detection dataset. Moreover, DETR can be easily generalized to produce panoptic segmentation in a unified manner. We show that it significantly outperforms competitive baselines. Training code and pretrained models are available at https://github.com/facebookresearch/detr.},
+    month={5},
+    year={2020}
+}
+@article{tombbrown2020language,
+    title={Language Models are Few-Shot Learners},
+    url={http://arxiv.org/abs/2005.14165v4},
+    author={Tom B. Brown and Benjamin Mann and Nick Ryder and Melanie Subbiah and Jared Kaplan and Prafulla Dhariwal and Arvind Neelakantan and Pranav Shyam and Girish Sastry and Amanda Askell and Sandhini Agarwal and Ariel Herbert-Voss and Gretchen Krueger and Tom Henighan and Rewon Child and Aditya Ramesh and Daniel M. Ziegler and Jeffrey Wu and Clemens Winter and Christopher Hesse and Mark Chen and Eric Sigler and Mateusz Litwin and Scott Gray and Benjamin Chess and Jack Clark and Christopher Berner and Sam McCandlish and Alec Radford and Ilya Sutskever and Dario Amodei},
+    abstract={Recent work has demonstrated substantial gains on many NLP tasks and benchmarks by pre-training on a large corpus of text followed by fine-tuning on a specific task. While typically task-agnostic in architecture, this method still requires task-specific fine-tuning datasets of thousands or tens of thousands of examples. By contrast, humans can generally perform a new language task from only a few examples or from simple instructions - something which current NLP systems still largely struggle to do. Here we show that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuning approaches. Specifically, we train GPT-3, an autoregressive language model with 175 billion parameters, 10x more than any previous non-sparse language model, and test its performance in the few-shot setting. For all tasks, GPT-3 is applied without any gradient updates or fine-tuning, with tasks and few-shot demonstrations specified purely via text interaction with the model. GPT-3 achieves strong performance on many NLP datasets, including translation, question-answering, and cloze tasks, as well as several tasks that require on-the-fly reasoning or domain adaptation, such as unscrambling words, using a novel word in a sentence, or performing 3-digit arithmetic. At the same time, we also identify some datasets where GPT-3's few-shot learning still struggles, as well as some datasets where GPT-3 faces methodological issues related to training on large web corpora. Finally, we find that GPT-3 can generate samples of news articles which human evaluators have difficulty distinguishing from articles written by humans. We discuss broader societal impacts of this finding and of GPT-3 in general.},
+    month={5},
+    year={2020}
+}
+@article{alexeydosovitskiy2020an,
+    title={An Image is Worth 16x16 Words: Transformers for Image Recognition at
+  Scale},
+    url={http://arxiv.org/abs/2010.11929v2},
+    author={Alexey Dosovitskiy and Lucas Beyer and Alexander Kolesnikov and Dirk Weissenborn and Xiaohua Zhai and Thomas Unterthiner and Mostafa Dehghani and Matthias Minderer and Georg Heigold and Sylvain Gelly and Jakob Uszkoreit and Neil Houlsby},
+    abstract={While the Transformer architecture has become the de-facto standard for natural language processing tasks, its applications to computer vision remain limited. In vision, attention is either applied in conjunction with convolutional networks, or used to replace certain components of convolutional networks while keeping their overall structure in place. We show that this reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks. When pre-trained on large amounts of data and transferred to multiple mid-sized or small image recognition benchmarks (ImageNet, CIFAR-100, VTAB, etc.), Vision Transformer (ViT) attains excellent results compared to state-of-the-art convolutional networks while requiring substantially fewer computational resources to train.},
+    month={10},
+    year={2020}
+}
+@article{taylorshin2020autoprompt,
+    title={AutoPrompt: Eliciting Knowledge from Language Models with Automatically
+  Generated Prompts},
+    url={http://arxiv.org/abs/2010.15980v2},
+    author={Taylor Shin and Yasaman Razeghi and Robert L. Logan IV and Eric Wallace and Sameer Singh},
+    abstract={The remarkable success of pretrained language models has motivated the study of what kinds of knowledge these models learn during pretraining. Reformulating tasks as fill-in-the-blanks problems (e.g., cloze tests) is a natural approach for gauging such knowledge, however, its usage is limited by the manual effort and guesswork required to write suitable prompts. To address this, we develop AutoPrompt, an automated method to create prompts for a diverse set of tasks, based on a gradient-guided search. Using AutoPrompt, we show that masked language models (MLMs) have an inherent capability to perform sentiment analysis and natural language inference without additional parameters or finetuning, sometimes achieving performance on par with recent state-of-the-art supervised models. We also show that our prompts elicit more accurate factual knowledge from MLMs than the manually created prompts on the LAMA benchmark, and that MLMs can be used as relation extractors more effectively than supervised relation extraction models. These results demonstrate that automatically generated prompts are a viable parameter-free alternative to existing probing methods, and as pretrained LMs become more sophisticated and capable, potentially a replacement for finetuning.},
+    month={10},
+    year={2020}
+}
+@article{hetshah2020kdlib,
+    title={KD-Lib: A PyTorch library for Knowledge Distillation, Pruning and
+  Quantization},
+    url={http://arxiv.org/abs/2011.14691v1},
+    author={Het Shah and Avishree Khare and Neelay Shah and Khizir Siddiqui},
+    abstract={In recent years, the growing size of neural networks has led to a vast amount of research concerning compression techniques to mitigate the drawbacks of such large sizes. Most of these research works can be categorized into three broad families : Knowledge Distillation, Pruning, and Quantization. While there has been steady research in this domain, adoption and commercial usage of the proposed techniques has not quite progressed at the rate. We present KD-Lib, an open-source PyTorch based library, which contains state-of-the-art modular implementations of algorithms from the three families on top of multiple abstraction layers. KD-Lib is model and algorithm-agnostic, with extended support for hyperparameter tuning using Optuna and Tensorboard for logging and monitoring. The library can be found at - https://github.com/SforAiDl/KD_Lib.},
+    month={11},
+    year={2020}
 }
 @article{chaojia2021scaling,
     title={Scaling Up Visual and Vision-Language Representation Learning With Noisy
@@ -91,40 +182,37 @@
     month={2},
     year={2021}
 }
-@article{huaishaoluo2021clip4clip,
-    title={CLIP4Clip: An Empirical Study of CLIP for End to End Video Clip
-  Retrieval},
-    url={http://arxiv.org/abs/2104.08860v2},
-    author={Huaishao Luo and Lei Ji and Ming Zhong and Yang Chen and Wen Lei and Nan Duan and Tianrui Li},
-    abstract={Video-text retrieval plays an essential role in multi-modal research and has been widely used in many real-world web applications. The CLIP (Contrastive Language-Image Pre-training), an image-language pre-training model, has demonstrated the power of visual concepts learning from web collected image-text datasets. In this paper, we propose a CLIP4Clip model to transfer the knowledge of the CLIP model to video-language retrieval in an end-to-end manner. Several questions are investigated via empirical studies: 1) Whether image feature is enough for video-text retrieval? 2) How a post-pretraining on a large-scale video-text dataset based on the CLIP affect the performance? 3) What is the practical mechanism to model temporal dependency between video frames? And 4) The Hyper-parameters sensitivity of the model on video-text retrieval task. Extensive experimental results present that the CLIP4Clip model transferred from the CLIP can achieve SOTA results on various video-text retrieval datasets, including MSR-VTT, MSVC, LSMDC, ActivityNet, and DiDeMo. We release our code at https://github.com/ArrowLuo/CLIP4Clip.},
-    month={4},
+@article{alecradford2021learning,
+    title={Learning Transferable Visual Models From Natural Language Supervision},
+    url={http://arxiv.org/abs/2103.00020v1},
+    author={Alec Radford and Jong Wook Kim and Chris Hallacy and Aditya Ramesh and Gabriel Goh and Sandhini Agarwal and Girish Sastry and Amanda Askell and Pamela Mishkin and Jack Clark and Gretchen Krueger and Ilya Sutskever},
+    abstract={State-of-the-art computer vision systems are trained to predict a fixed set of predetermined object categories. This restricted form of supervision limits their generality and usability since additional labeled data is needed to specify any other visual concept. Learning directly from raw text about images is a promising alternative which leverages a much broader source of supervision. We demonstrate that the simple pre-training task of predicting which caption goes with which image is an efficient and scalable way to learn SOTA image representations from scratch on a dataset of 400 million (image, text) pairs collected from the internet. After pre-training, natural language is used to reference learned visual concepts (or describe new ones) enabling zero-shot transfer of the model to downstream tasks. We study the performance of this approach by benchmarking on over 30 different existing computer vision datasets, spanning tasks such as OCR, action recognition in videos, geo-localization, and many types of fine-grained object classification. The model transfers non-trivially to most tasks and is often competitive with a fully supervised baseline without the need for any dataset specific training. For instance, we match the accuracy of the original ResNet-50 on ImageNet zero-shot without needing to use any of the 1.28 million training examples it was trained on. We release our code and pre-trained model weights at https://github.com/OpenAI/CLIP.},
+    month={2},
     year={2021}
 }
-@article{shuaizhao2022centerclip,
-    title={CenterCLIP: Token Clustering for Efficient Text-Video Retrieval},
-    url={http://arxiv.org/abs/2205.00823v1},
-    author={Shuai Zhao and Linchao Zhu and Xiaohan Wang and Yi Yang},
-    abstract={Recently, large-scale pre-training methods like CLIP have made great progress in multi-modal research such as text-video retrieval. In CLIP, transformers are vital for modeling complex multi-modal relations. However, in the vision transformer of CLIP, the essential visual tokenization process, which produces discrete visual token sequences, generates many homogeneous tokens due to the redundancy nature of consecutive and similar frames in videos. This significantly increases computation costs and hinders the deployment of video retrieval models in web applications. In this paper, to reduce the number of redundant video tokens, we design a multi-segment token clustering algorithm to find the most representative tokens and drop the non-essential ones. As the frame redundancy occurs mostly in consecutive frames, we divide videos into multiple segments and conduct segment-level clustering. Center tokens from each segment are later concatenated into a new sequence, while their original spatial-temporal relations are well maintained. We instantiate two clustering algorithms to efficiently find deterministic medoids and iteratively partition groups in high dimensional space. Through this token clustering and center selection procedure, we successfully reduce computation costs by removing redundant visual tokens. This method further enhances segment-level semantic alignment between video and text representations, enforcing the spatio-temporal interactions of tokens from within-segment frames. Our method, coined as CenterCLIP, surpasses existing state-of-the-art by a large margin on typical text-video benchmarks, while reducing the training memory cost by 35\% and accelerating the inference speed by 14\% at the best case. The code is available at \href{{https://github.com/mzhaoshuai/CenterCLIP}}{{https://github.com/mzhaoshuai/CenterCLIP}}.},
-    month={5},
-    year={2022},
-    DOI={10.1145/3477495.3531950}
-}
-@article{yiweima2022xclip,
-    title={X-CLIP: End-to-End Multi-grained Contrastive Learning for Video-Text
-  Retrieval},
-    url={http://arxiv.org/abs/2207.07285v2},
-    author={Yiwei Ma and Guohai Xu and Xiaoshuai Sun and Ming Yan and Ji Zhang and Rongrong Ji},
-    abstract={Video-text retrieval has been a crucial and fundamental task in multi-modal research. The development of video-text retrieval has been considerably promoted by large-scale multi-modal contrastive pre-training, which primarily focuses on coarse-grained or fine-grained contrast. However, cross-grained contrast, which is the contrast between coarse-grained representations and fine-grained representations, has rarely been explored in prior research. Compared with fine-grained or coarse-grained contrasts, cross-grained contrast calculate the correlation between coarse-grained features and each fine-grained feature, and is able to filter out the unnecessary fine-grained features guided by the coarse-grained feature during similarity calculation, thus improving the accuracy of retrieval. To this end, this paper presents a novel multi-grained contrastive model, namely X-CLIP, for video-text retrieval. However, another challenge lies in the similarity aggregation problem, which aims to aggregate fine-grained and cross-grained similarity matrices to instance-level similarity. To address this challenge, we propose the Attention Over Similarity Matrix (AOSM) module to make the model focus on the contrast between essential frames and words, thus lowering the impact of unnecessary frames and words on retrieval results. With multi-grained contrast and the proposed AOSM module, X-CLIP achieves outstanding performance on five widely-used video-text retrieval datasets, including MSR-VTT (49.3 R@1), MSVD (50.4 R@1), LSMDC (26.1 R@1), DiDeMo (47.8 R@1) and ActivityNet (46.2 R@1). It outperforms the previous state-of-theart by +6.3%, +6.6%, +11.1%, +6.7%, +3.8% relative improvements on these benchmarks, demonstrating the superiority of multi-grained contrast and AOSM.},
-    month={7},
-    year={2022}
-}
-@article{qiangwang2022disentangled,
-    title={Disentangled Representation Learning for Text-Video Retrieval},
-    url={http://arxiv.org/abs/2203.07111v1},
-    author={Qiang Wang and Yanhao Zhang and Yun Zheng and Pan Pan and Xian-Sheng Hua},
-    abstract={Cross-modality interaction is a critical component in Text-Video Retrieval (TVR), yet there has been little examination of how different influencing factors for computing interaction affect performance. This paper first studies the interaction paradigm in depth, where we find that its computation can be split into two terms, the interaction contents at different granularity and the matching function to distinguish pairs with the same semantics. We also observe that the single-vector representation and implicit intensive function substantially hinder the optimization. Based on these findings, we propose a disentangled framework to capture a sequential and hierarchical representation. Firstly, considering the natural sequential structure in both text and video inputs, a Weighted Token-wise Interaction (WTI) module is performed to decouple the content and adaptively exploit the pair-wise correlations. This interaction can form a better disentangled manifold for sequential inputs. Secondly, we introduce a Channel DeCorrelation Regularization (CDCR) to minimize the redundancy between the components of the compared vectors, which facilitate learning a hierarchical representation. We demonstrate the effectiveness of the disentangled representation on various benchmarks, e.g., surpassing CLIP4Clip largely by +2.9%, +3.1%, +7.9%, +2.3%, +2.8% and +6.5% R@1 on the MSR-VTT, MSVD, VATEX, LSMDC, AcitivityNet, and DiDeMo, respectively.},
+@article{dankondratyuk2021movinets,
+    title={MoViNets: Mobile Video Networks for Efficient Video Recognition},
+    url={http://arxiv.org/abs/2103.11511v2},
+    author={Dan Kondratyuk and Liangzhe Yuan and Yandong Li and Li Zhang and Mingxing Tan and Matthew Brown and Boqing Gong},
+    abstract={We present Mobile Video Networks (MoViNets), a family of computation and memory efficient video networks that can operate on streaming video for online inference. 3D convolutional neural networks (CNNs) are accurate at video recognition but require large computation and memory budgets and do not support online inference, making them difficult to work on mobile devices. We propose a three-step approach to improve computational efficiency while substantially reducing the peak memory usage of 3D CNNs. First, we design a video network search space and employ neural architecture search to generate efficient and diverse 3D CNN architectures. Second, we introduce the Stream Buffer technique that decouples memory from video clip duration, allowing 3D CNNs to embed arbitrary-length streaming video sequences for both training and inference with a small constant memory footprint. Third, we propose a simple ensembling technique to improve accuracy further without sacrificing efficiency. These three progressive techniques allow MoViNets to achieve state-of-the-art accuracy and efficiency on the Kinetics, Moments in Time, and Charades video action recognition datasets. For instance, MoViNet-A5-Stream achieves the same accuracy as X3D-XL on Kinetics 600 while requiring 80% fewer FLOPs and 65% less memory. Code will be made available at https://github.com/tensorflow/models/tree/master/official/vision.},
     month={3},
-    year={2022}
+    year={2021}
+}
+@article{amirgholami2021a,
+    title={A Survey of Quantization Methods for Efficient Neural Network Inference},
+    url={http://arxiv.org/abs/2103.13630v3},
+    author={Amir Gholami and Sehoon Kim and Zhen Dong and Zhewei Yao and Michael W. Mahoney and Kurt Keutzer},
+    abstract={As soon as abstract mathematical computations were adapted to computation on digital computers, the problem of efficient representation, manipulation, and communication of the numerical values in those computations arose. Strongly related to the problem of numerical representation is the problem of quantization: in what manner should a set of continuous real-valued numbers be distributed over a fixed discrete set of numbers to minimize the number of bits required and also to maximize the accuracy of the attendant computations? This perennial problem of quantization is particularly relevant whenever memory and/or computational resources are severely restricted, and it has come to the forefront in recent years due to the remarkable performance of Neural Network models in computer vision, natural language processing, and related areas. Moving from floating-point representations to low-precision fixed integer values represented in four bits or less holds the potential to reduce the memory footprint and latency by a factor of 16x; and, in fact, reductions of 4x to 8x are often realized in practice in these applications. Thus, it is not surprising that quantization has emerged recently as an important and very active sub-area of research in the efficient implementation of computations associated with Neural Networks. In this article, we survey approaches to the problem of quantizing the numerical values in deep Neural Network computations, covering the advantages/disadvantages of current methods. With this survey and its organization, we hope to have presented a useful snapshot of the current research in quantization for Neural Networks and to have given an intelligent organization to ease the evaluation of future research in this area.},
+    month={3},
+    year={2021}
+}
+@article{anuragarnab2021vivit,
+    title={ViViT: A Video Vision Transformer},
+    url={http://arxiv.org/abs/2103.15691v2},
+    author={Anurag Arnab and Mostafa Dehghani and Georg Heigold and Chen Sun and Mario Lučić and Cordelia Schmid},
+    abstract={We present pure-transformer based models for video classification, drawing upon the recent success of such models in image classification. Our model extracts spatio-temporal tokens from the input video, which are then encoded by a series of transformer layers. In order to handle the long sequences of tokens encountered in video, we propose several, efficient variants of our model which factorise the spatial- and temporal-dimensions of the input. Although transformer-based models are known to only be effective when large training datasets are available, we show how we can effectively regularise the model during training and leverage pretrained image models to be able to train on comparatively small datasets. We conduct thorough ablation studies, and achieve state-of-the-art results on multiple video classification benchmarks including Kinetics 400 and 600, Epic Kitchens, Something-Something v2 and Moments in Time, outperforming prior methods based on deep 3D convolutional networks. To facilitate further research, we release code at https://github.com/google-research/scenic/tree/main/scenic/projects/vivit},
+    month={3},
+    year={2021}
 }
 @article{maxbain2021frozen,
     title={Frozen in Time: A Joint Video and Image Encoder for End-to-End Retrieval},
@@ -134,45 +222,98 @@
     month={4},
     year={2021}
 }
-@article{sauradipnag2022semisupervised,
-    title={Semi-Supervised Temporal Action Detection with Proposal-Free Masking},
-    url={http://arxiv.org/abs/2207.07059v1},
-    author={Sauradip Nag and Xiatian Zhu and Yi-Zhe Song and Tao Xiang},
-    abstract={Existing temporal action detection (TAD) methods rely on a large number of training data with segment-level annotations. Collecting and annotating such a training set is thus highly expensive and unscalable. Semi-supervised TAD (SS-TAD) alleviates this problem by leveraging unlabeled videos freely available at scale. However, SS-TAD is also a much more challenging problem than supervised TAD, and consequently much under-studied. Prior SS-TAD methods directly combine an existing proposal-based TAD method and a SSL method. Due to their sequential localization (e.g, proposal generation) and classification design, they are prone to proposal error propagation. To overcome this limitation, in this work we propose a novel Semi-supervised Temporal action detection model based on PropOsal-free Temporal mask (SPOT) with a parallel localization (mask generation) and classification architecture. Such a novel design effectively eliminates the dependence between localization and classification by cutting off the route for error propagation in-between. We further introduce an interaction mechanism between classification and localization for prediction refinement, and a new pretext task for self-supervised model pre-training. Extensive experiments on two standard benchmarks show that our SPOT outperforms state-of-the-art alternatives, often by a large margin. The PyTorch implementation of SPOT is available at https://github.com/sauradip/SPOT},
-    month={7},
-    year={2022}
+@article{huaishaoluo2021clip4clip,
+    title={CLIP4Clip: An Empirical Study of CLIP for End to End Video Clip
+  Retrieval},
+    url={http://arxiv.org/abs/2104.08860v2},
+    author={Huaishao Luo and Lei Ji and Ming Zhong and Yang Chen and Wen Lei and Nan Duan and Tianrui Li},
+    abstract={Video-text retrieval plays an essential role in multi-modal research and has been widely used in many real-world web applications. The CLIP (Contrastive Language-Image Pre-training), an image-language pre-training model, has demonstrated the power of visual concepts learning from web collected image-text datasets. In this paper, we propose a CLIP4Clip model to transfer the knowledge of the CLIP model to video-language retrieval in an end-to-end manner. Several questions are investigated via empirical studies: 1) Whether image feature is enough for video-text retrieval? 2) How a post-pretraining on a large-scale video-text dataset based on the CLIP affect the performance? 3) What is the practical mechanism to model temporal dependency between video frames? And 4) The Hyper-parameters sensitivity of the model on video-text retrieval task. Extensive experimental results present that the CLIP4Clip model transferred from the CLIP can achieve SOTA results on various video-text retrieval datasets, including MSR-VTT, MSVC, LSMDC, ActivityNet, and DiDeMo. We release our code at https://github.com/ArrowLuo/CLIP4Clip.},
+    month={4},
+    year={2021}
 }
-@article{sauradipnag2022zeroshot,
-    title={Zero-Shot Temporal Action Detection via Vision-Language Prompting},
-    url={http://arxiv.org/abs/2207.08184v1},
-    author={Sauradip Nag and Xiatian Zhu and Yi-Zhe Song and Tao Xiang},
-    abstract={Existing temporal action detection (TAD) methods rely on large training data including segment-level annotations, limited to recognizing previously seen classes alone during inference. Collecting and annotating a large training set for each class of interest is costly and hence unscalable. Zero-shot TAD (ZS-TAD) resolves this obstacle by enabling a pre-trained model to recognize any unseen action classes. Meanwhile, ZS-TAD is also much more challenging with significantly less investigation. Inspired by the success of zero-shot image classification aided by vision-language (ViL) models such as CLIP, we aim to tackle the more complex TAD task. An intuitive method is to integrate an off-the-shelf proposal detector with CLIP style classification. However, due to the sequential localization (e.g, proposal generation) and classification design, it is prone to localization error propagation. To overcome this problem, in this paper we propose a novel zero-Shot Temporal Action detection model via Vision-LanguagE prompting (STALE). Such a novel design effectively eliminates the dependence between localization and classification by breaking the route for error propagation in-between. We further introduce an interaction mechanism between classification and localization for improved optimization. Extensive experiments on standard ZS-TAD video benchmarks show that our STALE significantly outperforms state-of-the-art alternatives. Besides, our model also yields superior results on supervised TAD over recent strong competitors. The PyTorch implementation of STALE is available at https://github.com/sauradip/STALE.},
-    month={7},
-    year={2022}
+@article{ruizhecheng2021dataefficient,
+    title={Data-Efficient Language-Supervised Zero-Shot Learning with
+  Self-Distillation},
+    url={http://arxiv.org/abs/2104.08945v1},
+    author={Ruizhe Cheng and Bichen Wu and Peizhao Zhang and Peter Vajda and Joseph E. Gonzalez},
+    abstract={Traditional computer vision models are trained to predict a fixed set of predefined categories. Recently, natural language has been shown to be a broader and richer source of supervision that provides finer descriptions to visual concepts than supervised "gold" labels. Previous works, such as CLIP, use a simple pretraining task of predicting the pairings between images and text captions. CLIP, however, is data hungry and requires more than 400M image text pairs for training. We propose a data-efficient contrastive distillation method that uses soft labels to learn from noisy image-text pairs. Our model transfers knowledge from pretrained image and sentence encoders and achieves strong performance with only 3M image text pairs, 133x smaller than CLIP. Our method exceeds the previous SoTA of general zero-shot learning on ImageNet 21k+1k by 73% relatively with a ResNet50 image encoder and DeCLUTR text encoder. We also beat CLIP by 10.5% relatively on zero-shot evaluation on Google Open Images (19,958 classes).},
+    month={4},
+    year={2021}
 }
-@article{jielei2022revealing,
-    title={Revealing Single Frame Bias for Video-and-Language Learning},
-    url={http://arxiv.org/abs/2206.03428v1},
-    author={Jie Lei and Tamara L. Berg and Mohit Bansal},
-    abstract={Training an effective video-and-language model intuitively requires multiple frames as model inputs. However, it is unclear whether using multiple frames is beneficial to downstream tasks, and if yes, whether the performance gain is worth the drastically-increased computation and memory costs resulting from using more frames. In this work, we explore single-frame models for video-and-language learning. On a diverse set of video-and-language tasks (including text-to-video retrieval and video question answering), we show the surprising result that, with large-scale pre-training and a proper frame ensemble strategy at inference time, a single-frame trained model that does not consider temporal information can achieve better performance than existing methods that use multiple frames for training. This result reveals the existence of a strong "static appearance bias" in popular video-and-language datasets. Therefore, to allow for a more comprehensive evaluation of video-and-language models, we propose two new retrieval tasks based on existing fine-grained action recognition datasets that encourage temporal modeling. Our code is available at https://github.com/jayleicn/singularity},
-    month={6},
-    year={2022}
+@article{xiuyegu2021openvocabulary,
+    title={Open-vocabulary Object Detection via Vision and Language Knowledge
+  Distillation},
+    url={http://arxiv.org/abs/2104.13921v3},
+    author={Xiuye Gu and Tsung-Yi Lin and Weicheng Kuo and Yin Cui},
+    abstract={We aim at advancing open-vocabulary object detection, which detects objects described by arbitrary text inputs. The fundamental challenge is the availability of training data. It is costly to further scale up the number of classes contained in existing object detection datasets. To overcome this challenge, we propose ViLD, a training method via Vision and Language knowledge Distillation. Our method distills the knowledge from a pretrained open-vocabulary image classification model (teacher) into a two-stage detector (student). Specifically, we use the teacher model to encode category texts and image regions of object proposals. Then we train a student detector, whose region embeddings of detected boxes are aligned with the text and image embeddings inferred by the teacher. We benchmark on LVIS by holding out all rare categories as novel categories that are not seen during training. ViLD obtains 16.1 mask AP$_r$ with a ResNet-50 backbone, even outperforming the supervised counterpart by 3.8. When trained with a stronger teacher model ALIGN, ViLD achieves 26.3 AP$_r$. The model can directly transfer to other datasets without finetuning, achieving 72.2 AP$_{50}$ on PASCAL VOC, 36.6 AP on COCO and 11.8 AP on Objects365. On COCO, ViLD outperforms the previous state-of-the-art by 4.8 on novel AP and 11.4 on overall AP. Code and demo are open-sourced at https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild.},
+    month={4},
+    year={2021}
 }
-@article{christophfeichtenhofer2018slowfast,
-    title={SlowFast Networks for Video Recognition},
-    url={http://arxiv.org/abs/1812.03982v3},
-    author={Christoph Feichtenhofer and Haoqi Fan and Jitendra Malik and Kaiming He},
-    abstract={We present SlowFast networks for video recognition. Our model involves (i) a Slow pathway, operating at low frame rate, to capture spatial semantics, and (ii) a Fast pathway, operating at high frame rate, to capture motion at fine temporal resolution. The Fast pathway can be made very lightweight by reducing its channel capacity, yet can learn useful temporal information for video recognition. Our models achieve strong performance for both action classification and detection in video, and large improvements are pin-pointed as contributions by our SlowFast concept. We report state-of-the-art accuracy on major video recognition benchmarks, Kinetics, Charades and AVA. Code has been made available at: https://github.com/facebookresearch/SlowFast},
-    month={12},
-    year={2018}
+@article{kaiyangzhou2021learning,
+    title={Learning to Prompt for Vision-Language Models},
+    url={http://arxiv.org/abs/2109.01134v6},
+    author={Kaiyang Zhou and Jingkang Yang and Chen Change Loy and Ziwei Liu},
+    abstract={Large pre-trained vision-language models like CLIP have shown great potential in learning representations that are transferable across a wide range of downstream tasks. Different from the traditional representation learning that is based mostly on discretized labels, vision-language pre-training aligns images and texts in a common feature space, which allows zero-shot transfer to a downstream task via prompting, i.e., classification weights are synthesized from natural language describing classes of interest. In this work, we show that a major challenge for deploying such models in practice is prompt engineering, which requires domain expertise and is extremely time-consuming -- one needs to spend a significant amount of time on words tuning since a slight change in wording could have a huge impact on performance. Inspired by recent advances in prompt learning research in natural language processing (NLP), we propose Context Optimization (CoOp), a simple approach specifically for adapting CLIP-like vision-language models for downstream image recognition. Concretely, CoOp models a prompt's context words with learnable vectors while the entire pre-trained parameters are kept fixed. To handle different image recognition tasks, we provide two implementations of CoOp: unified context and class-specific context. Through extensive experiments on 11 datasets, we demonstrate that CoOp requires as few as one or two shots to beat hand-crafted prompts with a decent margin and is able to gain significant improvements over prompt engineering with more shots, e.g., with 16 shots the average gain is around 15% (with the highest reaching over 45%). Despite being a learning-based approach, CoOp achieves superb domain generalization performance compared with the zero-shot model using hand-crafted prompts.},
+    month={9},
+    year={2021},
+    DOI={10.1007/s11263-022-01653-1}
 }
-@article{yulinwang2021adafocus,
-    title={AdaFocus V2: End-to-End Training of Spatial Dynamic Networks for Video
-  Recognition},
-    url={http://arxiv.org/abs/2112.14238v2},
-    author={Yulin Wang and Yang Yue and Yuanze Lin and Haojun Jiang and Zihang Lai and Victor Kulikov and Nikita Orlov and Humphrey Shi and Gao Huang},
-    abstract={Recent works have shown that the computational efficiency of video recognition can be significantly improved by reducing the spatial redundancy. As a representative work, the adaptive focus method (AdaFocus) has achieved a favorable trade-off between accuracy and inference speed by dynamically identifying and attending to the informative regions in each video frame. However, AdaFocus requires a complicated three-stage training pipeline (involving reinforcement learning), leading to slow convergence and is unfriendly to practitioners. This work reformulates the training of AdaFocus as a simple one-stage algorithm by introducing a differentiable interpolation-based patch selection operation, enabling efficient end-to-end optimization. We further present an improved training scheme to address the issues introduced by the one-stage formulation, including the lack of supervision, input diversity and training stability. Moreover, a conditional-exit technique is proposed to perform temporal adaptive computation on top of AdaFocus without additional training. Extensive experiments on six benchmark datasets (i.e., ActivityNet, FCVID, Mini-Kinetics, Something-Something V1&V2, and Jester) demonstrate that our model significantly outperforms the original AdaFocus and other competitive baselines, while being considerably more simple and efficient to train. Code is available at https://github.com/LeapLabTHU/AdaFocusV2.},
-    month={12},
+@article{mitchellwortsman2021robust,
+    title={Robust fine-tuning of zero-shot models},
+    url={http://arxiv.org/abs/2109.01903v3},
+    author={Mitchell Wortsman and Gabriel Ilharco and Jong Wook Kim and Mike Li and Simon Kornblith and Rebecca Roelofs and Raphael Gontijo-Lopes and Hannaneh Hajishirzi and Ali Farhadi and Hongseok Namkoong and Ludwig Schmidt},
+    abstract={Large pre-trained models such as CLIP or ALIGN offer consistent accuracy across a range of data distributions when performing zero-shot inference (i.e., without fine-tuning on a specific dataset). Although existing fine-tuning methods substantially improve accuracy on a given target distribution, they often reduce robustness to distribution shifts. We address this tension by introducing a simple and effective method for improving robustness while fine-tuning: ensembling the weights of the zero-shot and fine-tuned models (WiSE-FT). Compared to standard fine-tuning, WiSE-FT provides large accuracy improvements under distribution shift, while preserving high accuracy on the target distribution. On ImageNet and five derived distribution shifts, WiSE-FT improves accuracy under distribution shift by 4 to 6 percentage points (pp) over prior work while increasing ImageNet accuracy by 1.6 pp. WiSE-FT achieves similarly large robustness gains (2 to 23 pp) on a diverse set of six further distribution shifts, and accuracy gains of 0.8 to 3.3 pp compared to standard fine-tuning on seven commonly used transfer learning datasets. These improvements come at no additional computational cost during fine-tuning or inference.},
+    month={9},
+    year={2021}
+}
+@article{mengmengwang2021actionclip,
+    title={ActionCLIP: A New Paradigm for Video Action Recognition},
+    url={http://arxiv.org/abs/2109.08472v1},
+    author={Mengmeng Wang and Jiazheng Xing and Yong Liu},
+    abstract={The canonical approach to video action recognition dictates a neural model to do a classic and standard 1-of-N majority vote task. They are trained to predict a fixed set of predefined categories, limiting their transferable ability on new datasets with unseen concepts. In this paper, we provide a new perspective on action recognition by attaching importance to the semantic information of label texts rather than simply mapping them into numbers. Specifically, we model this task as a video-text matching problem within a multimodal learning framework, which strengthens the video representation with more semantic language supervision and enables our model to do zero-shot action recognition without any further labeled data or parameters requirements. Moreover, to handle the deficiency of label texts and make use of tremendous web data, we propose a new paradigm based on this multimodal learning framework for action recognition, which we dub "pre-train, prompt and fine-tune". This paradigm first learns powerful representations from pre-training on a large amount of web image-text or video-text data. Then it makes the action recognition task to act more like pre-training problems via prompt engineering. Finally, it end-to-end fine-tunes on target datasets to obtain strong performance. We give an instantiation of the new paradigm, ActionCLIP, which not only has superior and flexible zero-shot/few-shot transfer ability but also reaches a top performance on general action recognition task, achieving 83.8% top-1 accuracy on Kinetics-400 with a ViT-B/16 as the backbone. Code is available at https://github.com/sallymmx/ActionCLIP.git},
+    month={9},
+    year={2021}
+}
+@article{huxu2021videoclip,
+    title={VideoCLIP: Contrastive Pre-training for Zero-shot Video-Text
+  Understanding},
+    url={http://arxiv.org/abs/2109.14084v2},
+    author={Hu Xu and Gargi Ghosh and Po-Yao Huang and Dmytro Okhonko and Armen Aghajanyan and Florian Metze and Luke Zettlemoyer and Christoph Feichtenhofer},
+    abstract={We present VideoCLIP, a contrastive approach to pre-train a unified model for zero-shot video and text understanding, without using any labels on downstream tasks. VideoCLIP trains a transformer for video and text by contrasting temporally overlapping positive video-text pairs with hard negatives from nearest neighbor retrieval. Our experiments on a diverse series of downstream tasks, including sequence-level text-video retrieval, VideoQA, token-level action localization, and action segmentation reveal state-of-the-art performance, surpassing prior work, and in some cases even outperforming supervised approaches. Code is made available at https://github.com/pytorch/fairseq/tree/main/examples/MMPT.},
+    month={9},
+    year={2021}
+}
+@article{penggao2021clipadapter,
+    title={CLIP-Adapter: Better Vision-Language Models with Feature Adapters},
+    url={http://arxiv.org/abs/2110.04544v1},
+    author={Peng Gao and Shijie Geng and Renrui Zhang and Teli Ma and Rongyao Fang and Yongfeng Zhang and Hongsheng Li and Yu Qiao},
+    abstract={Large-scale contrastive vision-language pre-training has shown significant progress in visual representation learning. Unlike traditional visual systems trained by a fixed set of discrete labels, a new paradigm was introduced in \cite{radford2021learning} to directly learn to align images with raw texts in an open-vocabulary setting. On downstream tasks, a carefully chosen text prompt is employed to make zero-shot predictions.~To avoid non-trivial prompt engineering, context optimization \cite{zhou2021coop} has been proposed to learn continuous vectors as task-specific prompts with few-shot training examples.~In this paper, we show that there is an alternative path to achieve better vision-language models other than prompt tuning.~While prompt tuning is for the textual inputs, we propose CLIP-Adapter to conduct fine-tuning with feature adapters on either visual or language branch. Specifically, CLIP-Adapter adopts an additional bottleneck layer to learn new features and performs residual-style feature blending with the original pre-trained features.~As a consequence, CLIP-Adapter is able to outperform context optimization while maintains a simple design. Experiments and extensive ablation studies on various visual classification tasks demonstrate the effectiveness of our approach.},
+    month={10},
+    year={2021}
+}
+@article{christophschuhmann2021laion400m,
+    title={LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs},
+    url={http://arxiv.org/abs/2111.02114v1},
+    author={Christoph Schuhmann and Richard Vencu and Romain Beaumont and Robert Kaczmarczyk and Clayton Mullis and Aarush Katta and Theo Coombes and Jenia Jitsev and Aran Komatsuzaki},
+    abstract={Multi-modal language-vision models trained on hundreds of millions of image-text pairs (e.g. CLIP, DALL-E) gained a recent surge, showing remarkable capability to perform zero- or few-shot learning and transfer even in absence of per-sample labels on target image data. Despite this trend, to date there has been no publicly available datasets of sufficient scale for training such models from scratch. To address this issue, in a community effort we build and release for public LAION-400M, a dataset with CLIP-filtered 400 million image-text pairs, their CLIP embeddings and kNN indices that allow efficient similarity search.},
+    month={11},
+    year={2021}
+}
+@article{renruizhang2021tipadapter,
+    title={Tip-Adapter: Training-free CLIP-Adapter for Better Vision-Language
+  Modeling},
+    url={http://arxiv.org/abs/2111.03930v2},
+    author={Renrui Zhang and Rongyao Fang and Wei Zhang and Peng Gao and Kunchang Li and Jifeng Dai and Yu Qiao and Hongsheng Li},
+    abstract={Contrastive Vision-Language Pre-training, known as CLIP, has provided a new paradigm for learning visual representations by using large-scale contrastive image-text pairs. It shows impressive performance on zero-shot knowledge transfer to downstream tasks. To further enhance CLIP's few-shot capability, CLIP-Adapter proposed to fine-tune a lightweight residual feature adapter and significantly improves the performance for few-shot classification. However, such a process still needs extra training and computational resources. In this paper, we propose \textbf{T}raining-Free CL\textbf{IP}-\textbf{Adapter} (\textbf{Tip-Adapter}), which not only inherits CLIP's training-free advantage but also performs comparably or even better than CLIP-Adapter. Tip-Adapter does not require any back propagation for training the adapter, but creates the weights by a key-value cache model constructed from the few-shot training set. In this non-parametric manner, Tip-Adapter acquires well-performed adapter weights without any training, which is both efficient and effective. Moreover, the performance of Tip-Adapter can be further boosted by fine-tuning such properly initialized adapter for only a few epochs with super-fast convergence speed. We conduct extensive experiments of few-shot classification on ImageNet and other 10 datasets to demonstrate the superiority of proposed Tip-Adapter. The code will be released at \url{https://github.com/gaopengcuhk/Tip-Adapter}.},
+    month={11},
+    year={2021}
+}
+@article{ronmokady2021clipcap,
+    title={ClipCap: CLIP Prefix for Image Captioning},
+    url={http://arxiv.org/abs/2111.09734v1},
+    author={Ron Mokady and Amir Hertz and Amit H. Bermano},
+    abstract={Image captioning is a fundamental task in vision-language understanding, where the model predicts a textual informative caption to a given input image. In this paper, we present a simple approach to address this task. We use CLIP encoding as a prefix to the caption, by employing a simple mapping network, and then fine-tunes a language model to generate the image captions. The recently proposed CLIP model contains rich semantic features which were trained with textual context, making it best for vision-language perception. Our key idea is that together with a pre-trained language model (GPT2), we obtain a wide understanding of both visual and textual data. Hence, our approach only requires rather quick training to produce a competent captioning model. Without additional annotations or pre-training, it efficiently generates meaningful captions for large-scale and diverse datasets. Surprisingly, our method works well even when only the mapping network is trained, while both CLIP and the language model remain frozen, allowing a lighter architecture with less trainable parameters. Through quantitative evaluation, we demonstrate our model achieves comparable results to state-of-the-art methods on the challenging Conceptual Captions and nocaps datasets, while it is simpler, faster, and lighter. Our code is available in https://github.com/rmokady/CLIP_prefix_caption.},
+    month={11},
     year={2021}
 }
 @article{yanghaoli2021mvitv2,
@@ -184,97 +325,29 @@
     month={12},
     year={2021}
 }
-@article{anuragarnab2021vivit,
-    title={ViViT: A Video Vision Transformer},
-    url={http://arxiv.org/abs/2103.15691v2},
-    author={Anurag Arnab and Mostafa Dehghani and Georg Heigold and Chen Sun and Mario Lučić and Cordelia Schmid},
-    abstract={We present pure-transformer based models for video classification, drawing upon the recent success of such models in image classification. Our model extracts spatio-temporal tokens from the input video, which are then encoded by a series of transformer layers. In order to handle the long sequences of tokens encountered in video, we propose several, efficient variants of our model which factorise the spatial- and temporal-dimensions of the input. Although transformer-based models are known to only be effective when large training datasets are available, we show how we can effectively regularise the model during training and leverage pretrained image models to be able to train on comparatively small datasets. We conduct thorough ablation studies, and achieve state-of-the-art results on multiple video classification benchmarks including Kinetics 400 and 600, Epic Kitchens, Something-Something v2 and Moments in Time, outperforming prior methods based on deep 3D convolutional networks. To facilitate further research, we release code at https://github.com/google-research/scenic/tree/main/scenic/projects/vivit},
-    month={3},
-    year={2021}
-}
-@article{nicolascarion2020endtoend,
-    title={End-to-End Object Detection with Transformers},
-    url={http://arxiv.org/abs/2005.12872v3},
-    author={Nicolas Carion and Francisco Massa and Gabriel Synnaeve and Nicolas Usunier and Alexander Kirillov and Sergey Zagoruyko},
-    abstract={We present a new method that views object detection as a direct set prediction problem. Our approach streamlines the detection pipeline, effectively removing the need for many hand-designed components like a non-maximum suppression procedure or anchor generation that explicitly encode our prior knowledge about the task. The main ingredients of the new framework, called DEtection TRansformer or DETR, are a set-based global loss that forces unique predictions via bipartite matching, and a transformer encoder-decoder architecture. Given a fixed small set of learned object queries, DETR reasons about the relations of the objects and the global image context to directly output the final set of predictions in parallel. The new model is conceptually simple and does not require a specialized library, unlike many other modern detectors. DETR demonstrates accuracy and run-time performance on par with the well-established and highly-optimized Faster RCNN baseline on the challenging COCO object detection dataset. Moreover, DETR can be easily generalized to produce panoptic segmentation in a unified manner. We show that it significantly outperforms competitive baselines. Training code and pretrained models are available at https://github.com/facebookresearch/detr.},
-    month={5},
-    year={2020}
-}
-@article{huxu2021videoclip,
-    title={VideoCLIP: Contrastive Pre-training for Zero-shot Video-Text
-  Understanding},
-    url={http://arxiv.org/abs/2109.14084v2},
-    author={Hu Xu and Gargi Ghosh and Po-Yao Huang and Dmytro Okhonko and Armen Aghajanyan and Florian Metze and Luke Zettlemoyer and Christoph Feichtenhofer},
-    abstract={We present VideoCLIP, a contrastive approach to pre-train a unified model for zero-shot video and text understanding, without using any labels on downstream tasks. VideoCLIP trains a transformer for video and text by contrasting temporally overlapping positive video-text pairs with hard negatives from nearest neighbor retrieval. Our experiments on a diverse series of downstream tasks, including sequence-level text-video retrieval, VideoQA, token-level action localization, and action segmentation reveal state-of-the-art performance, surpassing prior work, and in some cases even outperforming supervised approaches. Code is made available at https://github.com/pytorch/fairseq/tree/main/examples/MMPT.},
-    month={9},
-    year={2021}
-}
-@article{bolinni2022expanding,
-    title={Expanding Language-Image Pretrained Models for General Video Recognition},
-    url={http://arxiv.org/abs/2208.02816v1},
-    author={Bolin Ni and Houwen Peng and Minghao Chen and Songyang Zhang and Gaofeng Meng and Jianlong Fu and Shiming Xiang and Haibin Ling},
-    abstract={Contrastive language-image pretraining has shown great success in learning visual-textual joint representation from web-scale data, demonstrating remarkable "zero-shot" generalization ability for various image tasks. However, how to effectively expand such new language-image pretraining methods to video domains is still an open problem. In this work, we present a simple yet effective approach that adapts the pretrained language-image models to video recognition directly, instead of pretraining a new model from scratch. More concretely, to capture the long-range dependencies of frames along the temporal dimension, we propose a cross-frame attention mechanism that explicitly exchanges information across frames. Such module is lightweight and can be plugged into pretrained language-image models seamlessly. Moreover, we propose a video-specific prompting scheme, which leverages video content information for generating discriminative textual prompts. Extensive experiments demonstrate that our approach is effective and can be generalized to different video recognition scenarios. In particular, under fully-supervised settings, our approach achieves a top-1 accuracy of 87.1% on Kinectics-400, while using 12 times fewer FLOPs compared with Swin-L and ViViT-H. In zero-shot experiments, our approach surpasses the current state-of-the-art methods by +7.6% and +14.9% in terms of top-1 accuracy under two popular protocols. In few-shot scenarios, our approach outperforms previous best methods by +32.1% and +23.1% when the labeled data is extremely limited. Code and models are available at https://aka.ms/X-CLIP},
-    month={8},
-    year={2022}
-}
-@article{yuyingge2022bridging,
-    title={Bridging Video-text Retrieval with Multiple Choice Questions},
-    url={http://arxiv.org/abs/2201.04850v2},
-    author={Yuying Ge and Yixiao Ge and Xihui Liu and Dian Li and Ying Shan and Xiaohu Qie and Ping Luo},
-    abstract={Pre-training a model to learn transferable video-text representation for retrieval has attracted a lot of attention in recent years. Previous dominant works mainly adopt two separate encoders for efficient retrieval, but ignore local associations between videos and texts. Another line of research uses a joint encoder to interact video with texts, but results in low efficiency since each text-video pair needs to be fed into the model. In this work, we enable fine-grained video-text interactions while maintaining high efficiency for retrieval via a novel pretext task, dubbed as Multiple Choice Questions (MCQ), where a parametric module BridgeFormer is trained to answer the "questions" constructed by the text features via resorting to the video features. Specifically, we exploit the rich semantics of text (i.e., nouns and verbs) to build questions, with which the video encoder can be trained to capture more regional content and temporal dynamics. In the form of questions and answers, the semantic associations between local video-text features can be properly established. BridgeFormer is able to be removed for downstream retrieval, rendering an efficient and flexible model with only two encoders. Our method outperforms state-of-the-art methods on the popular text-to-video retrieval task in five datasets with different experimental setups (i.e., zero-shot and fine-tune), including HowTo100M (one million videos). We further conduct zero-shot action recognition, which can be cast as video-to-text retrieval, and our approach also significantly surpasses its counterparts. As an additional benefit, our method achieves competitive results with much shorter pre-training videos on single-modality downstream tasks, e.g., action recognition with linear evaluation.},
-    month={1},
-    year={2022}
-}
-@article{wenhaowu2022revisiting,
-    title={Revisiting Classifier: Transferring Vision-Language Models for Video
-  Recognition},
-    url={http://arxiv.org/abs/2207.01297v4},
-    author={Wenhao Wu and Zhun Sun and Wanli Ouyang},
-    abstract={Transferring knowledge from task-agnostic pre-trained deep models for downstream tasks is an important topic in computer vision research. Along with the growth of computational capacity, we now have open-source vision-language pre-trained models in large scales of the model architecture and amount of data. In this study, we focus on transferring knowledge for video classification tasks. Conventional methods randomly initialize the linear classifier head for vision classification, but they leave the usage of the text encoder for downstream visual recognition tasks undiscovered. In this paper, we revise the role of the linear classifier and replace the classifier with the different knowledge from pre-trained model. We utilize the well-pretrained language model to generate good semantic target for efficient transferring learning. The empirical study shows that our method improves both the performance and the training speed of video classification, with a negligible change in the model. Our simple yet effective tuning paradigm achieves state-of-the-art performance and efficient training on various video recognition scenarios, i.e., zero-shot, few-shot, general recognition. In particular, our paradigm achieves the state-of-the-art accuracy of 87.8% on Kinetics-400, and also surpasses previous methods by 20~50% absolute top-1 accuracy under zero-shot, few-shot settings on five popular video datasets. Code and models can be found at https://github.com/whwu95/Text4Vis .},
-    month={7},
-    year={2022}
-}
-@article{wenhaowu2022bidirectional,
-    title={Bidirectional Cross-Modal Knowledge Exploration for Video Recognition
-  with Pre-trained Vision-Language Models},
-    url={http://arxiv.org/abs/2301.00182v2},
-    author={Wenhao Wu and Xiaohan Wang and Haipeng Luo and Jingdong Wang and Yi Yang and Wanli Ouyang},
-    abstract={Vision-language models (VLMs) pre-trained on large-scale image-text pairs have demonstrated impressive transferability on various visual tasks. Transferring knowledge from such powerful VLMs is a promising direction for building effective video recognition models. However, current exploration in this field is still limited. We believe that the greatest value of pre-trained VLMs lies in building a bridge between visual and textual domains. In this paper, we propose a novel framework called BIKE, which utilizes the cross-modal bridge to explore bidirectional knowledge: i) We introduce the Video Attribute Association mechanism, which leverages the Video-to-Text knowledge to generate textual auxiliary attributes for complementing video recognition. ii) We also present a Temporal Concept Spotting mechanism that uses the Text-to-Video expertise to capture temporal saliency in a parameter-free manner, leading to enhanced video representation. Extensive studies on six popular video datasets, including Kinetics-400 & 600, UCF-101, HMDB-51, ActivityNet and Charades, show that our method achieves state-of-the-art performance in various recognition scenarios, such as general, zero-shot, and few-shot video recognition. Our best model achieves a state-of-the-art accuracy of 88.6% on the challenging Kinetics-400 using the released CLIP model. The code is available at https://github.com/whwu95/BIKE .},
+@article{renruizhang2021pointclip,
+    title={PointCLIP: Point Cloud Understanding by CLIP},
+    url={http://arxiv.org/abs/2112.02413v1},
+    author={Renrui Zhang and Ziyu Guo and Wei Zhang and Kunchang Li and Xupeng Miao and Bin Cui and Yu Qiao and Peng Gao and Hongsheng Li},
+    abstract={Recently, zero-shot and few-shot learning via Contrastive Vision-Language Pre-training (CLIP) have shown inspirational performance on 2D visual recognition, which learns to match images with their corresponding texts in open-vocabulary settings. However, it remains under explored that whether CLIP, pre-trained by large-scale image-text pairs in 2D, can be generalized to 3D recognition. In this paper, we identify such a setting is feasible by proposing PointCLIP, which conducts alignment between CLIP-encoded point cloud and 3D category texts. Specifically, we encode a point cloud by projecting it into multi-view depth maps without rendering, and aggregate the view-wise zero-shot prediction to achieve knowledge transfer from 2D to 3D. On top of that, we design an inter-view adapter to better extract the global feature and adaptively fuse the few-shot knowledge learned from 3D into CLIP pre-trained in 2D. By just fine-tuning the lightweight adapter in the few-shot settings, the performance of PointCLIP could be largely improved. In addition, we observe the complementary property between PointCLIP and classical 3D-supervised networks. By simple ensembling, PointCLIP boosts baseline's performance and even surpasses state-of-the-art models. Therefore, PointCLIP is a promising alternative for effective 3D point cloud understanding via CLIP under low resource cost and data regime. We conduct thorough experiments on widely-adopted ModelNet10, ModelNet40 and the challenging ScanObjectNN to demonstrate the effectiveness of PointCLIP. The code is released at https://github.com/ZrrSkywalker/PointCLIP.},
     month={12},
-    year={2022}
-}
-@article{jaemincho2022finegrained,
-    title={Fine-grained Image Captioning with CLIP Reward},
-    url={http://arxiv.org/abs/2205.13115v1},
-    author={Jaemin Cho and Seunghyun Yoon and Ajinkya Kale and Franck Dernoncourt and Trung Bui and Mohit Bansal},
-    abstract={Modern image captioning models are usually trained with text similarity objectives. However, since reference captions in public datasets often describe the most salient common objects, models trained with text similarity objectives tend to ignore specific and detailed aspects of an image that distinguish it from others. Toward more descriptive and distinctive caption generation, we propose using CLIP, a multimodal encoder trained on huge image-text pairs from web, to calculate multimodal similarity and use it as a reward function. We also propose a simple finetuning strategy of the CLIP text encoder to improve grammar that does not require extra text annotation. This completely eliminates the need for reference captions during the reward computation. To comprehensively evaluate descriptive captions, we introduce FineCapEval, a new dataset for caption evaluation with fine-grained criteria: overall, background, object, relations. In our experiments on text-to-image retrieval and FineCapEval, the proposed CLIP-guided model generates more distinctive captions than the CIDEr-optimized model. We also show that our unsupervised grammar finetuning of the CLIP text encoder alleviates the degeneration problem of the naive CLIP reward. Lastly, we show human analysis where the annotators strongly prefer the CLIP reward to the CIDEr and MLE objectives according to various criteria. Code and Data: https://github.com/j-min/CLIP-Caption-Reward},
-    month={5},
-    year={2022}
-}
-@article{ronmokady2021clipcap,
-    title={ClipCap: CLIP Prefix for Image Captioning},
-    url={http://arxiv.org/abs/2111.09734v1},
-    author={Ron Mokady and Amir Hertz and Amit H. Bermano},
-    abstract={Image captioning is a fundamental task in vision-language understanding, where the model predicts a textual informative caption to a given input image. In this paper, we present a simple approach to address this task. We use CLIP encoding as a prefix to the caption, by employing a simple mapping network, and then fine-tunes a language model to generate the image captions. The recently proposed CLIP model contains rich semantic features which were trained with textual context, making it best for vision-language perception. Our key idea is that together with a pre-trained language model (GPT2), we obtain a wide understanding of both visual and textual data. Hence, our approach only requires rather quick training to produce a competent captioning model. Without additional annotations or pre-training, it efficiently generates meaningful captions for large-scale and diverse datasets. Surprisingly, our method works well even when only the mapping network is trained, while both CLIP and the language model remain frozen, allowing a lighter architecture with less trainable parameters. Through quantitative evaluation, we demonstrate our model achieves comparable results to state-of-the-art methods on the challenging Conceptual Captions and nocaps datasets, while it is simpler, faster, and lighter. Our code is available in https://github.com/rmokady/CLIP_prefix_caption.},
-    month={11},
     year={2021}
 }
-@article{junnanli2022blip,
-    title={BLIP: Bootstrapping Language-Image Pre-training for Unified
-  Vision-Language Understanding and Generation},
-    url={http://arxiv.org/abs/2201.12086v2},
-    author={Junnan Li and Dongxu Li and Caiming Xiong and Steven Hoi},
-    abstract={Vision-Language Pre-training (VLP) has advanced the performance for many vision-language tasks. However, most existing pre-trained models only excel in either understanding-based tasks or generation-based tasks. Furthermore, performance improvement has been largely achieved by scaling up the dataset with noisy image-text pairs collected from the web, which is a suboptimal source of supervision. In this paper, we propose BLIP, a new VLP framework which transfers flexibly to both vision-language understanding and generation tasks. BLIP effectively utilizes the noisy web data by bootstrapping the captions, where a captioner generates synthetic captions and a filter removes the noisy ones. We achieve state-of-the-art results on a wide range of vision-language tasks, such as image-text retrieval (+2.7% in average recall@1), image captioning (+2.8% in CIDEr), and VQA (+1.6% in VQA score). BLIP also demonstrates strong generalization ability when directly transferred to video-language tasks in a zero-shot manner. Code, models, and datasets are released at https://github.com/salesforce/BLIP.},
-    month={1},
-    year={2022}
+@article{normanmu2021slip,
+    title={SLIP: Self-supervision meets Language-Image Pre-training},
+    url={http://arxiv.org/abs/2112.12750v1},
+    author={Norman Mu and Alexander Kirillov and David Wagner and Saining Xie},
+    abstract={Recent work has shown that self-supervised pre-training leads to improvements over supervised learning on challenging visual recognition tasks. CLIP, an exciting new approach to learning with language supervision, demonstrates promising performance on a wide variety of benchmarks. In this work, we explore whether self-supervised learning can aid in the use of language supervision for visual representation learning. We introduce SLIP, a multi-task learning framework for combining self-supervised learning and CLIP pre-training. After pre-training with Vision Transformers, we thoroughly evaluate representation quality and compare performance to both CLIP and self-supervised learning under three distinct settings: zero-shot transfer, linear classification, and end-to-end finetuning. Across ImageNet and a battery of additional datasets, we find that SLIP improves accuracy by a large margin. We validate our results further with experiments on different model sizes, training schedules, and pre-training datasets. Our findings show that SLIP enjoys the best of both worlds: better performance than self-supervision (+8.1% linear accuracy) and language supervision (+5.2% zero-shot accuracy).},
+    month={12},
+    year={2021}
 }
-@article{xiuyegu2021openvocabulary,
-    title={Open-vocabulary Object Detection via Vision and Language Knowledge
-  Distillation},
-    url={http://arxiv.org/abs/2104.13921v3},
-    author={Xiuye Gu and Tsung-Yi Lin and Weicheng Kuo and Yin Cui},
-    abstract={We aim at advancing open-vocabulary object detection, which detects objects described by arbitrary text inputs. The fundamental challenge is the availability of training data. It is costly to further scale up the number of classes contained in existing object detection datasets. To overcome this challenge, we propose ViLD, a training method via Vision and Language knowledge Distillation. Our method distills the knowledge from a pretrained open-vocabulary image classification model (teacher) into a two-stage detector (student). Specifically, we use the teacher model to encode category texts and image regions of object proposals. Then we train a student detector, whose region embeddings of detected boxes are aligned with the text and image embeddings inferred by the teacher. We benchmark on LVIS by holding out all rare categories as novel categories that are not seen during training. ViLD obtains 16.1 mask AP$_r$ with a ResNet-50 backbone, even outperforming the supervised counterpart by 3.8. When trained with a stronger teacher model ALIGN, ViLD achieves 26.3 AP$_r$. The model can directly transfer to other datasets without finetuning, achieving 72.2 AP$_{50}$ on PASCAL VOC, 36.6 AP on COCO and 11.8 AP on Objects365. On COCO, ViLD outperforms the previous state-of-the-art by 4.8 on novel AP and 11.4 on overall AP. Code and demo are open-sourced at https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild.},
-    month={4},
+@article{yulinwang2021adafocus,
+    title={AdaFocus V2: End-to-End Training of Spatial Dynamic Networks for Video
+  Recognition},
+    url={http://arxiv.org/abs/2112.14238v2},
+    author={Yulin Wang and Yang Yue and Yuanze Lin and Haojun Jiang and Zihang Lai and Victor Kulikov and Nikita Orlov and Humphrey Shi and Gao Huang},
+    abstract={Recent works have shown that the computational efficiency of video recognition can be significantly improved by reducing the spatial redundancy. As a representative work, the adaptive focus method (AdaFocus) has achieved a favorable trade-off between accuracy and inference speed by dynamically identifying and attending to the informative regions in each video frame. However, AdaFocus requires a complicated three-stage training pipeline (involving reinforcement learning), leading to slow convergence and is unfriendly to practitioners. This work reformulates the training of AdaFocus as a simple one-stage algorithm by introducing a differentiable interpolation-based patch selection operation, enabling efficient end-to-end optimization. We further present an improved training scheme to address the issues introduced by the one-stage formulation, including the lack of supervision, input diversity and training stability. Moreover, a conditional-exit technique is proposed to perform temporal adaptive computation on top of AdaFocus without additional training. Extensive experiments on six benchmark datasets (i.e., ActivityNet, FCVID, Mini-Kinetics, Something-Something V1&V2, and Jester) demonstrate that our model significantly outperforms the original AdaFocus and other competitive baselines, while being considerably more simple and efficient to train. Code is available at https://github.com/LeapLabTHU/AdaFocusV2.},
+    month={12},
     year={2021}
 }
 @article{xingyizhou2022detecting,
@@ -282,6 +355,14 @@
     url={http://arxiv.org/abs/2201.02605v3},
     author={Xingyi Zhou and Rohit Girdhar and Armand Joulin and Philipp Krähenbühl and Ishan Misra},
     abstract={Current object detectors are limited in vocabulary size due to the small scale of detection datasets. Image classifiers, on the other hand, reason about much larger vocabularies, as their datasets are larger and easier to collect. We propose Detic, which simply trains the classifiers of a detector on image classification data and thus expands the vocabulary of detectors to tens of thousands of concepts. Unlike prior work, Detic does not need complex assignment schemes to assign image labels to boxes based on model predictions, making it much easier to implement and compatible with a range of detection architectures and backbones. Our results show that Detic yields excellent detectors even for classes without box annotations. It outperforms prior work on both open-vocabulary and long-tail detection benchmarks. Detic provides a gain of 2.4 mAP for all classes and 8.3 mAP for novel classes on the open-vocabulary LVIS benchmark. On the standard LVIS benchmark, Detic obtains 41.7 mAP when evaluated on all classes, or only rare classes, hence closing the gap in performance for object categories with few samples. For the first time, we train a detector with all the twenty-one-thousand classes of the ImageNet dataset and show that it generalizes to new datasets without finetuning. Code is available at \url{https://github.com/facebookresearch/Detic}.},
+    month={1},
+    year={2022}
+}
+@article{yuyingge2022bridging,
+    title={Bridging Video-text Retrieval with Multiple Choice Questions},
+    url={http://arxiv.org/abs/2201.04850v2},
+    author={Yuying Ge and Yixiao Ge and Xihui Liu and Dian Li and Ying Shan and Xiaohu Qie and Ping Luo},
+    abstract={Pre-training a model to learn transferable video-text representation for retrieval has attracted a lot of attention in recent years. Previous dominant works mainly adopt two separate encoders for efficient retrieval, but ignore local associations between videos and texts. Another line of research uses a joint encoder to interact video with texts, but results in low efficiency since each text-video pair needs to be fed into the model. In this work, we enable fine-grained video-text interactions while maintaining high efficiency for retrieval via a novel pretext task, dubbed as Multiple Choice Questions (MCQ), where a parametric module BridgeFormer is trained to answer the "questions" constructed by the text features via resorting to the video features. Specifically, we exploit the rich semantics of text (i.e., nouns and verbs) to build questions, with which the video encoder can be trained to capture more regional content and temporal dynamics. In the form of questions and answers, the semantic associations between local video-text features can be properly established. BridgeFormer is able to be removed for downstream retrieval, rendering an efficient and flexible model with only two encoders. Our method outperforms state-of-the-art methods on the popular text-to-video retrieval task in five datasets with different experimental setups (i.e., zero-shot and fine-tune), including HowTo100M (one million videos). We further conduct zero-shot action recognition, which can be cast as video-to-text retrieval, and our approach also significantly surpasses its counterparts. As an additional benefit, our method achieves competitive results with much shorter pre-training videos on single-modality downstream tasks, e.g., action recognition with linear evaluation.},
     month={1},
     year={2022}
 }
@@ -293,13 +374,30 @@
     month={1},
     year={2022}
 }
-@article{normanmu2021slip,
-    title={SLIP: Self-supervision meets Language-Image Pre-training},
-    url={http://arxiv.org/abs/2112.12750v1},
-    author={Norman Mu and Alexander Kirillov and David Wagner and Saining Xie},
-    abstract={Recent work has shown that self-supervised pre-training leads to improvements over supervised learning on challenging visual recognition tasks. CLIP, an exciting new approach to learning with language supervision, demonstrates promising performance on a wide variety of benchmarks. In this work, we explore whether self-supervised learning can aid in the use of language supervision for visual representation learning. We introduce SLIP, a multi-task learning framework for combining self-supervised learning and CLIP pre-training. After pre-training with Vision Transformers, we thoroughly evaluate representation quality and compare performance to both CLIP and self-supervised learning under three distinct settings: zero-shot transfer, linear classification, and end-to-end finetuning. Across ImageNet and a battery of additional datasets, we find that SLIP improves accuracy by a large margin. We validate our results further with experiments on different model sizes, training schedules, and pre-training datasets. Our findings show that SLIP enjoys the best of both worlds: better performance than self-supervision (+8.1% linear accuracy) and language supervision (+5.2% zero-shot accuracy).},
-    month={12},
-    year={2021}
+@article{junnanli2022blip,
+    title={BLIP: Bootstrapping Language-Image Pre-training for Unified
+  Vision-Language Understanding and Generation},
+    url={http://arxiv.org/abs/2201.12086v2},
+    author={Junnan Li and Dongxu Li and Caiming Xiong and Steven Hoi},
+    abstract={Vision-Language Pre-training (VLP) has advanced the performance for many vision-language tasks. However, most existing pre-trained models only excel in either understanding-based tasks or generation-based tasks. Furthermore, performance improvement has been largely achieved by scaling up the dataset with noisy image-text pairs collected from the web, which is a suboptimal source of supervision. In this paper, we propose BLIP, a new VLP framework which transfers flexibly to both vision-language understanding and generation tasks. BLIP effectively utilizes the noisy web data by bootstrapping the captions, where a captioner generates synthetic captions and a filter removes the noisy ones. We achieve state-of-the-art results on a wide range of vision-language tasks, such as image-text retrieval (+2.7% in average recall@1), image captioning (+2.8% in CIDEr), and VQA (+1.6% in VQA score). BLIP also demonstrates strong generalization ability when directly transferred to video-language tasks in a zero-shot manner. Code, models, and datasets are released at https://github.com/salesforce/BLIP.},
+    month={1},
+    year={2022}
+}
+@article{kaiyangzhou2022conditional,
+    title={Conditional Prompt Learning for Vision-Language Models},
+    url={http://arxiv.org/abs/2203.05557v2},
+    author={Kaiyang Zhou and Jingkang Yang and Chen Change Loy and Ziwei Liu},
+    abstract={With the rise of powerful pre-trained vision-language models like CLIP, it becomes essential to investigate ways to adapt these models to downstream datasets. A recently proposed method named Context Optimization (CoOp) introduces the concept of prompt learning -- a recent trend in NLP -- to the vision domain for adapting pre-trained vision-language models. Specifically, CoOp turns context words in a prompt into a set of learnable vectors and, with only a few labeled images for learning, can achieve huge improvements over intensively-tuned manual prompts. In our study we identify a critical problem of CoOp: the learned context is not generalizable to wider unseen classes within the same dataset, suggesting that CoOp overfits base classes observed during training. To address the problem, we propose Conditional Context Optimization (CoCoOp), which extends CoOp by further learning a lightweight neural network to generate for each image an input-conditional token (vector). Compared to CoOp's static prompts, our dynamic prompts adapt to each instance and are thus less sensitive to class shift. Extensive experiments show that CoCoOp generalizes much better than CoOp to unseen classes, even showing promising transferability beyond a single dataset; and yields stronger domain generalization performance as well. Code is available at https://github.com/KaiyangZhou/CoOp.},
+    month={3},
+    year={2022}
+}
+@article{qiangwang2022disentangled,
+    title={Disentangled Representation Learning for Text-Video Retrieval},
+    url={http://arxiv.org/abs/2203.07111v1},
+    author={Qiang Wang and Yanhao Zhang and Yun Zheng and Pan Pan and Xian-Sheng Hua},
+    abstract={Cross-modality interaction is a critical component in Text-Video Retrieval (TVR), yet there has been little examination of how different influencing factors for computing interaction affect performance. This paper first studies the interaction paradigm in depth, where we find that its computation can be split into two terms, the interaction contents at different granularity and the matching function to distinguish pairs with the same semantics. We also observe that the single-vector representation and implicit intensive function substantially hinder the optimization. Based on these findings, we propose a disentangled framework to capture a sequential and hierarchical representation. Firstly, considering the natural sequential structure in both text and video inputs, a Weighted Token-wise Interaction (WTI) module is performed to decouple the content and adaptively exploit the pair-wise correlations. This interaction can form a better disentangled manifold for sequential inputs. Secondly, we introduce a Channel DeCorrelation Regularization (CDCR) to minimize the redundancy between the components of the compared vectors, which facilitate learning a hierarchical representation. We demonstrate the effectiveness of the disentangled representation on various benchmarks, e.g., surpassing CLIP4Clip largely by +2.9%, +3.1%, +7.9%, +2.3%, +2.8% and +6.5% R@1 on the MSR-VTT, MSVD, VATEX, LSMDC, AcitivityNet, and DiDeMo, respectively.},
+    month={3},
+    year={2022}
 }
 @article{sanjaysubramanian2022reclip,
     title={ReCLIP: A Strong Zero-Shot Baseline for Referring Expression
@@ -310,195 +408,47 @@
     month={4},
     year={2022}
 }
-@article{dankondratyuk2021movinets,
-    title={MoViNets: Mobile Video Networks for Efficient Video Recognition},
-    url={http://arxiv.org/abs/2103.11511v2},
-    author={Dan Kondratyuk and Liangzhe Yuan and Yandong Li and Li Zhang and Mingxing Tan and Matthew Brown and Boqing Gong},
-    abstract={We present Mobile Video Networks (MoViNets), a family of computation and memory efficient video networks that can operate on streaming video for online inference. 3D convolutional neural networks (CNNs) are accurate at video recognition but require large computation and memory budgets and do not support online inference, making them difficult to work on mobile devices. We propose a three-step approach to improve computational efficiency while substantially reducing the peak memory usage of 3D CNNs. First, we design a video network search space and employ neural architecture search to generate efficient and diverse 3D CNN architectures. Second, we introduce the Stream Buffer technique that decouples memory from video clip duration, allowing 3D CNNs to embed arbitrary-length streaming video sequences for both training and inference with a small constant memory footprint. Third, we propose a simple ensembling technique to improve accuracy further without sacrificing efficiency. These three progressive techniques allow MoViNets to achieve state-of-the-art accuracy and efficiency on the Kinetics, Moments in Time, and Charades video action recognition datasets. For instance, MoViNet-A5-Stream achieves the same accuracy as X3D-XL on Kinetics 600 while requiring 80% fewer FLOPs and 65% less memory. Code will be made available at https://github.com/tensorflow/models/tree/master/official/vision.},
-    month={3},
-    year={2021}
+@article{shuaizhao2022centerclip,
+    title={CenterCLIP: Token Clustering for Efficient Text-Video Retrieval},
+    url={http://arxiv.org/abs/2205.00823v1},
+    author={Shuai Zhao and Linchao Zhu and Xiaohan Wang and Yi Yang},
+    abstract={Recently, large-scale pre-training methods like CLIP have made great progress in multi-modal research such as text-video retrieval. In CLIP, transformers are vital for modeling complex multi-modal relations. However, in the vision transformer of CLIP, the essential visual tokenization process, which produces discrete visual token sequences, generates many homogeneous tokens due to the redundancy nature of consecutive and similar frames in videos. This significantly increases computation costs and hinders the deployment of video retrieval models in web applications. In this paper, to reduce the number of redundant video tokens, we design a multi-segment token clustering algorithm to find the most representative tokens and drop the non-essential ones. As the frame redundancy occurs mostly in consecutive frames, we divide videos into multiple segments and conduct segment-level clustering. Center tokens from each segment are later concatenated into a new sequence, while their original spatial-temporal relations are well maintained. We instantiate two clustering algorithms to efficiently find deterministic medoids and iteratively partition groups in high dimensional space. Through this token clustering and center selection procedure, we successfully reduce computation costs by removing redundant visual tokens. This method further enhances segment-level semantic alignment between video and text representations, enforcing the spatio-temporal interactions of tokens from within-segment frames. Our method, coined as CenterCLIP, surpasses existing state-of-the-art by a large margin on typical text-video benchmarks, while reducing the training memory cost by 35\% and accelerating the inference speed by 14\% at the best case. The code is available at \href{{https://github.com/mzhaoshuai/CenterCLIP}}{{https://github.com/mzhaoshuai/CenterCLIP}}.},
+    month={5},
+    year={2022},
+    DOI={10.1145/3477495.3531950}
 }
-@article{fabiopetroni2019language,
-    title={Language Models as Knowledge Bases?},
-    url={http://arxiv.org/abs/1909.01066v2},
-    author={Fabio Petroni and Tim Rocktäschel and Patrick Lewis and Anton Bakhtin and Yuxiang Wu and Alexander H. Miller and Sebastian Riedel},
-    abstract={Recent progress in pretraining language models on large textual corpora led to a surge of improvements for downstream NLP tasks. Whilst learning linguistic knowledge, these models may also be storing relational knowledge present in the training data, and may be able to answer queries structured as "fill-in-the-blank" cloze statements. Language models have many advantages over structured knowledge bases: they require no schema engineering, allow practitioners to query about an open class of relations, are easy to extend to more data, and require no human supervision to train. We present an in-depth analysis of the relational knowledge already present (without fine-tuning) in a wide range of state-of-the-art pretrained language models. We find that (i) without fine-tuning, BERT contains relational knowledge competitive with traditional NLP methods that have some access to oracle knowledge, (ii) BERT also does remarkably well on open-domain question answering against a supervised baseline, and (iii) certain types of factual knowledge are learned much more readily than others by standard language model pretraining approaches. The surprisingly strong ability of these models to recall factual knowledge without any fine-tuning demonstrates their potential as unsupervised open-domain QA systems. The code to reproduce our analysis is available at https://github.com/facebookresearch/LAMA.},
-    month={9},
-    year={2019}
+@article{jaemincho2022finegrained,
+    title={Fine-grained Image Captioning with CLIP Reward},
+    url={http://arxiv.org/abs/2205.13115v1},
+    author={Jaemin Cho and Seunghyun Yoon and Ajinkya Kale and Franck Dernoncourt and Trung Bui and Mohit Bansal},
+    abstract={Modern image captioning models are usually trained with text similarity objectives. However, since reference captions in public datasets often describe the most salient common objects, models trained with text similarity objectives tend to ignore specific and detailed aspects of an image that distinguish it from others. Toward more descriptive and distinctive caption generation, we propose using CLIP, a multimodal encoder trained on huge image-text pairs from web, to calculate multimodal similarity and use it as a reward function. We also propose a simple finetuning strategy of the CLIP text encoder to improve grammar that does not require extra text annotation. This completely eliminates the need for reference captions during the reward computation. To comprehensively evaluate descriptive captions, we introduce FineCapEval, a new dataset for caption evaluation with fine-grained criteria: overall, background, object, relations. In our experiments on text-to-image retrieval and FineCapEval, the proposed CLIP-guided model generates more distinctive captions than the CIDEr-optimized model. We also show that our unsupervised grammar finetuning of the CLIP text encoder alleviates the degeneration problem of the naive CLIP reward. Lastly, we show human analysis where the annotators strongly prefer the CLIP reward to the CIDEr and MLE objectives according to various criteria. Code and Data: https://github.com/j-min/CLIP-Caption-Reward},
+    month={5},
+    year={2022}
 }
-@article{norakassner2019negated,
-    title={Negated and Misprimed Probes for Pretrained Language Models: Birds Can
-  Talk, But Cannot Fly},
-    url={http://arxiv.org/abs/1911.03343v3},
-    author={Nora Kassner and Hinrich Schütze},
-    abstract={Building on Petroni et al. (2019), we propose two new probing tasks analyzing factual knowledge stored in Pretrained Language Models (PLMs). (1) Negation. We find that PLMs do not distinguish between negated ("Birds cannot [MASK]") and non-negated ("Birds can [MASK]") cloze questions. (2) Mispriming. Inspired by priming methods in human psychology, we add "misprimes" to cloze questions ("Talk? Birds can [MASK]"). We find that PLMs are easily distracted by misprimes. These results suggest that PLMs still have a long way to go to adequately learn human-like factual knowledge.},
-    month={11},
-    year={2019}
+@article{shashankgoel2022cyclip,
+    title={CyCLIP: Cyclic Contrastive Language-Image Pretraining},
+    url={http://arxiv.org/abs/2205.14459v2},
+    author={Shashank Goel and Hritik Bansal and Sumit Bhatia and Ryan A. Rossi and Vishwa Vinay and Aditya Grover},
+    abstract={Recent advances in contrastive representation learning over paired image-text data have led to models such as CLIP that achieve state-of-the-art performance for zero-shot classification and distributional robustness. Such models typically require joint reasoning in the image and text representation spaces for downstream inference tasks. Contrary to prior beliefs, we demonstrate that the image and text representations learned via a standard contrastive objective are not interchangeable and can lead to inconsistent downstream predictions. To mitigate this issue, we formalize consistency and propose CyCLIP, a framework for contrastive representation learning that explicitly optimizes for the learned representations to be geometrically consistent in the image and text space. In particular, we show that consistent representations can be learned by explicitly symmetrizing (a) the similarity between the two mismatched image-text pairs (cross-modal consistency); and (b) the similarity between the image-image pair and the text-text pair (in-modal consistency). Empirically, we show that the improved consistency in CyCLIP translates to significant gains over CLIP, with gains ranging from 10%-24% for zero-shot classification accuracy on standard benchmarks (CIFAR-10, CIFAR-100, ImageNet1K) and 10%-27% for robustness to various natural distribution shifts. The code is available at https://github.com/goel-shashank/CyCLIP.},
+    month={5},
+    year={2022}
 }
-@article{taylorshin2020autoprompt,
-    title={AutoPrompt: Eliciting Knowledge from Language Models with Automatically
-  Generated Prompts},
-    url={http://arxiv.org/abs/2010.15980v2},
-    author={Taylor Shin and Yasaman Razeghi and Robert L. Logan IV and Eric Wallace and Sameer Singh},
-    abstract={The remarkable success of pretrained language models has motivated the study of what kinds of knowledge these models learn during pretraining. Reformulating tasks as fill-in-the-blanks problems (e.g., cloze tests) is a natural approach for gauging such knowledge, however, its usage is limited by the manual effort and guesswork required to write suitable prompts. To address this, we develop AutoPrompt, an automated method to create prompts for a diverse set of tasks, based on a gradient-guided search. Using AutoPrompt, we show that masked language models (MLMs) have an inherent capability to perform sentiment analysis and natural language inference without additional parameters or finetuning, sometimes achieving performance on par with recent state-of-the-art supervised models. We also show that our prompts elicit more accurate factual knowledge from MLMs than the manually created prompts on the LAMA benchmark, and that MLMs can be used as relation extractors more effectively than supervised relation extraction models. These results demonstrate that automatically generated prompts are a viable parameter-free alternative to existing probing methods, and as pretrained LMs become more sophisticated and capable, potentially a replacement for finetuning.},
-    month={10},
-    year={2020}
-}
-@article{kaiminghe2015deep,
-    title={Deep Residual Learning for Image Recognition},
-    url={http://arxiv.org/abs/1512.03385v1},
-    author={Kaiming He and Xiangyu Zhang and Shaoqing Ren and Jian Sun},
-    abstract={Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers---8x deeper than VGG nets but still having lower complexity. An ensemble of these residual nets achieves 3.57% error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers.   The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 competitions, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.},
-    month={12},
-    year={2015}
-}
-@article{ashishvaswani2017attention,
-    title={Attention Is All You Need},
-    url={http://arxiv.org/abs/1706.03762v5},
-    author={Ashish Vaswani and Noam Shazeer and Niki Parmar and Jakob Uszkoreit and Llion Jones and Aidan N. Gomez and Lukasz Kaiser and Illia Polosukhin},
-    abstract={The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.},
+@article{jielei2022revealing,
+    title={Revealing Single Frame Bias for Video-and-Language Learning},
+    url={http://arxiv.org/abs/2206.03428v1},
+    author={Jie Lei and Tamara L. Berg and Mohit Bansal},
+    abstract={Training an effective video-and-language model intuitively requires multiple frames as model inputs. However, it is unclear whether using multiple frames is beneficial to downstream tasks, and if yes, whether the performance gain is worth the drastically-increased computation and memory costs resulting from using more frames. In this work, we explore single-frame models for video-and-language learning. On a diverse set of video-and-language tasks (including text-to-video retrieval and video question answering), we show the surprising result that, with large-scale pre-training and a proper frame ensemble strategy at inference time, a single-frame trained model that does not consider temporal information can achieve better performance than existing methods that use multiple frames for training. This result reveals the existence of a strong "static appearance bias" in popular video-and-language datasets. Therefore, to allow for a more comprehensive evaluation of video-and-language models, we propose two new retrieval tasks based on existing fine-grained action recognition datasets that encourage temporal modeling. Our code is available at https://github.com/jayleicn/singularity},
     month={6},
-    year={2017}
+    year={2022}
 }
-@article{alexeydosovitskiy2020an,
-    title={An Image is Worth 16x16 Words: Transformers for Image Recognition at
-  Scale},
-    url={http://arxiv.org/abs/2010.11929v2},
-    author={Alexey Dosovitskiy and Lucas Beyer and Alexander Kolesnikov and Dirk Weissenborn and Xiaohua Zhai and Thomas Unterthiner and Mostafa Dehghani and Matthias Minderer and Georg Heigold and Sylvain Gelly and Jakob Uszkoreit and Neil Houlsby},
-    abstract={While the Transformer architecture has become the de-facto standard for natural language processing tasks, its applications to computer vision remain limited. In vision, attention is either applied in conjunction with convolutional networks, or used to replace certain components of convolutional networks while keeping their overall structure in place. We show that this reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks. When pre-trained on large amounts of data and transferred to multiple mid-sized or small image recognition benchmarks (ImageNet, CIFAR-100, VTAB, etc.), Vision Transformer (ViT) attains excellent results compared to state-of-the-art convolutional networks while requiring substantially fewer computational resources to train.},
-    month={10},
-    year={2020}
-}
-@article{dankondratyuk2021movinets,
-    title={MoViNets: Mobile Video Networks for Efficient Video Recognition},
-    url={http://arxiv.org/abs/2103.11511v2},
-    author={Dan Kondratyuk and Liangzhe Yuan and Yandong Li and Li Zhang and Mingxing Tan and Matthew Brown and Boqing Gong},
-    abstract={We present Mobile Video Networks (MoViNets), a family of computation and memory efficient video networks that can operate on streaming video for online inference. 3D convolutional neural networks (CNNs) are accurate at video recognition but require large computation and memory budgets and do not support online inference, making them difficult to work on mobile devices. We propose a three-step approach to improve computational efficiency while substantially reducing the peak memory usage of 3D CNNs. First, we design a video network search space and employ neural architecture search to generate efficient and diverse 3D CNN architectures. Second, we introduce the Stream Buffer technique that decouples memory from video clip duration, allowing 3D CNNs to embed arbitrary-length streaming video sequences for both training and inference with a small constant memory footprint. Third, we propose a simple ensembling technique to improve accuracy further without sacrificing efficiency. These three progressive techniques allow MoViNets to achieve state-of-the-art accuracy and efficiency on the Kinetics, Moments in Time, and Charades video action recognition datasets. For instance, MoViNet-A5-Stream achieves the same accuracy as X3D-XL on Kinetics 600 while requiring 80% fewer FLOPs and 65% less memory. Code will be made available at https://github.com/tensorflow/models/tree/master/official/vision.},
-    month={3},
-    year={2021}
-}
-@article{mitchellwortsman2021robust,
-    title={Robust fine-tuning of zero-shot models},
-    url={http://arxiv.org/abs/2109.01903v3},
-    author={Mitchell Wortsman and Gabriel Ilharco and Jong Wook Kim and Mike Li and Simon Kornblith and Rebecca Roelofs and Raphael Gontijo-Lopes and Hannaneh Hajishirzi and Ali Farhadi and Hongseok Namkoong and Ludwig Schmidt},
-    abstract={Large pre-trained models such as CLIP or ALIGN offer consistent accuracy across a range of data distributions when performing zero-shot inference (i.e., without fine-tuning on a specific dataset). Although existing fine-tuning methods substantially improve accuracy on a given target distribution, they often reduce robustness to distribution shifts. We address this tension by introducing a simple and effective method for improving robustness while fine-tuning: ensembling the weights of the zero-shot and fine-tuned models (WiSE-FT). Compared to standard fine-tuning, WiSE-FT provides large accuracy improvements under distribution shift, while preserving high accuracy on the target distribution. On ImageNet and five derived distribution shifts, WiSE-FT improves accuracy under distribution shift by 4 to 6 percentage points (pp) over prior work while increasing ImageNet accuracy by 1.6 pp. WiSE-FT achieves similarly large robustness gains (2 to 23 pp) on a diverse set of six further distribution shifts, and accuracy gains of 0.8 to 3.3 pp compared to standard fine-tuning on seven commonly used transfer learning datasets. These improvements come at no additional computational cost during fine-tuning or inference.},
-    month={9},
-    year={2021}
-}
-@article{aeminorhan2018a,
-    title={A Simple Cache Model for Image Recognition},
-    url={http://arxiv.org/abs/1805.08709v2},
-    author={A. Emin Orhan},
-    abstract={Training large-scale image recognition models is computationally expensive. This raises the question of whether there might be simple ways to improve the test performance of an already trained model without having to re-train or fine-tune it with new data. Here, we show that, surprisingly, this is indeed possible. The key observation we make is that the layers of a deep network close to the output layer contain independent, easily extractable class-relevant information that is not contained in the output layer itself. We propose to extract this extra class-relevant information using a simple key-value cache memory to improve the classification performance of the model at test time. Our cache memory is directly inspired by a similar cache model previously proposed for language modeling (Grave et al., 2017). This cache component does not require any training or fine-tuning; it can be applied to any pre-trained model and, by properly setting only two hyper-parameters, leads to significant improvements in its classification performance. Improvements are observed across several architectures and datasets. In the cache component, using features extracted from layers close to the output (but not from the output layer itself) as keys leads to the largest improvements. Concatenating features from multiple layers to form keys can further improve performance over using single-layer features as keys. The cache component also has a regularizing effect, a simple consequence of which is that it substantially increases the robustness of models against adversarial attacks.},
-    month={5},
-    year={2018}
-}
-@article{hetshah2020kdlib,
-    title={KD-Lib: A PyTorch library for Knowledge Distillation, Pruning and
-  Quantization},
-    url={http://arxiv.org/abs/2011.14691v1},
-    author={Het Shah and Avishree Khare and Neelay Shah and Khizir Siddiqui},
-    abstract={In recent years, the growing size of neural networks has led to a vast amount of research concerning compression techniques to mitigate the drawbacks of such large sizes. Most of these research works can be categorized into three broad families : Knowledge Distillation, Pruning, and Quantization. While there has been steady research in this domain, adoption and commercial usage of the proposed techniques has not quite progressed at the rate. We present KD-Lib, an open-source PyTorch based library, which contains state-of-the-art modular implementations of algorithms from the three families on top of multiple abstraction layers. KD-Lib is model and algorithm-agnostic, with extended support for hyperparameter tuning using Optuna and Tensorboard for logging and monitoring. The library can be found at - https://github.com/SforAiDl/KD_Lib.},
-    month={11},
-    year={2020}
-}
-@article{tsungyilin2016feature,
-    title={Feature Pyramid Networks for Object Detection},
-    url={http://arxiv.org/abs/1612.03144v2},
-    author={Tsung-Yi Lin and Piotr Dollár and Ross Girshick and Kaiming He and Bharath Hariharan and Serge Belongie},
-    abstract={Feature pyramids are a basic component in recognition systems for detecting objects at different scales. But recent deep learning object detectors have avoided pyramid representations, in part because they are compute and memory intensive. In this paper, we exploit the inherent multi-scale, pyramidal hierarchy of deep convolutional networks to construct feature pyramids with marginal extra cost. A top-down architecture with lateral connections is developed for building high-level semantic feature maps at all scales. This architecture, called a Feature Pyramid Network (FPN), shows significant improvement as a generic feature extractor in several applications. Using FPN in a basic Faster R-CNN system, our method achieves state-of-the-art single-model results on the COCO detection benchmark without bells and whistles, surpassing all existing single-model entries including those from the COCO 2016 challenge winners. In addition, our method can run at 5 FPS on a GPU and thus is a practical and accurate solution to multi-scale object detection. Code will be made publicly available.},
-    month={12},
-    year={2016}
-}
-@article{tombbrown2020language,
-    title={Language Models are Few-Shot Learners},
-    url={http://arxiv.org/abs/2005.14165v4},
-    author={Tom B. Brown and Benjamin Mann and Nick Ryder and Melanie Subbiah and Jared Kaplan and Prafulla Dhariwal and Arvind Neelakantan and Pranav Shyam and Girish Sastry and Amanda Askell and Sandhini Agarwal and Ariel Herbert-Voss and Gretchen Krueger and Tom Henighan and Rewon Child and Aditya Ramesh and Daniel M. Ziegler and Jeffrey Wu and Clemens Winter and Christopher Hesse and Mark Chen and Eric Sigler and Mateusz Litwin and Scott Gray and Benjamin Chess and Jack Clark and Christopher Berner and Sam McCandlish and Alec Radford and Ilya Sutskever and Dario Amodei},
-    abstract={Recent work has demonstrated substantial gains on many NLP tasks and benchmarks by pre-training on a large corpus of text followed by fine-tuning on a specific task. While typically task-agnostic in architecture, this method still requires task-specific fine-tuning datasets of thousands or tens of thousands of examples. By contrast, humans can generally perform a new language task from only a few examples or from simple instructions - something which current NLP systems still largely struggle to do. Here we show that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuning approaches. Specifically, we train GPT-3, an autoregressive language model with 175 billion parameters, 10x more than any previous non-sparse language model, and test its performance in the few-shot setting. For all tasks, GPT-3 is applied without any gradient updates or fine-tuning, with tasks and few-shot demonstrations specified purely via text interaction with the model. GPT-3 achieves strong performance on many NLP datasets, including translation, question-answering, and cloze tasks, as well as several tasks that require on-the-fly reasoning or domain adaptation, such as unscrambling words, using a novel word in a sentence, or performing 3-digit arithmetic. At the same time, we also identify some datasets where GPT-3's few-shot learning still struggles, as well as some datasets where GPT-3 faces methodological issues related to training on large web corpora. Finally, we find that GPT-3 can generate samples of news articles which human evaluators have difficulty distinguishing from articles written by humans. We discuss broader societal impacts of this finding and of GPT-3 in general.},
-    month={5},
-    year={2020}
-}
-@article{olgarussakovsky2014imagenet,
-    title={ImageNet Large Scale Visual Recognition Challenge},
-    url={http://arxiv.org/abs/1409.0575v3},
-    author={Olga Russakovsky and Jia Deng and Hao Su and Jonathan Krause and Sanjeev Satheesh and Sean Ma and Zhiheng Huang and Andrej Karpathy and Aditya Khosla and Michael Bernstein and Alexander C. Berg and Li Fei-Fei},
-    abstract={The ImageNet Large Scale Visual Recognition Challenge is a benchmark in object category classification and detection on hundreds of object categories and millions of images. The challenge has been run annually from 2010 to present, attracting participation from more than fifty institutions.   This paper describes the creation of this benchmark dataset and the advances in object recognition that have been possible as a result. We discuss the challenges of collecting large-scale ground truth annotation, highlight key breakthroughs in categorical object recognition, provide a detailed analysis of the current state of the field of large-scale image classification and object detection, and compare the state-of-the-art computer vision accuracy with human accuracy. We conclude with lessons learned in the five years of the challenge, and propose future directions and improvements.},
-    month={9},
-    year={2014}
-}
-@article{christophschuhmann2021laion400m,
-    title={LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs},
-    url={http://arxiv.org/abs/2111.02114v1},
-    author={Christoph Schuhmann and Richard Vencu and Romain Beaumont and Robert Kaczmarczyk and Clayton Mullis and Aarush Katta and Theo Coombes and Jenia Jitsev and Aran Komatsuzaki},
-    abstract={Multi-modal language-vision models trained on hundreds of millions of image-text pairs (e.g. CLIP, DALL-E) gained a recent surge, showing remarkable capability to perform zero- or few-shot learning and transfer even in absence of per-sample labels on target image data. Despite this trend, to date there has been no publicly available datasets of sufficient scale for training such models from scratch. To address this issue, in a community effort we build and release for public LAION-400M, a dataset with CLIP-filtered 400 million image-text pairs, their CLIP embeddings and kNN indices that allow efficient similarity search.},
-    month={11},
-    year={2021}
-}
-@article{bartthomee2015yfcc100m,
-    title={YFCC100M: The New Data in Multimedia Research},
-    url={http://arxiv.org/abs/1503.01817v2},
-    author={Bart Thomee and David A. Shamma and Gerald Friedland and Benjamin Elizalde and Karl Ni and Douglas Poland and Damian Borth and Li-Jia Li},
-    abstract={We present the Yahoo Flickr Creative Commons 100 Million Dataset (YFCC100M), the largest public multimedia collection that has ever been released. The dataset contains a total of 100 million media objects, of which approximately 99.2 million are photos and 0.8 million are videos, all of which carry a Creative Commons license. Each media object in the dataset is represented by several pieces of metadata, e.g. Flickr identifier, owner name, camera, title, tags, geo, media source. The collection provides a comprehensive snapshot of how photos and videos were taken, described, and shared over the years, from the inception of Flickr in 2004 until early 2014. In this article we explain the rationale behind its creation, as well as the implications the dataset has for science, research, engineering, and development. We further present several new challenges in multimedia research that can now be expanded upon with our dataset.},
-    month={3},
-    year={2015},
-    DOI={10.1145/2812802}
-}
-@article{tsungyilin2014microsoft,
-    title={Microsoft COCO: Common Objects in Context},
-    url={http://arxiv.org/abs/1405.0312v3},
-    author={Tsung-Yi Lin and Michael Maire and Serge Belongie and Lubomir Bourdev and Ross Girshick and James Hays and Pietro Perona and Deva Ramanan and C. Lawrence Zitnick and Piotr Dollár},
-    abstract={We present a new dataset with the goal of advancing the state-of-the-art in object recognition by placing the question of object recognition in the context of the broader question of scene understanding. This is achieved by gathering images of complex everyday scenes containing common objects in their natural context. Objects are labeled using per-instance segmentations to aid in precise object localization. Our dataset contains photos of 91 objects types that would be easily recognizable by a 4 year old. With a total of 2.5 million labeled instances in 328k images, the creation of our dataset drew upon extensive crowd worker involvement via novel user interfaces for category detection, instance spotting and instance segmentation. We present a detailed statistical analysis of the dataset in comparison to PASCAL, ImageNet, and SUN. Finally, we provide baseline performance analysis for bounding box and segmentation detection results using a Deformable Parts Model.},
-    month={5},
-    year={2014}
-}
-@article{khurramsoomro2012ucf101,
-    title={UCF101: A Dataset of 101 Human Actions Classes From Videos in The Wild},
-    url={http://arxiv.org/abs/1212.0402v1},
-    author={Khurram Soomro and Amir Roshan Zamir and Mubarak Shah},
-    abstract={We introduce UCF101 which is currently the largest dataset of human actions. It consists of 101 action classes, over 13k clips and 27 hours of video data. The database consists of realistic user uploaded videos containing camera motion and cluttered background. Additionally, we provide baseline action recognition results on this new dataset using standard bag of words approach with overall performance of 44.5%. To the best of our knowledge, UCF101 is currently the most challenging dataset of actions due to its large number of classes, large number of clips and also unconstrained nature of such clips.},
-    month={12},
-    year={2012}
-}
-@article{willkay2017the,
-    title={The Kinetics Human Action Video Dataset},
-    url={http://arxiv.org/abs/1705.06950v1},
-    author={Will Kay and Joao Carreira and Karen Simonyan and Brian Zhang and Chloe Hillier and Sudheendra Vijayanarasimhan and Fabio Viola and Tim Green and Trevor Back and Paul Natsev and Mustafa Suleyman and Andrew Zisserman},
-    abstract={We describe the DeepMind Kinetics human action video dataset. The dataset contains 400 human action classes, with at least 400 video clips for each action. Each clip lasts around 10s and is taken from a different YouTube video. The actions are human focussed and cover a broad range of classes including human-object interactions such as playing instruments, as well as human-human interactions such as shaking hands. We describe the statistics of the dataset, how it was collected, and give some baseline performance figures for neural network architectures trained and tested for human action classification on this dataset. We also carry out a preliminary analysis of whether imbalance in the dataset leads to bias in the classifiers.},
-    month={5},
-    year={2017}
-}
-@article{joaocarreira2018a,
-    title={A Short Note about Kinetics-600},
-    url={http://arxiv.org/abs/1808.01340v1},
-    author={Joao Carreira and Eric Noland and Andras Banki-Horvath and Chloe Hillier and Andrew Zisserman},
-    abstract={We describe an extension of the DeepMind Kinetics human action dataset from 400 classes, each with at least 400 video clips, to 600 classes, each with at least 600 video clips. In order to scale up the dataset we changed the data collection process so it uses multiple queries per class, with some of them in a language other than english -- portuguese. This paper details the changes between the two versions of the dataset and includes a comprehensive set of statistics of the new version as well as baseline results using the I3D neural network architecture. The paper is a companion to the release of the ground truth labels for the public test set.},
-    month={8},
-    year={2018}
-}
-@article{haroonidrees2016the,
-    title={The THUMOS Challenge on Action Recognition for Videos "in the Wild"},
-    url={http://arxiv.org/abs/1604.06182v1},
-    author={Haroon Idrees and Amir R. Zamir and Yu-Gang Jiang and Alex Gorban and Ivan Laptev and Rahul Sukthankar and Mubarak Shah},
-    abstract={Automatically recognizing and localizing wide ranges of human actions has crucial importance for video understanding. Towards this goal, the THUMOS challenge was introduced in 2013 to serve as a benchmark for action recognition. Until then, video action recognition, including THUMOS challenge, had focused primarily on the classification of pre-segmented (i.e., trimmed) videos, which is an artificial task. In THUMOS 2014, we elevated action recognition to a more practical level by introducing temporally untrimmed videos. These also include `background videos' which share similar scenes and backgrounds as action videos, but are devoid of the specific actions. The three editions of the challenge organized in 2013--2015 have made THUMOS a common benchmark for action classification and detection and the annual challenge is widely attended by teams from around the world.   In this paper we describe the THUMOS benchmark in detail and give an overview of data collection and annotation procedures. We present the evaluation protocols used to quantify results in the two THUMOS tasks of action classification and temporal detection. We also present results of submissions to the THUMOS 2015 challenge and review the participating approaches. Additionally, we include a comprehensive empirical study evaluating the differences in action recognition between trimmed and untrimmed videos, and how well methods trained on trimmed videos generalize to untrimmed videos. We conclude by proposing several directions and improvements for future THUMOS challenges.},
-    month={4},
-    year={2016},
-    DOI={10.1016/j.cviu.2016.10.018}
-}
-@article{kimmokrkkinen2019fairface,
-    title={FairFace: Face Attribute Dataset for Balanced Race, Gender, and Age},
-    url={http://arxiv.org/abs/1908.04913v1},
-    author={Kimmo Kärkkäinen and Jungseock Joo},
-    abstract={Existing public face datasets are strongly biased toward Caucasian faces, and other races (e.g., Latino) are significantly underrepresented. This can lead to inconsistent model accuracy, limit the applicability of face analytic systems to non-White race groups, and adversely affect research findings based on such skewed data. To mitigate the race bias in these datasets, we construct a novel face image dataset, containing 108,501 images, with an emphasis of balanced race composition in the dataset. We define 7 race groups: White, Black, Indian, East Asian, Southeast Asian, Middle East, and Latino. Images were collected from the YFCC-100M Flickr dataset and labeled with race, gender, and age groups. Evaluations were performed on existing face attribute datasets as well as novel image datasets to measure generalization performance. We find that the model trained from our dataset is substantially more accurate on novel datasets and the accuracy is consistent between race and gender groups.},
-    month={8},
-    year={2019}
-}
-@article{amirgholami2021a,
-    title={A Survey of Quantization Methods for Efficient Neural Network Inference},
-    url={http://arxiv.org/abs/2103.13630v3},
-    author={Amir Gholami and Sehoon Kim and Zhen Dong and Zhewei Yao and Michael W. Mahoney and Kurt Keutzer},
-    abstract={As soon as abstract mathematical computations were adapted to computation on digital computers, the problem of efficient representation, manipulation, and communication of the numerical values in those computations arose. Strongly related to the problem of numerical representation is the problem of quantization: in what manner should a set of continuous real-valued numbers be distributed over a fixed discrete set of numbers to minimize the number of bits required and also to maximize the accuracy of the attendant computations? This perennial problem of quantization is particularly relevant whenever memory and/or computational resources are severely restricted, and it has come to the forefront in recent years due to the remarkable performance of Neural Network models in computer vision, natural language processing, and related areas. Moving from floating-point representations to low-precision fixed integer values represented in four bits or less holds the potential to reduce the memory footprint and latency by a factor of 16x; and, in fact, reductions of 4x to 8x are often realized in practice in these applications. Thus, it is not surprising that quantization has emerged recently as an important and very active sub-area of research in the efficient implementation of computations associated with Neural Networks. In this article, we survey approaches to the problem of quantizing the numerical values in deep Neural Network computations, covering the advantages/disadvantages of current methods. With this survey and its organization, we hope to have presented a useful snapshot of the current research in quantization for Neural Networks and to have given an intelligent organization to ease the evaluation of future research in this area.},
-    month={3},
-    year={2021}
+@article{wenhaowu2022revisiting,
+    title={Revisiting Classifier: Transferring Vision-Language Models for Video
+  Recognition},
+    url={http://arxiv.org/abs/2207.01297v4},
+    author={Wenhao Wu and Zhun Sun and Wanli Ouyang},
+    abstract={Transferring knowledge from task-agnostic pre-trained deep models for downstream tasks is an important topic in computer vision research. Along with the growth of computational capacity, we now have open-source vision-language pre-trained models in large scales of the model architecture and amount of data. In this study, we focus on transferring knowledge for video classification tasks. Conventional methods randomly initialize the linear classifier head for vision classification, but they leave the usage of the text encoder for downstream visual recognition tasks undiscovered. In this paper, we revise the role of the linear classifier and replace the classifier with the different knowledge from pre-trained model. We utilize the well-pretrained language model to generate good semantic target for efficient transferring learning. The empirical study shows that our method improves both the performance and the training speed of video classification, with a negligible change in the model. Our simple yet effective tuning paradigm achieves state-of-the-art performance and efficient training on various video recognition scenarios, i.e., zero-shot, few-shot, general recognition. In particular, our paradigm achieves the state-of-the-art accuracy of 87.8% on Kinetics-400, and also surpasses previous methods by 20~50% absolute top-1 accuracy under zero-shot, few-shot settings on five popular video datasets. Code and models can be found at https://github.com/whwu95/Text4Vis .},
+    month={7},
+    year={2022}
 }
 @article{chienyaowang2022yolov7,
     title={YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for
@@ -509,12 +459,63 @@
     month={7},
     year={2022}
 }
+@article{sauradipnag2022semisupervised,
+    title={Semi-Supervised Temporal Action Detection with Proposal-Free Masking},
+    url={http://arxiv.org/abs/2207.07059v1},
+    author={Sauradip Nag and Xiatian Zhu and Yi-Zhe Song and Tao Xiang},
+    abstract={Existing temporal action detection (TAD) methods rely on a large number of training data with segment-level annotations. Collecting and annotating such a training set is thus highly expensive and unscalable. Semi-supervised TAD (SS-TAD) alleviates this problem by leveraging unlabeled videos freely available at scale. However, SS-TAD is also a much more challenging problem than supervised TAD, and consequently much under-studied. Prior SS-TAD methods directly combine an existing proposal-based TAD method and a SSL method. Due to their sequential localization (e.g, proposal generation) and classification design, they are prone to proposal error propagation. To overcome this limitation, in this work we propose a novel Semi-supervised Temporal action detection model based on PropOsal-free Temporal mask (SPOT) with a parallel localization (mask generation) and classification architecture. Such a novel design effectively eliminates the dependence between localization and classification by cutting off the route for error propagation in-between. We further introduce an interaction mechanism between classification and localization for prediction refinement, and a new pretext task for self-supervised model pre-training. Extensive experiments on two standard benchmarks show that our SPOT outperforms state-of-the-art alternatives, often by a large margin. The PyTorch implementation of SPOT is available at https://github.com/sauradip/SPOT},
+    month={7},
+    year={2022}
+}
+@article{yiweima2022xclip,
+    title={X-CLIP: End-to-End Multi-grained Contrastive Learning for Video-Text
+  Retrieval},
+    url={http://arxiv.org/abs/2207.07285v2},
+    author={Yiwei Ma and Guohai Xu and Xiaoshuai Sun and Ming Yan and Ji Zhang and Rongrong Ji},
+    abstract={Video-text retrieval has been a crucial and fundamental task in multi-modal research. The development of video-text retrieval has been considerably promoted by large-scale multi-modal contrastive pre-training, which primarily focuses on coarse-grained or fine-grained contrast. However, cross-grained contrast, which is the contrast between coarse-grained representations and fine-grained representations, has rarely been explored in prior research. Compared with fine-grained or coarse-grained contrasts, cross-grained contrast calculate the correlation between coarse-grained features and each fine-grained feature, and is able to filter out the unnecessary fine-grained features guided by the coarse-grained feature during similarity calculation, thus improving the accuracy of retrieval. To this end, this paper presents a novel multi-grained contrastive model, namely X-CLIP, for video-text retrieval. However, another challenge lies in the similarity aggregation problem, which aims to aggregate fine-grained and cross-grained similarity matrices to instance-level similarity. To address this challenge, we propose the Attention Over Similarity Matrix (AOSM) module to make the model focus on the contrast between essential frames and words, thus lowering the impact of unnecessary frames and words on retrieval results. With multi-grained contrast and the proposed AOSM module, X-CLIP achieves outstanding performance on five widely-used video-text retrieval datasets, including MSR-VTT (49.3 R@1), MSVD (50.4 R@1), LSMDC (26.1 R@1), DiDeMo (47.8 R@1) and ActivityNet (46.2 R@1). It outperforms the previous state-of-theart by +6.3%, +6.6%, +11.1%, +6.7%, +3.8% relative improvements on these benchmarks, demonstrating the superiority of multi-grained contrast and AOSM.},
+    month={7},
+    year={2022}
+}
+@article{sauradipnag2022zeroshot,
+    title={Zero-Shot Temporal Action Detection via Vision-Language Prompting},
+    url={http://arxiv.org/abs/2207.08184v1},
+    author={Sauradip Nag and Xiatian Zhu and Yi-Zhe Song and Tao Xiang},
+    abstract={Existing temporal action detection (TAD) methods rely on large training data including segment-level annotations, limited to recognizing previously seen classes alone during inference. Collecting and annotating a large training set for each class of interest is costly and hence unscalable. Zero-shot TAD (ZS-TAD) resolves this obstacle by enabling a pre-trained model to recognize any unseen action classes. Meanwhile, ZS-TAD is also much more challenging with significantly less investigation. Inspired by the success of zero-shot image classification aided by vision-language (ViL) models such as CLIP, we aim to tackle the more complex TAD task. An intuitive method is to integrate an off-the-shelf proposal detector with CLIP style classification. However, due to the sequential localization (e.g, proposal generation) and classification design, it is prone to localization error propagation. To overcome this problem, in this paper we propose a novel zero-Shot Temporal Action detection model via Vision-LanguagE prompting (STALE). Such a novel design effectively eliminates the dependence between localization and classification by breaking the route for error propagation in-between. We further introduce an interaction mechanism between classification and localization for improved optimization. Extensive experiments on standard ZS-TAD video benchmarks show that our STALE significantly outperforms state-of-the-art alternatives. Besides, our model also yields superior results on supervised TAD over recent strong competitors. The PyTorch implementation of STALE is available at https://github.com/sauradip/STALE.},
+    month={7},
+    year={2022}
+}
+@article{bolinni2022expanding,
+    title={Expanding Language-Image Pretrained Models for General Video Recognition},
+    url={http://arxiv.org/abs/2208.02816v1},
+    author={Bolin Ni and Houwen Peng and Minghao Chen and Songyang Zhang and Gaofeng Meng and Jianlong Fu and Shiming Xiang and Haibin Ling},
+    abstract={Contrastive language-image pretraining has shown great success in learning visual-textual joint representation from web-scale data, demonstrating remarkable "zero-shot" generalization ability for various image tasks. However, how to effectively expand such new language-image pretraining methods to video domains is still an open problem. In this work, we present a simple yet effective approach that adapts the pretrained language-image models to video recognition directly, instead of pretraining a new model from scratch. More concretely, to capture the long-range dependencies of frames along the temporal dimension, we propose a cross-frame attention mechanism that explicitly exchanges information across frames. Such module is lightweight and can be plugged into pretrained language-image models seamlessly. Moreover, we propose a video-specific prompting scheme, which leverages video content information for generating discriminative textual prompts. Extensive experiments demonstrate that our approach is effective and can be generalized to different video recognition scenarios. In particular, under fully-supervised settings, our approach achieves a top-1 accuracy of 87.1% on Kinectics-400, while using 12 times fewer FLOPs compared with Swin-L and ViViT-H. In zero-shot experiments, our approach surpasses the current state-of-the-art methods by +7.6% and +14.9% in terms of top-1 accuracy under two popular protocols. In few-shot scenarios, our approach outperforms previous best methods by +32.1% and +23.1% when the labeled data is extremely limited. Code and models are available at https://aka.ms/X-CLIP},
+    month={8},
+    year={2022}
+}
+@article{wenhaowu2022bidirectional,
+    title={Bidirectional Cross-Modal Knowledge Exploration for Video Recognition
+  with Pre-trained Vision-Language Models},
+    url={http://arxiv.org/abs/2301.00182v2},
+    author={Wenhao Wu and Xiaohan Wang and Haipeng Luo and Jingdong Wang and Yi Yang and Wanli Ouyang},
+    abstract={Vision-language models (VLMs) pre-trained on large-scale image-text pairs have demonstrated impressive transferability on various visual tasks. Transferring knowledge from such powerful VLMs is a promising direction for building effective video recognition models. However, current exploration in this field is still limited. We believe that the greatest value of pre-trained VLMs lies in building a bridge between visual and textual domains. In this paper, we propose a novel framework called BIKE, which utilizes the cross-modal bridge to explore bidirectional knowledge: i) We introduce the Video Attribute Association mechanism, which leverages the Video-to-Text knowledge to generate textual auxiliary attributes for complementing video recognition. ii) We also present a Temporal Concept Spotting mechanism that uses the Text-to-Video expertise to capture temporal saliency in a parameter-free manner, leading to enhanced video representation. Extensive studies on six popular video datasets, including Kinetics-400 & 600, UCF-101, HMDB-51, ActivityNet and Charades, show that our method achieves state-of-the-art performance in various recognition scenarios, such as general, zero-shot, and few-shot video recognition. Our best model achieves a state-of-the-art accuracy of 88.6% on the challenging Kinetics-400 using the released CLIP model. The code is available at https://github.com/whwu95/BIKE .},
+    month={12},
+    year={2022}
+}
 @article{shikunliu2023prismer,
     title={Prismer: A Vision-Language Model with An Ensemble of Experts},
     url={http://arxiv.org/abs/2303.02506v2},
     author={Shikun Liu and Linxi Fan and Edward Johns and Zhiding Yu and Chaowei Xiao and Anima Anandkumar},
     abstract={Recent vision-language models have shown impressive multi-modal generation capabilities. However, typically they require training huge models on massive datasets. As a more scalable alternative, we introduce Prismer, a data- and parameter-efficient vision-language model that leverages an ensemble of domain experts. Prismer only requires training of a small number of components, with the majority of network weights inherited from readily-available, pre-trained domain experts, and kept frozen during training. By leveraging experts from a wide range of domains, we show that Prismer can efficiently pool this expert knowledge and adapt it to various vision-language reasoning tasks. In our experiments, we show that Prismer achieves fine-tuned and few-shot learning performance which is competitive with current state-of-the-art models, whilst requiring up to two orders of magnitude less training data. Code is available at https://github.com/NVlabs/prismer.},
     month={3},
+    year={2023}
+}
+@article{shuheiwatanabe2023treestructured,
+    title={Tree-Structured Parzen Estimator: Understanding Its Algorithm Components
+  and Their Roles for Better Empirical Performance},
+    url={http://arxiv.org/abs/2304.11127v3},
+    author={Shuhei Watanabe},
+    abstract={Recent advances in many domains require more and more complicated experiment design. Such complicated experiments often have many parameters, which necessitate parameter tuning. Tree-structured Parzen estimator (TPE), a Bayesian optimization method, is widely used in recent parameter tuning frameworks. Despite its popularity, the roles of each control parameter and the algorithm intuition have not been discussed so far. In this tutorial, we will identify the roles of each control parameter and their impacts on hyperparameter optimization using a diverse set of benchmarks. We compare our recommended setting drawn from the ablation study with baseline methods and demonstrate that our recommended setting improves the performance of TPE. Our TPE implementation is available at https://github.com/nabenabe0928/tpe/tree/single-opt.},
+    month={4},
     year={2023}
 }
 @article{serenayeung2015endtoend,

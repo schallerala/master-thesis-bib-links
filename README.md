@@ -166,6 +166,8 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 * MoViNets: Mobile Video Networks for Efficient Video Recognition [[arXiv abstract]](https://arxiv.org/abs/2103.11511) [[pdf]](2103.11511.pdf) [[github code]](https://github.com/tensorflow/models/tree/35ed75e315a582640c5c25f870f4e23e9c35b8b9/official/projects/movinet)
 
+* Tree-Structured Parzen Estimator: Understanding Its Algorithm Components and Their Roles for Better Empirical Performance [[arXiv abstract]](https://arxiv.org/abs/2304.11127) [[pdf]](2304.11127.pdf)
+
 * Robust fine-tuning of zero-shot models (by ML Foundations) [[github code]](https://github.com/mlfoundations/wise-ft) [[arXiv abstract]](https://arxiv.org/abs/2109.01903) [[pdf]](2109.01903.pdf)
 
 * 🏄 Embed/reason/rank images and sentences with CLIP models [[github code]](https://github.com/jina-ai/clip-as-service)
@@ -257,8 +259,6 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
   >
   > Open-source tool to simplify ML model deployment: Save your ML model with a Python call, Model metadata is captured automatically, Deploy models anywhere you want, make git a Model Registry
 
-* Optuna - A hyperparameter optimization framework [[official website]](https://optuna.org/)
-
 * Weights & Biases – Developer tools for ML [[official website]](https://wandb.ai/site)
   > The developer-first ‍MLOps platform
   >
@@ -321,6 +321,8 @@ With Noisy Text Supervision [[arXiv abstract]](https://arxiv.org/abs/2102.05918)
 
 
 ### Optimization
+
+* [Optuna - A hyperparameter optimization framework](https://optuna.org/) [[github code]](https://github.com/optuna/optuna/)
 
 * [Mixed precision | TensorFlow Core](https://www.tensorflow.org/guide/mixed_precision)
 
